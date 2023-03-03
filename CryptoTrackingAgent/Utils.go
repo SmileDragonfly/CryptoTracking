@@ -6,12 +6,11 @@ import (
 	"database/sql"
 	"fmt"
 	"runtime"
-	"time"
 )
 
 func getCurrentFuncname() string {
 	pc, _, _, _ := runtime.Caller(1)
-	return fmt.Sprintf("%s-%s", time.Now().String(), runtime.FuncForPC(pc).Name())
+	return fmt.Sprintf("%s", runtime.FuncForPC(pc).Name())
 }
 
 func insertTblBUSDPrice(strPrice string, strDBConn string, strDBDriver string) error {
