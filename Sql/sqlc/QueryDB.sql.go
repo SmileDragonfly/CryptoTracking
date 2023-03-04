@@ -10,6 +10,209 @@ import (
 	"database/sql"
 )
 
+const get10MinAgoBUSDPrice = `-- name: Get10MinAgoBUSDPrice :one
+SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '601 seconds') ORDER BY "time" ASC LIMIT 1
+`
+
+func (q *Queries) Get10MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+	row := q.db.QueryRowContext(ctx, get10MinAgoBUSDPrice)
+	var price sql.NullString
+	err := row.Scan(&price)
+	return price, err
+}
+
+const get15MinAgoBUSDPrice = `-- name: Get15MinAgoBUSDPrice :one
+SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '901 seconds') ORDER BY "time" ASC LIMIT 1
+`
+
+func (q *Queries) Get15MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+	row := q.db.QueryRowContext(ctx, get15MinAgoBUSDPrice)
+	var price sql.NullString
+	err := row.Scan(&price)
+	return price, err
+}
+
+const get1MinAgoBUSDPrice = `-- name: Get1MinAgoBUSDPrice :one
+SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '61 seconds') ORDER BY "time" ASC LIMIT 1
+`
+
+func (q *Queries) Get1MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+	row := q.db.QueryRowContext(ctx, get1MinAgoBUSDPrice)
+	var price sql.NullString
+	err := row.Scan(&price)
+	return price, err
+}
+
+const get30MinAgoBUSDPrice = `-- name: Get30MinAgoBUSDPrice :one
+SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '1801 seconds') ORDER BY "time" ASC LIMIT 1
+`
+
+func (q *Queries) Get30MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+	row := q.db.QueryRowContext(ctx, get30MinAgoBUSDPrice)
+	var price sql.NullString
+	err := row.Scan(&price)
+	return price, err
+}
+
+const get5MinAgoBUSDPrice = `-- name: Get5MinAgoBUSDPrice :one
+SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '301 seconds') ORDER BY "time" ASC LIMIT 1
+`
+
+func (q *Queries) Get5MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+	row := q.db.QueryRowContext(ctx, get5MinAgoBUSDPrice)
+	var price sql.NullString
+	err := row.Scan(&price)
+	return price, err
+}
+
+const get60MinAgoBUSDPrice = `-- name: Get60MinAgoBUSDPrice :one
+SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '3601 seconds') ORDER BY "time" ASC LIMIT 1
+`
+
+func (q *Queries) Get60MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+	row := q.db.QueryRowContext(ctx, get60MinAgoBUSDPrice)
+	var price sql.NullString
+	err := row.Scan(&price)
+	return price, err
+}
+
+const getLastestBUSDPrice = `-- name: GetLastestBUSDPrice :one
+SELECT "price" FROM tblBUSDPrice ORDER BY "time" DESC LIMIT 1
+`
+
+func (q *Queries) GetLastestBUSDPrice(ctx context.Context) (sql.NullString, error) {
+	row := q.db.QueryRowContext(ctx, getLastestBUSDPrice)
+	var price sql.NullString
+	err := row.Scan(&price)
+	return price, err
+}
+
+const insert10MinBUSDPercent = `-- name: Insert10MinBUSDPercent :exec
+INSERT INTO tblBUSD10MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+`
+
+type Insert10MinBUSDPercentParams struct {
+	Symbol    sql.NullString
+	Price     sql.NullFloat64
+	Prevprice sql.NullFloat64
+	Percent   sql.NullFloat64
+}
+
+func (q *Queries) Insert10MinBUSDPercent(ctx context.Context, arg Insert10MinBUSDPercentParams) error {
+	_, err := q.db.ExecContext(ctx, insert10MinBUSDPercent,
+		arg.Symbol,
+		arg.Price,
+		arg.Prevprice,
+		arg.Percent,
+	)
+	return err
+}
+
+const insert15MinBUSDPercent = `-- name: Insert15MinBUSDPercent :exec
+INSERT INTO tblBUSD15MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+`
+
+type Insert15MinBUSDPercentParams struct {
+	Symbol    sql.NullString
+	Price     sql.NullFloat64
+	Prevprice sql.NullFloat64
+	Percent   sql.NullFloat64
+}
+
+func (q *Queries) Insert15MinBUSDPercent(ctx context.Context, arg Insert15MinBUSDPercentParams) error {
+	_, err := q.db.ExecContext(ctx, insert15MinBUSDPercent,
+		arg.Symbol,
+		arg.Price,
+		arg.Prevprice,
+		arg.Percent,
+	)
+	return err
+}
+
+const insert1MinBUSDPercent = `-- name: Insert1MinBUSDPercent :exec
+INSERT INTO tblBUSD1MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+`
+
+type Insert1MinBUSDPercentParams struct {
+	Symbol    sql.NullString
+	Price     sql.NullFloat64
+	Prevprice sql.NullFloat64
+	Percent   sql.NullFloat64
+}
+
+func (q *Queries) Insert1MinBUSDPercent(ctx context.Context, arg Insert1MinBUSDPercentParams) error {
+	_, err := q.db.ExecContext(ctx, insert1MinBUSDPercent,
+		arg.Symbol,
+		arg.Price,
+		arg.Prevprice,
+		arg.Percent,
+	)
+	return err
+}
+
+const insert30MinBUSDPercent = `-- name: Insert30MinBUSDPercent :exec
+INSERT INTO tblBUSD30MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+`
+
+type Insert30MinBUSDPercentParams struct {
+	Symbol    sql.NullString
+	Price     sql.NullFloat64
+	Prevprice sql.NullFloat64
+	Percent   sql.NullFloat64
+}
+
+func (q *Queries) Insert30MinBUSDPercent(ctx context.Context, arg Insert30MinBUSDPercentParams) error {
+	_, err := q.db.ExecContext(ctx, insert30MinBUSDPercent,
+		arg.Symbol,
+		arg.Price,
+		arg.Prevprice,
+		arg.Percent,
+	)
+	return err
+}
+
+const insert5MinBUSDPercent = `-- name: Insert5MinBUSDPercent :exec
+INSERT INTO tblBUSD5MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+`
+
+type Insert5MinBUSDPercentParams struct {
+	Symbol    sql.NullString
+	Price     sql.NullFloat64
+	Prevprice sql.NullFloat64
+	Percent   sql.NullFloat64
+}
+
+func (q *Queries) Insert5MinBUSDPercent(ctx context.Context, arg Insert5MinBUSDPercentParams) error {
+	_, err := q.db.ExecContext(ctx, insert5MinBUSDPercent,
+		arg.Symbol,
+		arg.Price,
+		arg.Prevprice,
+		arg.Percent,
+	)
+	return err
+}
+
+const insert60MinBUSDPercent = `-- name: Insert60MinBUSDPercent :exec
+INSERT INTO tblBUSD60MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+`
+
+type Insert60MinBUSDPercentParams struct {
+	Symbol    sql.NullString
+	Price     sql.NullFloat64
+	Prevprice sql.NullFloat64
+	Percent   sql.NullFloat64
+}
+
+func (q *Queries) Insert60MinBUSDPercent(ctx context.Context, arg Insert60MinBUSDPercentParams) error {
+	_, err := q.db.ExecContext(ctx, insert60MinBUSDPercent,
+		arg.Symbol,
+		arg.Price,
+		arg.Prevprice,
+		arg.Percent,
+	)
+	return err
+}
+
 const insertBUSDPrice = `-- name: InsertBUSDPrice :exec
 INSERT INTO tblBUSDPrice ("price") VALUES ($1)
 `

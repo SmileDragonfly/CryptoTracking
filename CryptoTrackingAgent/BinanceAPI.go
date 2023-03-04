@@ -14,11 +14,12 @@ type TTickerPrice struct {
 	Price  string `json:"price"`
 }
 
-func (receiver BinanceAPI) getAllPrice(symReg string) string {
+func (receiver BinanceAPI) getAllPrice(symReg string) (string, error) {
 	link := "https://api.binance.com/api/v3/ticker/price"
 	resp, err := http.Get(link)
 	if err != nil {
 		log.Println(getCurrentFuncname(), err.Error())
+		return "", err
 	}
 	respBody, err := io.ReadAll(resp.Body)
 	//respStr := string(respBody)
@@ -27,6 +28,7 @@ func (receiver BinanceAPI) getAllPrice(symReg string) string {
 	err = json.Unmarshal(respBody, &arrJson)
 	if err != nil {
 		log.Println(getCurrentFuncname(), err.Error())
+		return "", err
 	}
 	// Get all symbol match with symReg
 	var arrRet []TTickerPrice
@@ -41,6 +43,7 @@ func (receiver BinanceAPI) getAllPrice(symReg string) string {
 	byteRet, err = json.Marshal(arrRet)
 	if err != nil {
 		log.Println(getCurrentFuncname(), err.Error())
+		return "", err
 	}
-	return string(byteRet)
+	return string(byteRet), err
 }

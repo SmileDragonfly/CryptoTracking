@@ -15,6 +15,7 @@ func getCurrentFuncname() string {
 
 func insertTblBUSDPrice(strPrice string, strDBConn string, strDBDriver string) error {
 	conn, err := sql.Open(strDBDriver, strDBConn)
+	defer conn.Close()
 	if err != nil {
 		return err
 	}

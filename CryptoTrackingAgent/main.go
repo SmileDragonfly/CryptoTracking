@@ -38,13 +38,17 @@ func main() {
 			case <-tickerDone:
 				return
 			case <-ticker.C:
-				strPrice := api.getAllPrice("BUSD$")
-				// Insert to DB
-				err = insertTblBUSDPrice(strPrice, GStrConn, GConfig.DBDriver)
+				strPrice, err := api.getAllPrice("BUSD$")
 				if err != nil {
 					log.Println(err.Error())
+				} else {
+					// Insert to DB
+					err = insertTblBUSDPrice(strPrice, GStrConn, GConfig.DBDriver)
+					if err != nil {
+						log.Println(err.Error())
+					}
+					log.Print(getCurrentFuncname())
 				}
-				log.Print(getCurrentFuncname())
 			}
 		}
 	}()
