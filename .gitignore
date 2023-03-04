@@ -15,4 +15,4 @@
 # vendor/
 
 # CryptoTrackingAgent log file 
-CryptoTrackingAgent.log
+CryptoTrackingAgent/CryptoTrackingAgent.log
