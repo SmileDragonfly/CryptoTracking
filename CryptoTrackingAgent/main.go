@@ -18,7 +18,7 @@ func main() {
 	}
 	defer f.Close()
 	log.SetOutput(f)
-	log.Println("Start CryptoTrackingAgent")
+	log.Println("----------Start CryptoTrackingAgent----------")
 
 	// Begin main program
 	var api BinanceAPI
