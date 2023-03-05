@@ -1,9 +1,6 @@
 package main
 
 import (
-	"CryptoTrackingSql/sqlc"
-	"context"
-	"database/sql"
 	"encoding/json"
 	"fmt"
 	"runtime"
@@ -12,8 +9,8 @@ import (
 
 type TPricePercent struct {
 	Symbol    string  `json:"symbol"`
-	Price     string  `json:"price"`
-	PrevPrice string  `json:"prevPrice"`
+	Price     float64 `json:"price"`
+	PrevPrice float64 `json:"prevPrice"`
 	Percent   float64 `json:"percent"`
 }
 
@@ -22,30 +19,24 @@ func getCurrentFuncname() string {
 	return fmt.Sprintf("%s", runtime.FuncForPC(pc).Name())
 }
 
-func insertTblBUSDPrice(strPrice string, strDBConn string, strDBDriver string) error {
-	conn, err := sql.Open(strDBDriver, strDBConn)
-	defer conn.Close()
-	if err != nil {
-		return err
-	}
-	query := sqlc.New(conn)
-	err = query.InsertBUSDPrice(context.Background(), sql.NullString{strPrice, true})
-	return err
-}
-
 func CalculatePercent(strPrice string, stringPrePrice string) ([]TPricePercent, error) {
 	var arrPrice []TTickerPrice
 	var arrPrevPrice []TTickerPrice
 	var arrPricePercent []TPricePercent
-	json.Unmarshal([]byte(strPrice), &arrPrice)
-	json.Unmarshal([]byte(stringPrePrice), &arrPrevPrice)
+	err := json.Unmarshal([]byte(strPrice), &arrPrice)
+	if err != nil {
+		return nil, err
+	}
+	err = json.Unmarshal([]byte(stringPrePrice), &arrPrevPrice)
+	if err != nil {
+		return nil, err
+	}
 	for _, v := range arrPrice {
 		for _, vPre := range arrPrevPrice {
 			if v.Symbol == vPre.Symbol {
 				var pricePercent TPricePercent
 				pricePercent.Symbol = v.Symbol
-				pricePercent.Price = v.Price
-				pricePercent.PrevPrice = vPre.Price
+
 				fPrice, err := strconv.ParseFloat(v.Price, 32)
 				if err != nil {
 					return nil, err
@@ -54,6 +45,8 @@ func CalculatePercent(strPrice string, stringPrePrice string) ([]TPricePercent, 
 				if err != nil {
 					return nil, err
 				}
+				pricePercent.Price = fPrice
+				pricePercent.PrevPrice = fPrePrice
 				pricePercent.Percent = (fPrice - fPrePrice) / fPrePrice
 				arrPricePercent = append(arrPricePercent, pricePercent)
 				continue
