@@ -49,8 +49,17 @@ func main() {
 					conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 					if err != nil {
 						log.Println(err.Error())
+						conn.Close()
+						continue
+					}
+					tx, err := conn.Begin()
+					if err != nil {
+						log.Println(err.Error())
+						conn.Close()
+						continue
 					}
 					query := sqlc.New(conn)
+					query = query.WithTx(tx)
 					// 2.Get price 1,5,10,15,30,60 min ago
 					strPrice1MinAgo, err := query.Get1MinAgoBUSDPrice(context.Background())
 					strPrice5MinAgo, err := query.Get5MinAgoBUSDPrice(context.Background())
@@ -81,6 +90,7 @@ func main() {
 					if arrPercent1Min == nil {
 						log.Println("CalculatePercent 1 Min NUll Data")
 					} else {
+						query.Delete1MinBUSDPercent(context.Background())
 						for _, v := range arrPercent1Min {
 							query.Insert1MinBUSDPercent(context.Background(),
 								sqlc.Insert1MinBUSDPercentParams{sql.NullString{v.Symbol, true},
@@ -92,6 +102,7 @@ func main() {
 					if arrPercent5Min == nil {
 						log.Println("CalculatePercent 5 Min NUll Data")
 					} else {
+						query.Delete5MinBUSDPercent(context.Background())
 						for _, v := range arrPercent5Min {
 							query.Insert5MinBUSDPercent(context.Background(),
 								sqlc.Insert5MinBUSDPercentParams{sql.NullString{v.Symbol, true},
@@ -104,6 +115,7 @@ func main() {
 						log.Println("CalculatePercent 10 Min NUll Data")
 					} else {
 						for _, v := range arrPercent10Min {
+							query.Delete10MinBUSDPercent(context.Background())
 							query.Insert10MinBUSDPercent(context.Background(),
 								sqlc.Insert10MinBUSDPercentParams{sql.NullString{v.Symbol, true},
 									sql.NullFloat64{v.Price, true},
@@ -114,6 +126,7 @@ func main() {
 					if arrPercent15Min == nil {
 						log.Println("CalculatePercent 15 Min NUll Data")
 					} else {
+						query.Delete15MinBUSDPercent(context.Background())
 						for _, v := range arrPercent15Min {
 							query.Insert15MinBUSDPercent(context.Background(),
 								sqlc.Insert15MinBUSDPercentParams{sql.NullString{v.Symbol, true},
@@ -125,6 +138,7 @@ func main() {
 					if arrPercent30Min == nil {
 						log.Println("CalculatePercent 30 Min NUll Data")
 					} else {
+						query.Delete30MinBUSDPercent(context.Background())
 						for _, v := range arrPercent30Min {
 							query.Insert30MinBUSDPercent(context.Background(),
 								sqlc.Insert30MinBUSDPercentParams{sql.NullString{v.Symbol, true},
@@ -136,6 +150,7 @@ func main() {
 					if arrPercent60Min == nil {
 						log.Println("CalculatePercent 60 Min NUll Data")
 					} else {
+						query.Delete60MinBUSDPercent(context.Background())
 						for _, v := range arrPercent60Min {
 							query.Insert60MinBUSDPercent(context.Background(),
 								sqlc.Insert60MinBUSDPercentParams{sql.NullString{v.Symbol, true},
@@ -150,6 +165,7 @@ func main() {
 					if err != nil {
 						log.Println(err.Error())
 					}
+					tx.Commit()
 					conn.Close()
 				}
 			}

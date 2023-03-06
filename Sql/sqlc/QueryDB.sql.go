@@ -10,8 +10,62 @@ import (
 	"database/sql"
 )
 
+const delete10MinBUSDPercent = `-- name: Delete10MinBUSDPercent :exec
+DELETE FROM tblBUSD10MinPercent
+`
+
+func (q *Queries) Delete10MinBUSDPercent(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, delete10MinBUSDPercent)
+	return err
+}
+
+const delete15MinBUSDPercent = `-- name: Delete15MinBUSDPercent :exec
+DELETE FROM tblBUSD15MinPercent
+`
+
+func (q *Queries) Delete15MinBUSDPercent(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, delete15MinBUSDPercent)
+	return err
+}
+
+const delete1MinBUSDPercent = `-- name: Delete1MinBUSDPercent :exec
+DELETE FROM tblBUSD1MinPercent
+`
+
+func (q *Queries) Delete1MinBUSDPercent(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, delete1MinBUSDPercent)
+	return err
+}
+
+const delete30MinBUSDPercent = `-- name: Delete30MinBUSDPercent :exec
+DELETE FROM tblBUSD30MinPercent
+`
+
+func (q *Queries) Delete30MinBUSDPercent(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, delete30MinBUSDPercent)
+	return err
+}
+
+const delete5MinBUSDPercent = `-- name: Delete5MinBUSDPercent :exec
+DELETE FROM tblBUSD5MinPercent
+`
+
+func (q *Queries) Delete5MinBUSDPercent(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, delete5MinBUSDPercent)
+	return err
+}
+
+const delete60MinBUSDPercent = `-- name: Delete60MinBUSDPercent :exec
+DELETE FROM tblBUSD60MinPercent
+`
+
+func (q *Queries) Delete60MinBUSDPercent(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, delete60MinBUSDPercent)
+	return err
+}
+
 const get10MinAgoBUSDPrice = `-- name: Get10MinAgoBUSDPrice :one
-SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '601 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '601 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
 func (q *Queries) Get10MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
@@ -22,7 +76,7 @@ func (q *Queries) Get10MinAgoBUSDPrice(ctx context.Context) (sql.NullString, err
 }
 
 const get15MinAgoBUSDPrice = `-- name: Get15MinAgoBUSDPrice :one
-SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '901 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '901 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
 func (q *Queries) Get15MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
@@ -33,7 +87,7 @@ func (q *Queries) Get15MinAgoBUSDPrice(ctx context.Context) (sql.NullString, err
 }
 
 const get1MinAgoBUSDPrice = `-- name: Get1MinAgoBUSDPrice :one
-SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '61 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '61 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
 func (q *Queries) Get1MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
@@ -44,7 +98,7 @@ func (q *Queries) Get1MinAgoBUSDPrice(ctx context.Context) (sql.NullString, erro
 }
 
 const get30MinAgoBUSDPrice = `-- name: Get30MinAgoBUSDPrice :one
-SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '1801 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '1801 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
 func (q *Queries) Get30MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
@@ -55,7 +109,7 @@ func (q *Queries) Get30MinAgoBUSDPrice(ctx context.Context) (sql.NullString, err
 }
 
 const get5MinAgoBUSDPrice = `-- name: Get5MinAgoBUSDPrice :one
-SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '301 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '301 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
 func (q *Queries) Get5MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
@@ -66,7 +120,7 @@ func (q *Queries) Get5MinAgoBUSDPrice(ctx context.Context) (sql.NullString, erro
 }
 
 const get60MinAgoBUSDPrice = `-- name: Get60MinAgoBUSDPrice :one
-SELECT "price" from tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '3601 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '3601 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
 func (q *Queries) Get60MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
