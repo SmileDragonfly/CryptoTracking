@@ -55,3 +55,45 @@ func CalculatePercent(strPrice string, stringPrePrice string) ([]TPricePercent, 
 	}
 	return arrPricePercent, nil
 }
+
+func CalculatePercentRountine(strPrice string, stringPrePrice string, percentChan chan []TPricePercent) {
+	var arrPrice []TTickerPrice
+	var arrPrevPrice []TTickerPrice
+	var arrPricePercent []TPricePercent
+	err := json.Unmarshal([]byte(strPrice), &arrPrice)
+	if err != nil {
+		percentChan <- arrPricePercent
+		return
+	}
+	err = json.Unmarshal([]byte(stringPrePrice), &arrPrevPrice)
+	if err != nil {
+		percentChan <- arrPricePercent
+		return
+	}
+	for _, v := range arrPrice {
+		for _, vPre := range arrPrevPrice {
+			if v.Symbol == vPre.Symbol {
+				var pricePercent TPricePercent
+				pricePercent.Symbol = v.Symbol
+
+				fPrice, err := strconv.ParseFloat(v.Price, 32)
+				if err != nil {
+					percentChan <- arrPricePercent
+					return
+				}
+				fPrePrice, err := strconv.ParseFloat(vPre.Price, 32)
+				if err != nil {
+					percentChan <- arrPricePercent
+					return
+				}
+				pricePercent.Price = fPrice
+				pricePercent.PrevPrice = fPrePrice
+				pricePercent.Percent = (fPrice - fPrePrice) / fPrePrice
+				arrPricePercent = append(arrPricePercent, pricePercent)
+				continue
+			}
+		}
+	}
+	percentChan <- arrPricePercent
+	return
+}

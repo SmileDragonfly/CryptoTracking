@@ -1,3 +1,502 @@
 2023/03/05 22:39:32 ----------Start CryptoTrackingAgent----------
 2023/03/05 22:41:47 CalculatePercent 1 Min unexpected end of JSON input
 2023/03/05 22:44:05 CalculatePercent 1 Min unexpected end of JSON input
+2023/03/06 15:20:08 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:20:28 Begin calculate percent
+2023/03/06 15:21:34 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:22:26 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:23:05 Begin calculate percent
+2023/03/06 15:24:11 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:24:35 Begin calculate percent
+2023/03/06 15:30:57 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:31:17 Begin calculate percent
+2023/03/06 15:33:36 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:33:55 Begin calculate percent
+2023/03/06 15:34:18 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:34:38 Begin calculate percent
+2023/03/06 15:36:21 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:36:40 Begin calculate percent
+2023/03/06 15:38:08 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:38:29 Begin calculate percent
+2023/03/06 15:46:12 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:46:32 Begin calculate percent
+2023/03/06 15:46:32 End calculate percent
+2023/03/06 15:46:48 dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.
+2023/03/06 15:47:41 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:47:47 Begin calculate percent
+2023/03/06 15:47:47 End calculate percent
+2023/03/06 15:47:51 Begin calculate percent
+2023/03/06 15:47:51 End calculate percent
+2023/03/06 15:47:51 CalculatePercent 1 Min NUll Data
+2023/03/06 15:47:51 CalculatePercent 5 Min NUll Data
+2023/03/06 15:47:51 CalculatePercent 10 Min NUll Data
+2023/03/06 15:47:51 CalculatePercent 15 Min NUll Data
+2023/03/06 15:47:51 CalculatePercent 30 Min NUll Data
+2023/03/06 15:47:51 CalculatePercent 60 Min NUll Data
+2023/03/06 15:47:56 Begin calculate percent
+2023/03/06 15:47:56 End calculate percent
+2023/03/06 15:47:56 CalculatePercent 1 Min NUll Data
+2023/03/06 15:47:56 CalculatePercent 5 Min NUll Data
+2023/03/06 15:47:56 CalculatePercent 10 Min NUll Data
+2023/03/06 15:47:56 CalculatePercent 15 Min NUll Data
+2023/03/06 15:47:56 CalculatePercent 30 Min NUll Data
+2023/03/06 15:47:56 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:01 Begin calculate percent
+2023/03/06 15:48:01 End calculate percent
+2023/03/06 15:48:01 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:01 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:01 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:01 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:01 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:01 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:07 Begin calculate percent
+2023/03/06 15:48:07 End calculate percent
+2023/03/06 15:48:07 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:07 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:07 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:07 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:07 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:07 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:11 Begin calculate percent
+2023/03/06 15:48:11 End calculate percent
+2023/03/06 15:48:11 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:11 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:11 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:11 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:11 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:11 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:16 Begin calculate percent
+2023/03/06 15:48:16 End calculate percent
+2023/03/06 15:48:16 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:16 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:16 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:16 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:16 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:16 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:21 Begin calculate percent
+2023/03/06 15:48:21 End calculate percent
+2023/03/06 15:48:21 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:21 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:21 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:21 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:21 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:21 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:26 Begin calculate percent
+2023/03/06 15:48:26 End calculate percent
+2023/03/06 15:48:26 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:26 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:26 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:26 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:26 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:26 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:31 Begin calculate percent
+2023/03/06 15:48:31 End calculate percent
+2023/03/06 15:48:31 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:31 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:31 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:31 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:31 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:31 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:36 Begin calculate percent
+2023/03/06 15:48:36 End calculate percent
+2023/03/06 15:48:36 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:36 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:36 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:36 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:36 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:36 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:41 Begin calculate percent
+2023/03/06 15:48:41 End calculate percent
+2023/03/06 15:48:41 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:41 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:41 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:41 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:41 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:41 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:46 Begin calculate percent
+2023/03/06 15:48:46 End calculate percent
+2023/03/06 15:48:46 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:46 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:46 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:46 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:46 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:46 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:51 Begin calculate percent
+2023/03/06 15:48:51 End calculate percent
+2023/03/06 15:48:51 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:51 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:51 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:51 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:51 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:51 CalculatePercent 60 Min NUll Data
+2023/03/06 15:48:57 Begin calculate percent
+2023/03/06 15:48:57 End calculate percent
+2023/03/06 15:48:57 CalculatePercent 1 Min NUll Data
+2023/03/06 15:48:57 CalculatePercent 5 Min NUll Data
+2023/03/06 15:48:57 CalculatePercent 10 Min NUll Data
+2023/03/06 15:48:57 CalculatePercent 15 Min NUll Data
+2023/03/06 15:48:57 CalculatePercent 30 Min NUll Data
+2023/03/06 15:48:57 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:01 Begin calculate percent
+2023/03/06 15:49:01 End calculate percent
+2023/03/06 15:49:01 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:01 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:01 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:01 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:01 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:01 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:06 Begin calculate percent
+2023/03/06 15:49:06 End calculate percent
+2023/03/06 15:49:06 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:06 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:06 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:06 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:06 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:06 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:12 Begin calculate percent
+2023/03/06 15:49:12 End calculate percent
+2023/03/06 15:49:12 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:12 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:12 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:12 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:12 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:12 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:16 Begin calculate percent
+2023/03/06 15:49:16 End calculate percent
+2023/03/06 15:49:16 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:16 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:16 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:16 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:16 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:16 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:21 Begin calculate percent
+2023/03/06 15:49:21 End calculate percent
+2023/03/06 15:49:21 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:21 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:21 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:21 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:21 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:21 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:26 Begin calculate percent
+2023/03/06 15:49:26 End calculate percent
+2023/03/06 15:49:26 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:26 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:26 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:26 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:26 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:26 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:31 Begin calculate percent
+2023/03/06 15:49:31 End calculate percent
+2023/03/06 15:49:31 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:31 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:31 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:31 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:31 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:31 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:36 Begin calculate percent
+2023/03/06 15:49:36 End calculate percent
+2023/03/06 15:49:36 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:36 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:36 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:36 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:36 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:36 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:41 Begin calculate percent
+2023/03/06 15:49:41 End calculate percent
+2023/03/06 15:49:41 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:41 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:41 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:41 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:41 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:41 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:46 Begin calculate percent
+2023/03/06 15:49:46 End calculate percent
+2023/03/06 15:49:46 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:46 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:46 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:46 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:46 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:46 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:51 Begin calculate percent
+2023/03/06 15:49:51 End calculate percent
+2023/03/06 15:49:51 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:51 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:51 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:51 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:51 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:51 CalculatePercent 60 Min NUll Data
+2023/03/06 15:49:56 Begin calculate percent
+2023/03/06 15:49:56 End calculate percent
+2023/03/06 15:49:56 CalculatePercent 1 Min NUll Data
+2023/03/06 15:49:56 CalculatePercent 5 Min NUll Data
+2023/03/06 15:49:56 CalculatePercent 10 Min NUll Data
+2023/03/06 15:49:56 CalculatePercent 15 Min NUll Data
+2023/03/06 15:49:56 CalculatePercent 30 Min NUll Data
+2023/03/06 15:49:56 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:01 Begin calculate percent
+2023/03/06 15:50:01 End calculate percent
+2023/03/06 15:50:01 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:01 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:01 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:01 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:01 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:01 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:06 Begin calculate percent
+2023/03/06 15:50:06 End calculate percent
+2023/03/06 15:50:06 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:06 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:06 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:06 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:06 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:06 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:11 Begin calculate percent
+2023/03/06 15:50:11 End calculate percent
+2023/03/06 15:50:11 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:11 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:11 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:11 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:11 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:11 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:16 Begin calculate percent
+2023/03/06 15:50:16 End calculate percent
+2023/03/06 15:50:16 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:16 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:16 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:16 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:16 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:16 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:22 Begin calculate percent
+2023/03/06 15:50:22 End calculate percent
+2023/03/06 15:50:22 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:22 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:22 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:22 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:22 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:22 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:27 Begin calculate percent
+2023/03/06 15:50:27 End calculate percent
+2023/03/06 15:50:27 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:27 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:27 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:27 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:27 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:27 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:31 Begin calculate percent
+2023/03/06 15:50:31 End calculate percent
+2023/03/06 15:50:31 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:31 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:31 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:31 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:31 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:31 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:36 Begin calculate percent
+2023/03/06 15:50:36 End calculate percent
+2023/03/06 15:50:36 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:36 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:36 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:36 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:36 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:36 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:41 Begin calculate percent
+2023/03/06 15:50:41 End calculate percent
+2023/03/06 15:50:41 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:41 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:41 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:41 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:41 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:41 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:46 Begin calculate percent
+2023/03/06 15:50:46 End calculate percent
+2023/03/06 15:50:46 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:46 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:46 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:46 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:46 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:46 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:52 Begin calculate percent
+2023/03/06 15:50:52 End calculate percent
+2023/03/06 15:50:52 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:52 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:52 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:52 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:52 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:52 CalculatePercent 60 Min NUll Data
+2023/03/06 15:50:56 Begin calculate percent
+2023/03/06 15:50:56 End calculate percent
+2023/03/06 15:50:56 CalculatePercent 1 Min NUll Data
+2023/03/06 15:50:56 CalculatePercent 5 Min NUll Data
+2023/03/06 15:50:56 CalculatePercent 10 Min NUll Data
+2023/03/06 15:50:56 CalculatePercent 15 Min NUll Data
+2023/03/06 15:50:56 CalculatePercent 30 Min NUll Data
+2023/03/06 15:50:56 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:01 Begin calculate percent
+2023/03/06 15:51:01 End calculate percent
+2023/03/06 15:51:01 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:01 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:01 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:01 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:01 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:01 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:06 Begin calculate percent
+2023/03/06 15:51:06 End calculate percent
+2023/03/06 15:51:06 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:06 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:06 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:06 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:06 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:06 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:11 Begin calculate percent
+2023/03/06 15:51:11 End calculate percent
+2023/03/06 15:51:11 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:11 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:11 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:11 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:11 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:11 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:17 Begin calculate percent
+2023/03/06 15:51:17 End calculate percent
+2023/03/06 15:51:17 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:17 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:17 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:17 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:17 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:17 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:21 Begin calculate percent
+2023/03/06 15:51:21 End calculate percent
+2023/03/06 15:51:21 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:21 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:21 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:21 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:21 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:21 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:26 Begin calculate percent
+2023/03/06 15:51:26 End calculate percent
+2023/03/06 15:51:26 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:26 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:26 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:26 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:26 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:26 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:32 Begin calculate percent
+2023/03/06 15:51:32 End calculate percent
+2023/03/06 15:51:32 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:32 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:32 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:32 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:32 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:32 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:36 Begin calculate percent
+2023/03/06 15:51:36 End calculate percent
+2023/03/06 15:51:36 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:36 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:36 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:36 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:36 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:36 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:42 Begin calculate percent
+2023/03/06 15:51:42 End calculate percent
+2023/03/06 15:51:42 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:42 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:42 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:42 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:42 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:42 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:46 Begin calculate percent
+2023/03/06 15:51:46 End calculate percent
+2023/03/06 15:51:46 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:46 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:46 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:46 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:46 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:46 CalculatePercent 60 Min NUll Data
+2023/03/06 15:51:51 Begin calculate percent
+2023/03/06 15:51:51 End calculate percent
+2023/03/06 15:51:51 CalculatePercent 1 Min NUll Data
+2023/03/06 15:51:51 CalculatePercent 5 Min NUll Data
+2023/03/06 15:51:51 CalculatePercent 10 Min NUll Data
+2023/03/06 15:51:51 CalculatePercent 15 Min NUll Data
+2023/03/06 15:51:51 CalculatePercent 30 Min NUll Data
+2023/03/06 15:51:51 CalculatePercent 60 Min NUll Data
+2023/03/06 15:52:28 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:52:33 Begin calculate percent
+2023/03/06 15:53:53 End calculate percent
+2023/03/06 15:54:57 ----------Start CryptoTrackingAgent----------
+2023/03/06 15:55:03 Begin calculate percent
+2023/03/06 15:55:03 End calculate percent
+2023/03/06 15:55:03 CalculatePercent 1 Min NUll Data
+2023/03/06 15:55:08 Begin calculate percent
+2023/03/06 15:55:08 End calculate percent
+2023/03/06 15:55:12 Begin calculate percent
+2023/03/06 15:55:12 End calculate percent
+2023/03/06 15:55:18 Begin calculate percent
+2023/03/06 15:55:18 End calculate percent
+2023/03/06 15:55:22 Begin calculate percent
+2023/03/06 15:55:22 End calculate percent
+2023/03/06 15:55:27 Begin calculate percent
+2023/03/06 15:55:27 End calculate percent
+2023/03/06 15:55:33 Begin calculate percent
+2023/03/06 15:55:33 End calculate percent
+2023/03/06 15:55:37 Begin calculate percent
+2023/03/06 15:55:37 End calculate percent
+2023/03/06 15:55:42 Begin calculate percent
+2023/03/06 15:55:42 End calculate percent
+2023/03/06 15:55:47 Begin calculate percent
+2023/03/06 15:55:47 End calculate percent
+2023/03/06 15:55:52 Begin calculate percent
+2023/03/06 15:55:52 End calculate percent
+2023/03/06 15:55:58 Begin calculate percent
+2023/03/06 15:55:58 End calculate percent
+2023/03/06 15:56:02 Begin calculate percent
+2023/03/06 15:56:02 End calculate percent
+2023/03/06 15:56:08 Begin calculate percent
+2023/03/06 15:56:08 End calculate percent
+2023/03/06 15:56:12 Begin calculate percent
+2023/03/06 15:56:12 End calculate percent
+2023/03/06 15:56:18 Begin calculate percent
+2023/03/06 15:56:18 End calculate percent
+2023/03/06 15:56:23 Begin calculate percent
+2023/03/06 15:56:23 End calculate percent
+2023/03/06 15:56:27 Begin calculate percent
+2023/03/06 15:56:27 End calculate percent
+2023/03/06 15:56:32 Begin calculate percent
+2023/03/06 15:56:32 End calculate percent
+2023/03/06 15:56:37 Begin calculate percent
+2023/03/06 15:56:37 End calculate percent
+2023/03/06 15:56:42 Begin calculate percent
+2023/03/06 15:56:42 End calculate percent
+2023/03/06 15:56:47 Begin calculate percent
+2023/03/06 15:56:47 End calculate percent
+2023/03/06 15:56:52 Begin calculate percent
+2023/03/06 15:56:52 End calculate percent
+2023/03/06 15:56:57 Begin calculate percent
+2023/03/06 15:56:57 End calculate percent
+2023/03/06 15:57:03 Begin calculate percent
+2023/03/06 15:57:03 End calculate percent
+2023/03/06 15:57:07 Begin calculate percent
+2023/03/06 15:57:07 End calculate percent
+2023/03/06 15:57:12 Begin calculate percent
+2023/03/06 15:57:12 End calculate percent
+2023/03/06 15:57:17 Begin calculate percent
+2023/03/06 15:57:18 End calculate percent
+2023/03/06 15:57:22 Begin calculate percent
+2023/03/06 15:57:22 End calculate percent
+2023/03/06 15:57:27 Begin calculate percent
+2023/03/06 15:57:27 End calculate percent
+2023/03/06 15:57:32 Begin calculate percent
+2023/03/06 15:57:32 End calculate percent
+2023/03/06 15:57:37 Begin calculate percent
+2023/03/06 15:57:37 End calculate percent
+2023/03/06 15:57:42 Begin calculate percent
+2023/03/06 15:57:42 End calculate percent
+2023/03/06 15:57:47 Begin calculate percent
+2023/03/06 15:57:47 End calculate percent
+2023/03/06 15:57:52 Begin calculate percent
+2023/03/06 15:57:52 End calculate percent
+2023/03/06 15:57:57 Begin calculate percent
+2023/03/06 15:57:57 End calculate percent
+2023/03/06 15:58:02 Begin calculate percent
+2023/03/06 15:58:02 End calculate percent
+2023/03/06 15:58:07 Begin calculate percent
+2023/03/06 15:58:07 End calculate percent
+2023/03/06 15:58:12 Begin calculate percent
+2023/03/06 15:58:12 End calculate percent
