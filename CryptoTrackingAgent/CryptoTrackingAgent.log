@@ -1,33 +1,157 @@
-2023/03/06 19:04:55 ----------Start CryptoTrackingAgent----------
-2023/03/06 19:05:01 Begin calculate percent
-2023/03/06 19:05:01 End calculate percent
-2023/03/06 19:05:01 CalculatePercent 1 Min NUll Data
-2023/03/06 19:05:01 CalculatePercent 5 Min NUll Data
-2023/03/06 19:05:01 CalculatePercent 10 Min NUll Data
-2023/03/06 19:05:01 CalculatePercent 15 Min NUll Data
-2023/03/06 19:05:01 CalculatePercent 30 Min NUll Data
-2023/03/06 19:05:01 CalculatePercent 60 Min NUll Data
-2023/03/06 19:05:06 Begin calculate percent
-2023/03/06 19:05:06 End calculate percent
-2023/03/06 19:05:11 Begin calculate percent
-2023/03/06 19:05:11 End calculate percent
-2023/03/06 19:05:16 Begin calculate percent
-2023/03/06 19:05:16 End calculate percent
-2023/03/06 19:05:21 Begin calculate percent
-2023/03/06 19:05:21 End calculate percent
-2023/03/06 19:05:26 Begin calculate percent
-2023/03/06 19:05:26 End calculate percent
-2023/03/06 19:05:31 Begin calculate percent
-2023/03/06 19:05:31 End calculate percent
-2023/03/06 19:05:36 Begin calculate percent
-2023/03/06 19:05:36 End calculate percent
-2023/03/06 19:05:41 Begin calculate percent
-2023/03/06 19:05:41 End calculate percent
-2023/03/06 19:05:46 Begin calculate percent
-2023/03/06 19:05:46 End calculate percent
-2023/03/06 19:05:51 Begin calculate percent
-2023/03/06 19:05:51 End calculate percent
-2023/03/06 19:05:56 Begin calculate percent
-2023/03/06 19:05:56 End calculate percent
-2023/03/06 19:06:01 Begin calculate percent
-2023/03/06 19:06:01 End calculate percent
+2023/03/07 11:34:20 ----------Start CryptoTrackingAgent----------
+2023/03/07 11:34:27 dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.
+2023/03/07 11:34:32 dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.
+2023/03/07 11:34:37 dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.
+2023/03/07 11:34:42 dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.
+2023/03/07 11:34:47 dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.
+2023/03/07 11:34:52 dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.
+2023/03/07 11:34:57 dial tcp [::1]:5432: connectex: No connection could be made because the target machine actively refused it.
+2023/03/07 11:35:00 pq: the database system is starting up
+2023/03/07 11:35:05 Begin calculate percent
+2023/03/07 11:35:05 End calculate percent
+2023/03/07 11:35:05 CalculatePercent 1 Min NUll Data
+2023/03/07 11:35:05 CalculatePercent 5 Min NUll Data
+2023/03/07 11:35:05 CalculatePercent 10 Min NUll Data
+2023/03/07 11:35:05 CalculatePercent 15 Min NUll Data
+2023/03/07 11:35:05 CalculatePercent 30 Min NUll Data
+2023/03/07 11:35:05 CalculatePercent 60 Min NUll Data
+2023/03/07 11:35:10 Begin calculate percent
+2023/03/07 11:35:10 End calculate percent
+2023/03/07 11:35:15 Begin calculate percent
+2023/03/07 11:35:15 End calculate percent
+2023/03/07 11:35:20 Begin calculate percent
+2023/03/07 11:35:20 End calculate percent
+2023/03/07 11:35:25 Begin calculate percent
+2023/03/07 11:35:25 End calculate percent
+2023/03/07 11:35:30 Begin calculate percent
+2023/03/07 11:35:30 End calculate percent
+2023/03/07 11:35:35 Begin calculate percent
+2023/03/07 11:35:35 End calculate percent
+2023/03/07 11:35:40 Begin calculate percent
+2023/03/07 11:35:40 End calculate percent
+2023/03/07 11:35:45 Begin calculate percent
+2023/03/07 11:35:45 End calculate percent
+2023/03/07 11:35:50 Begin calculate percent
+2023/03/07 11:35:50 End calculate percent
+2023/03/07 11:35:55 Begin calculate percent
+2023/03/07 11:35:55 End calculate percent
+2023/03/07 11:36:00 Begin calculate percent
+2023/03/07 11:36:00 End calculate percent
+2023/03/07 11:36:05 Begin calculate percent
+2023/03/07 11:36:05 End calculate percent
+2023/03/07 11:36:10 Begin calculate percent
+2023/03/07 11:36:10 End calculate percent
+2023/03/07 11:36:15 Begin calculate percent
+2023/03/07 11:36:15 End calculate percent
+2023/03/07 11:36:20 Begin calculate percent
+2023/03/07 11:36:20 End calculate percent
+2023/03/07 11:36:25 Begin calculate percent
+2023/03/07 11:36:25 End calculate percent
+2023/03/07 11:36:30 Begin calculate percent
+2023/03/07 11:36:30 End calculate percent
+2023/03/07 11:36:35 Begin calculate percent
+2023/03/07 11:36:35 End calculate percent
+2023/03/07 11:36:40 Begin calculate percent
+2023/03/07 11:36:40 End calculate percent
+2023/03/07 11:36:45 Begin calculate percent
+2023/03/07 11:36:45 End calculate percent
+2023/03/07 11:36:50 Begin calculate percent
+2023/03/07 11:36:50 End calculate percent
+2023/03/07 11:36:55 Begin calculate percent
+2023/03/07 11:36:55 End calculate percent
+2023/03/07 11:37:00 Begin calculate percent
+2023/03/07 11:37:00 End calculate percent
+2023/03/07 11:37:05 Begin calculate percent
+2023/03/07 11:37:05 End calculate percent
+2023/03/07 11:37:10 Begin calculate percent
+2023/03/07 11:37:10 End calculate percent
+2023/03/07 11:37:15 Begin calculate percent
+2023/03/07 11:37:15 End calculate percent
+2023/03/07 11:37:20 Begin calculate percent
+2023/03/07 11:37:20 End calculate percent
+2023/03/07 11:37:25 Begin calculate percent
+2023/03/07 11:37:25 End calculate percent
+2023/03/07 11:37:30 Begin calculate percent
+2023/03/07 11:37:30 End calculate percent
+2023/03/07 11:37:35 Begin calculate percent
+2023/03/07 11:37:35 End calculate percent
+2023/03/07 11:37:40 Begin calculate percent
+2023/03/07 11:37:40 End calculate percent
+2023/03/07 11:37:45 Begin calculate percent
+2023/03/07 11:37:45 End calculate percent
+2023/03/07 11:37:50 Begin calculate percent
+2023/03/07 11:37:50 End calculate percent
+2023/03/07 11:37:55 Begin calculate percent
+2023/03/07 11:37:55 End calculate percent
+2023/03/07 11:38:00 Begin calculate percent
+2023/03/07 11:38:00 End calculate percent
+2023/03/07 11:38:05 Begin calculate percent
+2023/03/07 11:38:05 End calculate percent
+2023/03/07 11:38:10 Begin calculate percent
+2023/03/07 11:38:10 End calculate percent
+2023/03/07 11:38:15 Begin calculate percent
+2023/03/07 11:38:15 End calculate percent
+2023/03/07 11:38:20 Begin calculate percent
+2023/03/07 11:38:20 End calculate percent
+2023/03/07 11:38:25 Begin calculate percent
+2023/03/07 11:38:25 End calculate percent
+2023/03/07 11:38:30 Begin calculate percent
+2023/03/07 11:38:30 End calculate percent
+2023/03/07 11:38:35 Begin calculate percent
+2023/03/07 11:38:35 End calculate percent
+2023/03/07 11:38:40 Begin calculate percent
+2023/03/07 11:38:40 End calculate percent
+2023/03/07 11:38:45 Begin calculate percent
+2023/03/07 11:38:45 End calculate percent
+2023/03/07 11:38:50 Begin calculate percent
+2023/03/07 11:38:50 End calculate percent
+2023/03/07 11:38:55 Begin calculate percent
+2023/03/07 11:38:55 End calculate percent
+2023/03/07 11:39:00 Begin calculate percent
+2023/03/07 11:39:00 End calculate percent
+2023/03/07 11:39:05 Begin calculate percent
+2023/03/07 11:39:05 End calculate percent
+2023/03/07 11:39:10 Begin calculate percent
+2023/03/07 11:39:10 End calculate percent
+2023/03/07 11:39:15 Begin calculate percent
+2023/03/07 11:39:15 End calculate percent
+2023/03/07 11:39:20 Begin calculate percent
+2023/03/07 11:39:20 End calculate percent
+2023/03/07 11:39:25 Begin calculate percent
+2023/03/07 11:39:25 End calculate percent
+2023/03/07 11:39:30 Begin calculate percent
+2023/03/07 11:39:30 End calculate percent
+2023/03/07 11:39:35 Begin calculate percent
+2023/03/07 11:39:35 End calculate percent
+2023/03/07 11:39:40 Begin calculate percent
+2023/03/07 11:39:40 End calculate percent
+2023/03/07 11:39:45 Begin calculate percent
+2023/03/07 11:39:45 End calculate percent
+2023/03/07 11:39:50 Begin calculate percent
+2023/03/07 11:39:50 End calculate percent
+2023/03/07 11:39:55 Begin calculate percent
+2023/03/07 11:39:55 End calculate percent
+2023/03/07 11:40:00 Begin calculate percent
+2023/03/07 11:40:00 End calculate percent
+2023/03/07 11:40:05 Begin calculate percent
+2023/03/07 11:40:05 End calculate percent
+2023/03/07 11:40:10 Begin calculate percent
+2023/03/07 11:40:10 End calculate percent
+2023/03/07 11:40:15 Begin calculate percent
+2023/03/07 11:40:15 End calculate percent
+2023/03/07 11:40:20 Begin calculate percent
+2023/03/07 11:40:20 End calculate percent
+2023/03/07 11:40:25 Begin calculate percent
+2023/03/07 11:40:25 End calculate percent
+2023/03/07 11:40:30 Begin calculate percent
+2023/03/07 11:40:30 End calculate percent
+2023/03/07 11:40:35 Begin calculate percent
+2023/03/07 11:40:35 End calculate percent
+2023/03/07 11:40:40 Begin calculate percent
+2023/03/07 11:40:40 End calculate percent
+2023/03/07 11:40:45 Begin calculate percent
+2023/03/07 11:40:45 End calculate percent
+2023/03/07 11:40:50 Begin calculate percent
+2023/03/07 11:40:50 End calculate percent
+2023/03/07 11:40:55 Begin calculate percent
+2023/03/07 11:40:55 End calculate percent
