@@ -41,15 +41,28 @@ DELETE FROM tblBUSD30MinPercent;
 -- name: Delete60MinBUSDPercent :exec
 DELETE FROM tblBUSD60MinPercent;
 
--- name: GetAll1MinPercent :many
-SELECT * FROM tblBUSD1MinPercent ORDER BY "percent" DESC;
--- name: GetAll5MinPercent :many
-SELECT * FROM tblBUSD5MinPercent ORDER BY "percent" DESC;
--- name: GetAll10MinPercent :many
-SELECT * FROM tblBUSD10MinPercent ORDER BY "percent" DESC;
--- name: GetAll15MinPercent :many
-SELECT * FROM tblBUSD15MinPercent ORDER BY "percent" DESC;
--- name: GetAll30MinPercent :many
-SELECT * FROM tblBUSD30MinPercent ORDER BY "percent" DESC;
--- name: GetAll60MinPercent :many
-SELECT * FROM tblBUSD60MinPercent ORDER BY "percent" DESC;
+-- name: GetAll1MinPercentDesc :many
+SELECT * FROM tblBUSD1MinPercent ORDER BY "percent" DESC LIMIT $1;
+-- name: GetAll5MinPercentDesc :many
+SELECT * FROM tblBUSD5MinPercent ORDER BY "percent" DESC LIMIT $1;
+-- name: GetAll10MinPercentDesc :many
+SELECT * FROM tblBUSD10MinPercent ORDER BY "percent" DESC LIMIT $1;
+-- name: GetAll15MinPercentDesc :many
+SELECT * FROM tblBUSD15MinPercent ORDER BY "percent" DESC LIMIT $1;
+-- name: GetAll30MinPercentDesc :many
+SELECT * FROM tblBUSD30MinPercent ORDER BY "percent" DESC LIMIT $1;
+-- name: GetAll60MinPercentDesc :many
+SELECT * FROM tblBUSD60MinPercent ORDER BY "percent" DESC LIMIT $1;
+
+-- name: GetAll1MinPercentAsc :many
+SELECT * FROM tblBUSD1MinPercent ORDER BY "percent" ASC LIMIT $1;
+-- name: GetAll5MinPercentAsc :many
+SELECT * FROM tblBUSD5MinPercent ORDER BY "percent" ASC LIMIT $1;
+-- name: GetAll10MinPercentAsc :many
+SELECT * FROM tblBUSD10MinPercent ORDER BY "percent" ASC LIMIT $1;
+-- name: GetAll15MinPercentAsc :many
+SELECT * FROM tblBUSD15MinPercent ORDER BY "percent" ASC LIMIT $1;
+-- name: GetAll30MinPercentAsc :many
+SELECT * FROM tblBUSD30MinPercent ORDER BY "percent" ASC LIMIT $1;
+-- name: GetAll60MinPercentAsc :many
+SELECT * FROM tblBUSD60MinPercent ORDER BY "percent" ASC LIMIT $1;

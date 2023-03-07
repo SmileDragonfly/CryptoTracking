@@ -2,31 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/stylesheets/WelcomeTemplate.css">
     <title>Welcome CryptoTracking</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            margin-left:-5px;
+            margin-right:-5px;
+        }
+
+        .column {
+            flex: 50%;
+            padding: 5px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    {{ $length := len . }}
-    <h3>Length {{$length}}</h3>
-    <table border="1">
-        <tr>
-            <td>ID</td>
-            <td>Time</td>
-            <td>Symbol</td>
-            <td>Price</td>
-            <td>PrevPrice</td>
-            <td>Percent</td>
-        </tr>
-        {{ range . }}
-        <tr>
-            <td>{{ .ID }}</td>
-            <td>{{ .Time }}</td>
-            <td>{{ .Symbol }}</td>
-            <td>{{ .Price }}</td>
-            <td>{{ .PrevPrice }}</td>
-            <td>{{ .Percent }}</td>
-        </tr>
-        {{ end }}
-    </table>
+<div class="row">
+    <div class="column">
+        <h3>1 min data</h3>
+        <table border="1">
+            <tr>
+                <td>Symbol</td>
+                <td>Price</td>
+                <td>PrevPrice</td>
+                <td>Percent</td>
+            </tr>
+            {{ range .OneMin }}
+            <tr>
+                <td>{{ .Symbol }}</td>
+                <td>{{ .Price }}</td>
+                <td>{{ .PrevPrice }}</td>
+                <td>{{ .Percent }}</td>
+            </tr>
+            {{ end }}
+        </table>
+    </div>
+    <div class="column">
+        <h3>5 min data</h3>
+        <table border="1">
+            <tr>
+                <td>Symbol</td>
+                <td>Price</td>
+                <td>PrevPrice</td>
+                <td>Percent</td>
+            </tr>
+            {{ range .FiveMin }}
+            <tr>
+                <td>{{ .Symbol }}</td>
+                <td>{{ .Price }}</td>
+                <td>{{ .PrevPrice }}</td>
+                <td>{{ .Percent }}</td>
+            </tr>
+            {{ end }}
+        </table>
+    </div>
+    <div class="column">
+        <h3>10 min data</h3>
+        <table border="1">
+            <tr>
+                <td>Symbol</td>
+                <td>Price</td>
+                <td>PrevPrice</td>
+                <td>Percent</td>
+            </tr>
+            {{ range .TenMin }}
+            <tr>
+                <td>{{ .Symbol }}</td>
+                <td>{{ .Price }}</td>
+                <td>{{ .PrevPrice }}</td>
+                <td>{{ .Percent }}</td>
+            </tr>
+            {{ end }}
+        </table>
+    </div>
+</div>
 </body>
 </html>
