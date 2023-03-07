@@ -130,6 +130,210 @@ func (q *Queries) Get60MinAgoBUSDPrice(ctx context.Context) (sql.NullString, err
 	return price, err
 }
 
+const getAll10MinPercent = `-- name: GetAll10MinPercent :many
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD10MinPercent
+`
+
+func (q *Queries) GetAll10MinPercent(ctx context.Context) ([]Tblbusd10minpercent, error) {
+	rows, err := q.db.QueryContext(ctx, getAll10MinPercent)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Tblbusd10minpercent
+	for rows.Next() {
+		var i Tblbusd10minpercent
+		if err := rows.Scan(
+			&i.ID,
+			&i.Time,
+			&i.Symbol,
+			&i.Price,
+			&i.Prevprice,
+			&i.Percent,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getAll15MinPercent = `-- name: GetAll15MinPercent :many
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD15MinPercent
+`
+
+func (q *Queries) GetAll15MinPercent(ctx context.Context) ([]Tblbusd15minpercent, error) {
+	rows, err := q.db.QueryContext(ctx, getAll15MinPercent)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Tblbusd15minpercent
+	for rows.Next() {
+		var i Tblbusd15minpercent
+		if err := rows.Scan(
+			&i.ID,
+			&i.Time,
+			&i.Symbol,
+			&i.Price,
+			&i.Prevprice,
+			&i.Percent,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getAll1MinPercent = `-- name: GetAll1MinPercent :many
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD1MinPercent
+`
+
+func (q *Queries) GetAll1MinPercent(ctx context.Context) ([]Tblbusd1minpercent, error) {
+	rows, err := q.db.QueryContext(ctx, getAll1MinPercent)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Tblbusd1minpercent
+	for rows.Next() {
+		var i Tblbusd1minpercent
+		if err := rows.Scan(
+			&i.ID,
+			&i.Time,
+			&i.Symbol,
+			&i.Price,
+			&i.Prevprice,
+			&i.Percent,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getAll30MinPercent = `-- name: GetAll30MinPercent :many
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD30MinPercent
+`
+
+func (q *Queries) GetAll30MinPercent(ctx context.Context) ([]Tblbusd30minpercent, error) {
+	rows, err := q.db.QueryContext(ctx, getAll30MinPercent)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Tblbusd30minpercent
+	for rows.Next() {
+		var i Tblbusd30minpercent
+		if err := rows.Scan(
+			&i.ID,
+			&i.Time,
+			&i.Symbol,
+			&i.Price,
+			&i.Prevprice,
+			&i.Percent,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getAll5MinPercent = `-- name: GetAll5MinPercent :many
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD5MinPercent
+`
+
+func (q *Queries) GetAll5MinPercent(ctx context.Context) ([]Tblbusd5minpercent, error) {
+	rows, err := q.db.QueryContext(ctx, getAll5MinPercent)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Tblbusd5minpercent
+	for rows.Next() {
+		var i Tblbusd5minpercent
+		if err := rows.Scan(
+			&i.ID,
+			&i.Time,
+			&i.Symbol,
+			&i.Price,
+			&i.Prevprice,
+			&i.Percent,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getAll60MinPercent = `-- name: GetAll60MinPercent :many
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD60MinPercent
+`
+
+func (q *Queries) GetAll60MinPercent(ctx context.Context) ([]Tblbusd60minpercent, error) {
+	rows, err := q.db.QueryContext(ctx, getAll60MinPercent)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Tblbusd60minpercent
+	for rows.Next() {
+		var i Tblbusd60minpercent
+		if err := rows.Scan(
+			&i.ID,
+			&i.Time,
+			&i.Symbol,
+			&i.Price,
+			&i.Prevprice,
+			&i.Percent,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
 const getLastestBUSDPrice = `-- name: GetLastestBUSDPrice :one
 SELECT "price" FROM tblBUSDPrice ORDER BY "time" DESC LIMIT 1
 `

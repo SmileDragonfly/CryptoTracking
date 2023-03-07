@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/static/stylesheets/WelcomeTemplate.css">
-    <title>Welcome {{.Name}}</title>
+    <title>Welcome CryptoTracking</title>
 </head>
 <body>
-    <div class="welcome center">Welcome {{.Name}}, it is {{.Time}}</div>
+    <div class="welcome top">Welcome CryptoTracking</div>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Time</td>
+            <td>Symbol</td>
+            <td>Price</td>
+            <td>PrevPrice</td>
+            <td>Percent</td>
+        </tr>
+        {{ range . }}
+        <tr>
+            <td>{{ .ID }}</td>
+            <td> {{ .Time }} </td>
+            <td>{{ .Symbol }} </td>
+            <td>{{ .Price }} </td>
+            <td>{{ .PrevPrice }} </td>
+            <td>{{ .Percent }} </td>
+        </tr>
+        {{ end }}
+    </table>
 </body>
 </html>

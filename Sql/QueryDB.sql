@@ -40,3 +40,16 @@ DELETE FROM tblBUSD15MinPercent;
 DELETE FROM tblBUSD30MinPercent;
 -- name: Delete60MinBUSDPercent :exec
 DELETE FROM tblBUSD60MinPercent;
+
+-- name: GetAll1MinPercent :many
+SELECT * FROM tblBUSD1MinPercent;
+-- name: GetAll5MinPercent :many
+SELECT * FROM tblBUSD5MinPercent;
+-- name: GetAll10MinPercent :many
+SELECT * FROM tblBUSD10MinPercent;
+-- name: GetAll15MinPercent :many
+SELECT * FROM tblBUSD15MinPercent;
+-- name: GetAll30MinPercent :many
+SELECT * FROM tblBUSD30MinPercent;
+-- name: GetAll60MinPercent :many
+SELECT * FROM tblBUSD60MinPercent;

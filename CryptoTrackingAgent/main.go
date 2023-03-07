@@ -11,8 +11,6 @@ import (
 	"time"
 )
 
-var GStrConn string
-
 func main() {
 	// Init log file
 	f, err := os.OpenFile("CryptoTrackingAgent.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
@@ -114,8 +112,8 @@ func main() {
 					if arrPercent10Min == nil {
 						log.Println("CalculatePercent 10 Min NUll Data")
 					} else {
+						query.Delete10MinBUSDPercent(context.Background())
 						for _, v := range arrPercent10Min {
-							query.Delete10MinBUSDPercent(context.Background())
 							query.Insert10MinBUSDPercent(context.Background(),
 								sqlc.Insert10MinBUSDPercentParams{sql.NullString{v.Symbol, true},
 									sql.NullFloat64{v.Price, true},
