@@ -6,8 +6,9 @@
     <title>Welcome CryptoTracking</title>
 </head>
 <body>
-    <div class="welcome top">Welcome CryptoTracking</div>
-    <table>
+    {{ $length := len . }}
+    <h3>Length {{$length}}</h3>
+    <table border="1">
         <tr>
             <td>ID</td>
             <td>Time</td>
@@ -19,11 +20,11 @@
         {{ range . }}
         <tr>
             <td>{{ .ID }}</td>
-            <td> {{ .Time }} </td>
-            <td>{{ .Symbol }} </td>
-            <td>{{ .Price }} </td>
-            <td>{{ .PrevPrice }} </td>
-            <td>{{ .Percent }} </td>
+            <td>{{ .Time }}</td>
+            <td>{{ .Symbol }}</td>
+            <td>{{ .Price }}</td>
+            <td>{{ .PrevPrice }}</td>
+            <td>{{ .Percent }}</td>
         </tr>
         {{ end }}
     </table>

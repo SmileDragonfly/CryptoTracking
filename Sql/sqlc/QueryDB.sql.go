@@ -131,7 +131,7 @@ func (q *Queries) Get60MinAgoBUSDPrice(ctx context.Context) (sql.NullString, err
 }
 
 const getAll10MinPercent = `-- name: GetAll10MinPercent :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD10MinPercent
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD10MinPercent ORDER BY "percent" DESC
 `
 
 func (q *Queries) GetAll10MinPercent(ctx context.Context) ([]Tblbusd10minpercent, error) {
@@ -165,7 +165,7 @@ func (q *Queries) GetAll10MinPercent(ctx context.Context) ([]Tblbusd10minpercent
 }
 
 const getAll15MinPercent = `-- name: GetAll15MinPercent :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD15MinPercent
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD15MinPercent ORDER BY "percent" DESC
 `
 
 func (q *Queries) GetAll15MinPercent(ctx context.Context) ([]Tblbusd15minpercent, error) {
@@ -199,7 +199,7 @@ func (q *Queries) GetAll15MinPercent(ctx context.Context) ([]Tblbusd15minpercent
 }
 
 const getAll1MinPercent = `-- name: GetAll1MinPercent :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD1MinPercent
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD1MinPercent ORDER BY "percent" DESC
 `
 
 func (q *Queries) GetAll1MinPercent(ctx context.Context) ([]Tblbusd1minpercent, error) {
@@ -233,7 +233,7 @@ func (q *Queries) GetAll1MinPercent(ctx context.Context) ([]Tblbusd1minpercent, 
 }
 
 const getAll30MinPercent = `-- name: GetAll30MinPercent :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD30MinPercent
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD30MinPercent ORDER BY "percent" DESC
 `
 
 func (q *Queries) GetAll30MinPercent(ctx context.Context) ([]Tblbusd30minpercent, error) {
@@ -267,7 +267,7 @@ func (q *Queries) GetAll30MinPercent(ctx context.Context) ([]Tblbusd30minpercent
 }
 
 const getAll5MinPercent = `-- name: GetAll5MinPercent :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD5MinPercent
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD5MinPercent ORDER BY "percent" DESC
 `
 
 func (q *Queries) GetAll5MinPercent(ctx context.Context) ([]Tblbusd5minpercent, error) {
@@ -301,7 +301,7 @@ func (q *Queries) GetAll5MinPercent(ctx context.Context) ([]Tblbusd5minpercent, 
 }
 
 const getAll60MinPercent = `-- name: GetAll60MinPercent :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD60MinPercent
+SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD60MinPercent ORDER BY "percent" DESC
 `
 
 func (q *Queries) GetAll60MinPercent(ctx context.Context) ([]Tblbusd60minpercent, error) {

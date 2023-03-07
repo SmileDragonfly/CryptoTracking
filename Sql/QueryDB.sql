@@ -42,14 +42,14 @@ DELETE FROM tblBUSD30MinPercent;
 DELETE FROM tblBUSD60MinPercent;
 
 -- name: GetAll1MinPercent :many
-SELECT * FROM tblBUSD1MinPercent;
+SELECT * FROM tblBUSD1MinPercent ORDER BY "percent" DESC;
 -- name: GetAll5MinPercent :many
-SELECT * FROM tblBUSD5MinPercent;
+SELECT * FROM tblBUSD5MinPercent ORDER BY "percent" DESC;
 -- name: GetAll10MinPercent :many
-SELECT * FROM tblBUSD10MinPercent;
+SELECT * FROM tblBUSD10MinPercent ORDER BY "percent" DESC;
 -- name: GetAll15MinPercent :many
-SELECT * FROM tblBUSD15MinPercent;
+SELECT * FROM tblBUSD15MinPercent ORDER BY "percent" DESC;
 -- name: GetAll30MinPercent :many
-SELECT * FROM tblBUSD30MinPercent;
+SELECT * FROM tblBUSD30MinPercent ORDER BY "percent" DESC;
 -- name: GetAll60MinPercent :many
-SELECT * FROM tblBUSD60MinPercent;
+SELECT * FROM tblBUSD60MinPercent ORDER BY "percent" DESC;
