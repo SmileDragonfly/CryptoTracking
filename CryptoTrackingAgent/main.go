@@ -4,14 +4,25 @@ import (
 	"CryptoTrackingSql/sqlc"
 	"context"
 	"database/sql"
+	"flag"
 	"fmt"
+	"github.com/kardianos/service"
 	_ "github.com/lib/pq"
 	"log"
 	"os"
 	"time"
 )
 
-func main() {
+type program struct{}
+
+func (p *program) Start(s service.Service) error {
+	// Should be non-blocking, so run async using goroutine
+	go p.run()
+	return nil
+}
+
+// run will be called by Start() so business logic goes here
+func (p *program) run() {
 	// Init log file
 	f, err := os.OpenFile("CryptoTrackingAgent.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	if err != nil {
@@ -22,7 +33,6 @@ func main() {
 	log.Println("----------Start CryptoTrackingAgent----------")
 
 	// Begin main program
-	var api BinanceAPI
 	err = loadConfig(".")
 	if err != nil {
 		log.Fatalf(err.Error())
@@ -30,6 +40,7 @@ func main() {
 	GStrConn = fmt.Sprintf("port=%d host=%s user=%s password=%s dbname=%s sslmode=disable",
 		GConfig.HostPort, GConfig.HostName, GConfig.UserName, GConfig.Password, GConfig.DBName)
 	// Setup a ticker
+	var api BinanceAPI
 	ticker := time.NewTicker(time.Duration(GConfig.TickerGetPrice) * time.Second)
 	tickerDone := make(chan bool)
 	go func() {
@@ -170,4 +181,50 @@ func main() {
 		}
 	}()
 	<-tickerDone
+}
+func (p *program) Stop(s service.Service) error {
+	// Should be non-blocking
+	return nil
+}
+
+func main() {
+	var mode string
+	flag.StringVar(&mode, "mode", "", "install/uninstall/run")
+	flag.Parse()
+
+	svcConfig := &service.Config{
+		Name:        "CryptoTrackingAgent",
+		DisplayName: "Crypto Tracking Agent",
+		Description: "Crypto Tracking Agent",
+	}
+
+	prg := &program{}
+	s, err := service.New(prg, svcConfig)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if mode == "install" {
+		err = s.Install()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
+	if mode == "uninstall" {
+		err = s.Uninstall()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
+	if mode == "" || mode == "run" {
+		err = s.Run()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
 }

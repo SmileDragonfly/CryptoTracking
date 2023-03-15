@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	CryptoTrackingSql v0.0.0-00010101000000-000000000000
+	github.com/kardianos/service v1.2.2
 	github.com/lib/pq v1.10.7
 	github.com/spf13/viper v1.15.0
 )
