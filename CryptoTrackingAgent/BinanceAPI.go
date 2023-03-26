@@ -2,8 +2,8 @@ package main
 
 import (
 	"encoding/json"
+	log "github.com/jeanphorn/log4go"
 	"io"
-	"log"
 	"net/http"
 	"regexp"
 )
@@ -18,7 +18,7 @@ func (receiver BinanceAPI) getAllPrice(symReg string) (string, error) {
 	link := "https://api.binance.com/api/v3/ticker/price"
 	resp, err := http.Get(link)
 	if err != nil {
-		log.Println(getCurrentFuncname(), err.Error())
+		log.Error(getCurrentFuncname(), err.Error())
 		return "", err
 	}
 	respBody, err := io.ReadAll(resp.Body)
@@ -27,7 +27,7 @@ func (receiver BinanceAPI) getAllPrice(symReg string) (string, error) {
 	var arrJson []TTickerPrice
 	err = json.Unmarshal(respBody, &arrJson)
 	if err != nil {
-		log.Println(getCurrentFuncname(), err.Error())
+		log.Error(getCurrentFuncname(), err.Error())
 		return "", err
 	}
 	// Get all symbol match with symReg
@@ -42,7 +42,7 @@ func (receiver BinanceAPI) getAllPrice(symReg string) (string, error) {
 	var byteRet []byte
 	byteRet, err = json.Marshal(arrRet)
 	if err != nil {
-		log.Println(getCurrentFuncname(), err.Error())
+		log.Error(getCurrentFuncname(), err.Error())
 		return "", err
 	}
 	return string(byteRet), err

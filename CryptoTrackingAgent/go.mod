@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	CryptoTrackingSql v0.0.0-00010101000000-000000000000
+	github.com/jeanphorn/log4go v0.0.0-20190526082429-7dbb8deb9468
 	github.com/kardianos/service v1.2.2
 	github.com/lib/pq v1.10.7
 	github.com/spf13/viper v1.15.0
@@ -20,6 +21,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
+	github.com/toolkits/file v0.0.0-20160325033739-a5b3c5147e07 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect

@@ -4,38 +4,25 @@ import (
 	"CryptoTrackingSql/sqlc"
 	"context"
 	"database/sql"
-	"flag"
 	"fmt"
-	"github.com/kardianos/service"
+	log "github.com/jeanphorn/log4go"
 	_ "github.com/lib/pq"
-	"log"
-	"os"
 	"time"
 )
 
-type program struct{}
-
-func (p *program) Start(s service.Service) error {
-	// Should be non-blocking, so run async using goroutine
-	go p.run()
-	return nil
-}
-
 // run will be called by Start() so business logic goes here
-func (p *program) run() {
+func main() {
 	// Init log file
-	f, err := os.OpenFile("CryptoTrackingAgent.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
-	if err != nil {
-		log.Fatalf(err.Error())
-	}
-	defer f.Close()
-	log.SetOutput(f)
-	log.Println("----------Start CryptoTrackingAgent----------")
+	// load config file, it's optional
+	// or log.LoadConfiguration("./example.json", "json")
+	// config file could be json or xml
+	log.LoadConfiguration("./log4go.json")
+	log.Info("----------Start CryptoTrackingAgent----------")
 
 	// Begin main program
-	err = loadConfig(".")
+	err := loadConfig(".")
 	if err != nil {
-		log.Fatalf(err.Error())
+		log.Error(err.Error())
 	}
 	GStrConn = fmt.Sprintf("port=%d host=%s user=%s password=%s dbname=%s sslmode=disable",
 		GConfig.HostPort, GConfig.HostName, GConfig.UserName, GConfig.Password, GConfig.DBName)
@@ -51,19 +38,19 @@ func (p *program) run() {
 			case <-ticker.C:
 				strPrice, err := api.getAllPrice("BUSD$")
 				if err != nil {
-					log.Println(err.Error())
+					log.Error(err.Error())
 				} else {
 					// Calculate percent
 					// 1.Open DB
 					conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 					if err != nil {
-						log.Println(err.Error())
+						log.Error(err.Error())
 						conn.Close()
 						continue
 					}
 					tx, err := conn.Begin()
 					if err != nil {
-						log.Println(err.Error())
+						log.Error(err.Error())
 						conn.Close()
 						continue
 					}
@@ -82,7 +69,7 @@ func (p *program) run() {
 					chanPercent15Min := make(chan []TPricePercent)
 					chanPercent30Min := make(chan []TPricePercent)
 					chanPercent60Min := make(chan []TPricePercent)
-					log.Println("Begin calculate percent")
+					log.Info("Begin calculate percent")
 					go CalculatePercentRountine(strPrice, strPrice1MinAgo.String, chanPercent1Min)
 					go CalculatePercentRountine(strPrice, strPrice5MinAgo.String, chanPercent5Min)
 					go CalculatePercentRountine(strPrice, strPrice10MinAgo.String, chanPercent10Min)
@@ -95,9 +82,9 @@ func (p *program) run() {
 					arrPercent15Min := <-chanPercent15Min
 					arrPercent30Min := <-chanPercent30Min
 					arrPercent60Min := <-chanPercent60Min
-					log.Println("End calculate percent")
+					log.Info("End calculate percent")
 					if arrPercent1Min == nil {
-						log.Println("CalculatePercent 1 Min NUll Data")
+						log.Warn("CalculatePercent 1 Min NUll Data")
 					} else {
 						query.Delete1MinBUSDPercent(context.Background())
 						for _, v := range arrPercent1Min {
@@ -109,7 +96,7 @@ func (p *program) run() {
 						}
 					}
 					if arrPercent5Min == nil {
-						log.Println("CalculatePercent 5 Min NUll Data")
+						log.Warn("CalculatePercent 5 Min NUll Data")
 					} else {
 						query.Delete5MinBUSDPercent(context.Background())
 						for _, v := range arrPercent5Min {
@@ -121,7 +108,7 @@ func (p *program) run() {
 						}
 					}
 					if arrPercent10Min == nil {
-						log.Println("CalculatePercent 10 Min NUll Data")
+						log.Warn("CalculatePercent 10 Min NUll Data")
 					} else {
 						query.Delete10MinBUSDPercent(context.Background())
 						for _, v := range arrPercent10Min {
@@ -133,7 +120,7 @@ func (p *program) run() {
 						}
 					}
 					if arrPercent15Min == nil {
-						log.Println("CalculatePercent 15 Min NUll Data")
+						log.Warn("CalculatePercent 15 Min NUll Data")
 					} else {
 						query.Delete15MinBUSDPercent(context.Background())
 						for _, v := range arrPercent15Min {
@@ -145,7 +132,7 @@ func (p *program) run() {
 						}
 					}
 					if arrPercent30Min == nil {
-						log.Println("CalculatePercent 30 Min NUll Data")
+						log.Warn("CalculatePercent 30 Min NUll Data")
 					} else {
 						query.Delete30MinBUSDPercent(context.Background())
 						for _, v := range arrPercent30Min {
@@ -157,7 +144,7 @@ func (p *program) run() {
 						}
 					}
 					if arrPercent60Min == nil {
-						log.Println("CalculatePercent 60 Min NUll Data")
+						log.Warn("CalculatePercent 60 Min NUll Data")
 					} else {
 						query.Delete60MinBUSDPercent(context.Background())
 						for _, v := range arrPercent60Min {
@@ -172,7 +159,7 @@ func (p *program) run() {
 					err = query.InsertBUSDPrice(context.Background(), sql.NullString{strPrice, true})
 					// Insert to DB
 					if err != nil {
-						log.Println(err.Error())
+						log.Error(err.Error())
 					}
 					tx.Commit()
 					conn.Close()
@@ -181,50 +168,4 @@ func (p *program) run() {
 		}
 	}()
 	<-tickerDone
-}
-func (p *program) Stop(s service.Service) error {
-	// Should be non-blocking
-	return nil
-}
-
-func main() {
-	var mode string
-	flag.StringVar(&mode, "mode", "", "install/uninstall/run")
-	flag.Parse()
-
-	svcConfig := &service.Config{
-		Name:        "CryptoTrackingAgent",
-		DisplayName: "Crypto Tracking Agent",
-		Description: "Crypto Tracking Agent",
-	}
-
-	prg := &program{}
-	s, err := service.New(prg, svcConfig)
-	if err != nil {
-		log.Fatal(err)
-	}
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	if mode == "install" {
-		err = s.Install()
-		if err != nil {
-			log.Fatal(err)
-		}
-	}
-
-	if mode == "uninstall" {
-		err = s.Uninstall()
-		if err != nil {
-			log.Fatal(err)
-		}
-	}
-
-	if mode == "" || mode == "run" {
-		err = s.Run()
-		if err != nil {
-			log.Fatal(err)
-		}
-	}
 }

@@ -1,9 +1,10 @@
-2023/03/15 14:25:26 ----------Start CryptoTrackingAPI----------
-2023/03/15 14:26:37 ----------Start CryptoTrackingAPI----------
-2023/03/15 14:27:30 sql: unknown driver "postgres" (forgotten import?)
-2023/03/15 14:27:33 sql: unknown driver "postgres" (forgotten import?)
-2023/03/15 14:28:02 ----------Start CryptoTrackingAPI----------
-2023/03/15 14:28:58 sql: unknown driver "postgres" (forgotten import?)
-2023/03/15 14:30:10 ----------Start CryptoTrackingAPI----------
-2023/03/15 14:30:54 ----------Start CryptoTrackingAPI----------
-2023/03/15 14:37:53 ----------Start CryptoTrackingAPI----------
+2023/03/26 22:16:05 ----------Start CryptoTrackingAPI----------
+[2023/03/26 22:35:48 +07] [DEFAULT] [INFO] (main.(*program).run:27) ----------Start CryptoTrackingAPI----------
+[2023/03/26 22:36:06 +07] [DEFAULT] [INFO] (main.(*program).run:27) ----------Start CryptoTrackingAPI----------
+[2023/03/26 22:36:26 +07] [DEFAULT] [INFO] (main.(*program).run:27) ----------Start CryptoTrackingAPI----------
+[2023/03/26 22:37:16 +07] [DEFAULT] [INFO] (main.(*program).run:27) ----------Start CryptoTrackingAPI----------
+[2023/03/26 22:39:00 +07] [DEFAULT] [INFO] (main.(*program).run:27) ----------Start CryptoTrackingAPI----------
+[2023/03/26 22:41:02 +07] [DEFAULT] [INFO] (main.(*program).run:27) ----------Start CryptoTrackingAPI----------
+[2023/03/26 22:41:52 +07] [DEFAULT] [INFO] (main.main:58) ----------Start CryptoTrackingAPI----------
+[2023/03/26 22:42:01 +07] [DEFAULT] [INFO] (main.main:97) Run service
+[2023/03/26 22:50:30 +07] [DEFAULT] [INFO] (main.main:16) ----------Start CryptoTrackingAgent----------
