@@ -18,7 +18,7 @@ func main() {
 	// config file could be json or xml
 	log.LoadConfiguration("./log4go.json")
 	log.Info("----------Start CryptoTrackingAgent----------")
-
+	defer log.Close()
 	// Begin main program
 	err := loadConfig(".")
 	if err != nil {
