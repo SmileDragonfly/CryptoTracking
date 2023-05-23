@@ -43,11 +43,10 @@ function ReactTable({endPoint}){// Define state variables for JSON data and load
                 <table>
                     <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Time</th>
                         <th>Symbol</th>
                         <th>Price</th>
-                        <th>PrePrice</th>
+                        <th>PrevPrice</th>
                         <th>Percent</th>
                     </tr>
                     </thead>
@@ -58,7 +57,7 @@ function ReactTable({endPoint}){// Define state variables for JSON data and load
                             <td>{item.Time}</td>
                             <td>{item.Symbol}</td>
                             <td>{item.Price}</td>
-                            <td>{item.PrePrice}</td>
+                            <td>{item.PrevPrice}</td>
                             <td>{item.Percent}</td>
                         </tr>
                     ))}

@@ -22,7 +22,7 @@ type BUSDPercent struct {
 func get1MinUp(c *gin.Context) {
 	// FIX-ERROR: Access to XMLHttpRequest at 'http://localhost:8888/5minup' from origin 'http://localhost:63342'
 	// has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -59,7 +59,7 @@ func get1MinUp(c *gin.Context) {
 }
 
 func get5MinUp(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -96,7 +96,7 @@ func get5MinUp(c *gin.Context) {
 }
 
 func get10MinUp(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -133,7 +133,7 @@ func get10MinUp(c *gin.Context) {
 }
 
 func get15MinUp(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -170,7 +170,7 @@ func get15MinUp(c *gin.Context) {
 }
 
 func get30MinUp(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -207,7 +207,7 @@ func get30MinUp(c *gin.Context) {
 }
 
 func get60MinUp(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -244,7 +244,7 @@ func get60MinUp(c *gin.Context) {
 }
 
 func get1MinDown(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -318,7 +318,7 @@ func get5MinDown(c *gin.Context) {
 }
 
 func get10MinDown(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -355,7 +355,7 @@ func get10MinDown(c *gin.Context) {
 }
 
 func get15MinDown(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -392,7 +392,7 @@ func get15MinDown(c *gin.Context) {
 }
 
 func get30MinDown(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
@@ -429,7 +429,7 @@ func get30MinDown(c *gin.Context) {
 }
 
 func get60MinDown(c *gin.Context) {
-	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+	//c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {

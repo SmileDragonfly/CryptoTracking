@@ -78,7 +78,7 @@ footer {
 
 table {
   border: 2px solid forestgreen;
-  width: 33%;
+  width: fit-content;
   height: fit-content;
 }
 
