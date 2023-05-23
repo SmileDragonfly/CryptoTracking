@@ -4,9 +4,9 @@ go 1.19
 
 require (
 	CryptoTrackingSql v0.0.0-00010101000000-000000000000
+	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-gonic/gin v1.9.0
 	github.com/jeanphorn/log4go v0.0.0-20190526082429-7dbb8deb9468
-	github.com/kardianos/service v1.2.2
 	github.com/lib/pq v1.10.7
 	github.com/spf13/viper v1.15.0
 )

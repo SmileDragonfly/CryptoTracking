@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	log "github.com/jeanphorn/log4go"
 )
@@ -25,6 +26,10 @@ func main() {
 
 	// Start api
 	router := gin.Default()
+	cfg := cors.DefaultConfig()
+	cfg.AllowAllOrigins = true
+	cfg.AllowHeaders = append(cfg.AllowHeaders, "ngrok-skip-browser-warning")
+	router.Use(cors.New(cfg))
 	router.GET("/1minup", get1MinUp)
 	router.GET("/5minup", get5MinUp)
 	router.GET("/10minup", get10MinUp)

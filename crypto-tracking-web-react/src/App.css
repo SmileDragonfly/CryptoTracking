@@ -46,6 +46,10 @@ footer {
   color: white;
 }
 
+.btn-group {
+  width: 100%;
+}
+
 .btn-group button {
   background-color: #04AA6D; /* Green background */
   border: 1px solid green; /* Green border */
@@ -53,6 +57,7 @@ footer {
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
+  width: 25%;
 }
 
 .btn-group button:not(:last-child) {
@@ -69,4 +74,31 @@ footer {
 /* Add a background color on hover */
 .btn-group button:hover {
   background-color: #3e8e41;
+}
+
+table {
+  border: 2px solid forestgreen;
+  width: 33%;
+  height: fit-content;
+}
+
+th {
+  border-bottom: 1px solid black;
+}
+
+td {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
