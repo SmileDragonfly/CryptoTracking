@@ -3,6 +3,7 @@ import './App.css';
 import ReactTable from './ReactTable'
 
 function App() {
+    let url = "https://f4ae-2a09-bac5-d459-e6-00-17-214.ngrok-free.app"
   return (
     <div className="App">
       <header className="App-header">
@@ -22,7 +23,12 @@ function App() {
           </div>
       </header>
         <div className="grid-container">
-            <ReactTable endPoint={'https://0469-123-24-56-232.ngrok-free.app/1minup'}/>
+            <ReactTable endPoint={url+'/1minup'}/>
+            <ReactTable endPoint={url+'/5minup'}/>
+            <ReactTable endPoint={url+'/10minup'}/>
+            <ReactTable endPoint={url+'/15minup'}/>
+            <ReactTable endPoint={url+'/30minup'}/>
+            <ReactTable endPoint={url+'/60minup'}/>
         </div>
         <footer> Contact me</footer>
     </div>

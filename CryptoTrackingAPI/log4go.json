@@ -6,13 +6,13 @@
   "files": [{
     "enable": false,
     "level": "DEBUG",
-    "filename":"./CryptoTrackingAPI.log",
+    "filename":"./Logs/CryptoTrackingAPI.log",
     "category": "Test",
     "pattern": "[%D %T] [%C] [%L] (%S) %M"
   },{
     "enable": true,
     "level": "DEBUG",
-    "filename":"CryptoTrackingAPI.log",
+    "filename":"./Logs/CryptoTrackingAPI.log",
     "category": "CryptoTrackingAPI",
     "pattern": "[%D %T] [%C] [%L] (%S) %M",
     "rotate": true,
