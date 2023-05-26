@@ -3,7 +3,7 @@ import './App.css';
 import ReactTable from './ReactTable'
 
 function App() {
-    let url = "https://f4ae-2a09-bac5-d459-e6-00-17-214.ngrok-free.app"
+    let url = "https://6d16-118-70-124-128.ngrok-free.app"
   return (
     <div className="App">
       <header className="App-header">

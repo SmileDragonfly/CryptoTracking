@@ -54,7 +54,7 @@ function ReactTable({endPoint}){// Define state variables for JSON data and load
 // Render each item as a table row with table cells
                         <tr key={item.ID}>
                             <td><Moment format={"YYYY-MM-DD HH:mm:ss"}>{item.Time}</Moment></td>
-                            <td>{item.Symbol}</td>
+                            <td>{item.Symbol.replace("BUSD", "")}</td>
                             <td>{item.Price.toFixed(5)}</td>
                             <td>{item.PrevPrice.toFixed(5)}</td>
                             <td>{item.Percent.toFixed(5)}</td>
