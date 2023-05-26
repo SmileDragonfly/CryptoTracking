@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 
-function ReactTable({endPoint}){// Define state variables for JSON data and loading status
+function ReactTable({endPoint, caption}){// Define state variables for JSON data and loading status
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(0);
 
@@ -39,10 +39,11 @@ function ReactTable({endPoint}){// Define state variables for JSON data and load
             ) : (
 // Show the table when data is ready
                 <table>
-                    <caption> Load {loading}</caption>
+                    <caption>{caption}</caption>
                     <thead>
                     <tr>
                         <th>Time</th>
+                        <th>PrevTime</th>
                         <th>Symbol</th>
                         <th>Price</th>
                         <th>PrevPrice</th>
@@ -53,7 +54,8 @@ function ReactTable({endPoint}){// Define state variables for JSON data and load
                     {data.map((item) => (
 // Render each item as a table row with table cells
                         <tr key={item.ID}>
-                            <td><Moment format={"YYYY-MM-DD HH:mm:ss"}>{item.Time}</Moment></td>
+                            <td><Moment format={"HH:mm:ss"}>{item.Time}</Moment></td>
+                            <td><Moment format={"HH:mm:ss"}>{item.PrevTime}</Moment></td>
                             <td>{item.Symbol.replace("BUSD", "")}</td>
                             <td>{item.Price.toFixed(5)}</td>
                             <td>{item.PrevPrice.toFixed(5)}</td>

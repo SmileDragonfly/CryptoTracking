@@ -11,6 +11,7 @@ import (
 type Tblbusd10minpercent struct {
 	ID        int32
 	Time      sql.NullTime
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -20,6 +21,7 @@ type Tblbusd10minpercent struct {
 type Tblbusd15minpercent struct {
 	ID        int32
 	Time      sql.NullTime
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -29,6 +31,7 @@ type Tblbusd15minpercent struct {
 type Tblbusd1minpercent struct {
 	ID        int32
 	Time      sql.NullTime
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -38,6 +41,7 @@ type Tblbusd1minpercent struct {
 type Tblbusd30minpercent struct {
 	ID        int32
 	Time      sql.NullTime
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -47,6 +51,7 @@ type Tblbusd30minpercent struct {
 type Tblbusd5minpercent struct {
 	ID        int32
 	Time      sql.NullTime
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -56,6 +61,7 @@ type Tblbusd5minpercent struct {
 type Tblbusd60minpercent struct {
 	ID        int32
 	Time      sql.NullTime
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64

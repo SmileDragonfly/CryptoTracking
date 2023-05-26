@@ -3,30 +3,30 @@ INSERT INTO tblBUSDPrice ("price") VALUES ($1);
 -- name: GetLastestBUSDPrice :one
 SELECT "price" FROM tblBUSDPrice ORDER BY "time" DESC LIMIT 1;
 -- name: Get1MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '61 seconds') ORDER BY "time" ASC LIMIT 1;
+SELECT "time", "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '61 seconds') ORDER BY "time" ASC LIMIT 1;
 -- name: Get5MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '301 seconds') ORDER BY "time" ASC LIMIT 1;
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '301 seconds') ORDER BY "time" ASC LIMIT 1;
 -- name: Get10MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '601 seconds') ORDER BY "time" ASC LIMIT 1;
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '601 seconds') ORDER BY "time" ASC LIMIT 1;
 -- name: Get15MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '901 seconds') ORDER BY "time" ASC LIMIT 1;
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '901 seconds') ORDER BY "time" ASC LIMIT 1;
 -- name: Get30MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '1801 seconds') ORDER BY "time" ASC LIMIT 1;
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '1801 seconds') ORDER BY "time" ASC LIMIT 1;
 -- name: Get60MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '3601 seconds') ORDER BY "time" ASC LIMIT 1;
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '3601 seconds') ORDER BY "time" ASC LIMIT 1;
 
 -- name: Insert1MinBUSDPercent :exec
-INSERT INTO tblBUSD1MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4);
+INSERT INTO tblBUSD1MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5);
 -- name: Insert5MinBUSDPercent :exec
-INSERT INTO tblBUSD5MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4);
+INSERT INTO tblBUSD5MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5);
 -- name: Insert10MinBUSDPercent :exec
-INSERT INTO tblBUSD10MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4);
+INSERT INTO tblBUSD10MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5);
 -- name: Insert15MinBUSDPercent :exec
-INSERT INTO tblBUSD15MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4);
+INSERT INTO tblBUSD15MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5);
 -- name: Insert30MinBUSDPercent :exec
-INSERT INTO tblBUSD30MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4);
+INSERT INTO tblBUSD30MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5);
 -- name: Insert60MinBUSDPercent :exec
-INSERT INTO tblBUSD60MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4);
+INSERT INTO tblBUSD60MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5);
 
 -- name: Delete1MinBUSDPercent :exec
 DELETE FROM tblBUSD1MinPercent;
@@ -66,3 +66,6 @@ SELECT * FROM tblBUSD15MinPercent ORDER BY "percent" ASC LIMIT $1;
 SELECT * FROM tblBUSD30MinPercent ORDER BY "percent" ASC LIMIT $1;
 -- name: GetAll60MinPercentAsc :many
 SELECT * FROM tblBUSD60MinPercent ORDER BY "percent" ASC LIMIT $1;
+
+-- name: DeleteWasteBUSDPrice :exec
+DELETE FROM tblBUSDPrice WHERE "time" < (NOW() - INTERVAL '7200 seconds');

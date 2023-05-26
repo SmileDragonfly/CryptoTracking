@@ -13,6 +13,7 @@ import (
 type BUSDPercent struct {
 	ID        int32
 	Time      time.Time
+	PrevTime  time.Time
 	Symbol    string
 	Price     float64
 	PrevPrice float64
@@ -43,6 +44,7 @@ func get1MinUp(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -80,6 +82,7 @@ func get5MinUp(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -117,6 +120,7 @@ func get10MinUp(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -154,6 +158,7 @@ func get15MinUp(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -191,6 +196,7 @@ func get30MinUp(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -228,6 +234,7 @@ func get60MinUp(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -265,6 +272,7 @@ func get1MinDown(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -302,6 +310,7 @@ func get5MinDown(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -339,6 +348,7 @@ func get10MinDown(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -376,6 +386,7 @@ func get15MinDown(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -413,6 +424,7 @@ func get30MinDown(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64
@@ -450,6 +462,7 @@ func get60MinDown(c *gin.Context) {
 			var it BUSDPercent
 			it.ID = v.ID
 			it.Time = v.Time.Time
+			it.PrevTime = v.Prevtime.Time
 			it.Symbol = v.Symbol.String
 			it.Price = v.Price.Float64
 			it.PrevPrice = v.Prevprice.Float64

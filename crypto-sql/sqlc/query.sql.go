@@ -64,74 +64,113 @@ func (q *Queries) Delete60MinBUSDPercent(ctx context.Context) error {
 	return err
 }
 
-const get10MinAgoBUSDPrice = `-- name: Get10MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '601 seconds') ORDER BY "time" ASC LIMIT 1
+const deleteWasteBUSDPrice = `-- name: DeleteWasteBUSDPrice :exec
+DELETE FROM tblBUSDPrice WHERE "time" < (NOW() - INTERVAL '7200 seconds')
 `
 
-func (q *Queries) Get10MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+func (q *Queries) DeleteWasteBUSDPrice(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, deleteWasteBUSDPrice)
+	return err
+}
+
+const get10MinAgoBUSDPrice = `-- name: Get10MinAgoBUSDPrice :one
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '601 seconds') ORDER BY "time" ASC LIMIT 1
+`
+
+type Get10MinAgoBUSDPriceRow struct {
+	Time  sql.NullTime
+	Price sql.NullString
+}
+
+func (q *Queries) Get10MinAgoBUSDPrice(ctx context.Context) (Get10MinAgoBUSDPriceRow, error) {
 	row := q.db.QueryRowContext(ctx, get10MinAgoBUSDPrice)
-	var price sql.NullString
-	err := row.Scan(&price)
-	return price, err
+	var i Get10MinAgoBUSDPriceRow
+	err := row.Scan(&i.Time, &i.Price)
+	return i, err
 }
 
 const get15MinAgoBUSDPrice = `-- name: Get15MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '901 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '901 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
-func (q *Queries) Get15MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+type Get15MinAgoBUSDPriceRow struct {
+	Time  sql.NullTime
+	Price sql.NullString
+}
+
+func (q *Queries) Get15MinAgoBUSDPrice(ctx context.Context) (Get15MinAgoBUSDPriceRow, error) {
 	row := q.db.QueryRowContext(ctx, get15MinAgoBUSDPrice)
-	var price sql.NullString
-	err := row.Scan(&price)
-	return price, err
+	var i Get15MinAgoBUSDPriceRow
+	err := row.Scan(&i.Time, &i.Price)
+	return i, err
 }
 
 const get1MinAgoBUSDPrice = `-- name: Get1MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '61 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "time", "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '61 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
-func (q *Queries) Get1MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+type Get1MinAgoBUSDPriceRow struct {
+	Time  sql.NullTime
+	Price sql.NullString
+}
+
+func (q *Queries) Get1MinAgoBUSDPrice(ctx context.Context) (Get1MinAgoBUSDPriceRow, error) {
 	row := q.db.QueryRowContext(ctx, get1MinAgoBUSDPrice)
-	var price sql.NullString
-	err := row.Scan(&price)
-	return price, err
+	var i Get1MinAgoBUSDPriceRow
+	err := row.Scan(&i.Time, &i.Price)
+	return i, err
 }
 
 const get30MinAgoBUSDPrice = `-- name: Get30MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '1801 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '1801 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
-func (q *Queries) Get30MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+type Get30MinAgoBUSDPriceRow struct {
+	Time  sql.NullTime
+	Price sql.NullString
+}
+
+func (q *Queries) Get30MinAgoBUSDPrice(ctx context.Context) (Get30MinAgoBUSDPriceRow, error) {
 	row := q.db.QueryRowContext(ctx, get30MinAgoBUSDPrice)
-	var price sql.NullString
-	err := row.Scan(&price)
-	return price, err
+	var i Get30MinAgoBUSDPriceRow
+	err := row.Scan(&i.Time, &i.Price)
+	return i, err
 }
 
 const get5MinAgoBUSDPrice = `-- name: Get5MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '301 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '301 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
-func (q *Queries) Get5MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+type Get5MinAgoBUSDPriceRow struct {
+	Time  sql.NullTime
+	Price sql.NullString
+}
+
+func (q *Queries) Get5MinAgoBUSDPrice(ctx context.Context) (Get5MinAgoBUSDPriceRow, error) {
 	row := q.db.QueryRowContext(ctx, get5MinAgoBUSDPrice)
-	var price sql.NullString
-	err := row.Scan(&price)
-	return price, err
+	var i Get5MinAgoBUSDPriceRow
+	err := row.Scan(&i.Time, &i.Price)
+	return i, err
 }
 
 const get60MinAgoBUSDPrice = `-- name: Get60MinAgoBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '3601 seconds') ORDER BY "time" ASC LIMIT 1
+SELECT "time","price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '3601 seconds') ORDER BY "time" ASC LIMIT 1
 `
 
-func (q *Queries) Get60MinAgoBUSDPrice(ctx context.Context) (sql.NullString, error) {
+type Get60MinAgoBUSDPriceRow struct {
+	Time  sql.NullTime
+	Price sql.NullString
+}
+
+func (q *Queries) Get60MinAgoBUSDPrice(ctx context.Context) (Get60MinAgoBUSDPriceRow, error) {
 	row := q.db.QueryRowContext(ctx, get60MinAgoBUSDPrice)
-	var price sql.NullString
-	err := row.Scan(&price)
-	return price, err
+	var i Get60MinAgoBUSDPriceRow
+	err := row.Scan(&i.Time, &i.Price)
+	return i, err
 }
 
 const getAll10MinPercentAsc = `-- name: GetAll10MinPercentAsc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD10MinPercent ORDER BY "percent" ASC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD10MinPercent ORDER BY "percent" ASC LIMIT $1
 `
 
 func (q *Queries) GetAll10MinPercentAsc(ctx context.Context, limit int32) ([]Tblbusd10minpercent, error) {
@@ -146,6 +185,7 @@ func (q *Queries) GetAll10MinPercentAsc(ctx context.Context, limit int32) ([]Tbl
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -165,7 +205,7 @@ func (q *Queries) GetAll10MinPercentAsc(ctx context.Context, limit int32) ([]Tbl
 }
 
 const getAll10MinPercentDesc = `-- name: GetAll10MinPercentDesc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD10MinPercent ORDER BY "percent" DESC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD10MinPercent ORDER BY "percent" DESC LIMIT $1
 `
 
 func (q *Queries) GetAll10MinPercentDesc(ctx context.Context, limit int32) ([]Tblbusd10minpercent, error) {
@@ -180,6 +220,7 @@ func (q *Queries) GetAll10MinPercentDesc(ctx context.Context, limit int32) ([]Tb
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -199,7 +240,7 @@ func (q *Queries) GetAll10MinPercentDesc(ctx context.Context, limit int32) ([]Tb
 }
 
 const getAll15MinPercentAsc = `-- name: GetAll15MinPercentAsc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD15MinPercent ORDER BY "percent" ASC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD15MinPercent ORDER BY "percent" ASC LIMIT $1
 `
 
 func (q *Queries) GetAll15MinPercentAsc(ctx context.Context, limit int32) ([]Tblbusd15minpercent, error) {
@@ -214,6 +255,7 @@ func (q *Queries) GetAll15MinPercentAsc(ctx context.Context, limit int32) ([]Tbl
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -233,7 +275,7 @@ func (q *Queries) GetAll15MinPercentAsc(ctx context.Context, limit int32) ([]Tbl
 }
 
 const getAll15MinPercentDesc = `-- name: GetAll15MinPercentDesc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD15MinPercent ORDER BY "percent" DESC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD15MinPercent ORDER BY "percent" DESC LIMIT $1
 `
 
 func (q *Queries) GetAll15MinPercentDesc(ctx context.Context, limit int32) ([]Tblbusd15minpercent, error) {
@@ -248,6 +290,7 @@ func (q *Queries) GetAll15MinPercentDesc(ctx context.Context, limit int32) ([]Tb
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -267,7 +310,7 @@ func (q *Queries) GetAll15MinPercentDesc(ctx context.Context, limit int32) ([]Tb
 }
 
 const getAll1MinPercentAsc = `-- name: GetAll1MinPercentAsc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD1MinPercent ORDER BY "percent" ASC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD1MinPercent ORDER BY "percent" ASC LIMIT $1
 `
 
 func (q *Queries) GetAll1MinPercentAsc(ctx context.Context, limit int32) ([]Tblbusd1minpercent, error) {
@@ -282,6 +325,7 @@ func (q *Queries) GetAll1MinPercentAsc(ctx context.Context, limit int32) ([]Tblb
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -301,7 +345,7 @@ func (q *Queries) GetAll1MinPercentAsc(ctx context.Context, limit int32) ([]Tblb
 }
 
 const getAll1MinPercentDesc = `-- name: GetAll1MinPercentDesc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD1MinPercent ORDER BY "percent" DESC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD1MinPercent ORDER BY "percent" DESC LIMIT $1
 `
 
 func (q *Queries) GetAll1MinPercentDesc(ctx context.Context, limit int32) ([]Tblbusd1minpercent, error) {
@@ -316,6 +360,7 @@ func (q *Queries) GetAll1MinPercentDesc(ctx context.Context, limit int32) ([]Tbl
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -335,7 +380,7 @@ func (q *Queries) GetAll1MinPercentDesc(ctx context.Context, limit int32) ([]Tbl
 }
 
 const getAll30MinPercentAsc = `-- name: GetAll30MinPercentAsc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD30MinPercent ORDER BY "percent" ASC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD30MinPercent ORDER BY "percent" ASC LIMIT $1
 `
 
 func (q *Queries) GetAll30MinPercentAsc(ctx context.Context, limit int32) ([]Tblbusd30minpercent, error) {
@@ -350,6 +395,7 @@ func (q *Queries) GetAll30MinPercentAsc(ctx context.Context, limit int32) ([]Tbl
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -369,7 +415,7 @@ func (q *Queries) GetAll30MinPercentAsc(ctx context.Context, limit int32) ([]Tbl
 }
 
 const getAll30MinPercentDesc = `-- name: GetAll30MinPercentDesc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD30MinPercent ORDER BY "percent" DESC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD30MinPercent ORDER BY "percent" DESC LIMIT $1
 `
 
 func (q *Queries) GetAll30MinPercentDesc(ctx context.Context, limit int32) ([]Tblbusd30minpercent, error) {
@@ -384,6 +430,7 @@ func (q *Queries) GetAll30MinPercentDesc(ctx context.Context, limit int32) ([]Tb
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -403,7 +450,7 @@ func (q *Queries) GetAll30MinPercentDesc(ctx context.Context, limit int32) ([]Tb
 }
 
 const getAll5MinPercentAsc = `-- name: GetAll5MinPercentAsc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD5MinPercent ORDER BY "percent" ASC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD5MinPercent ORDER BY "percent" ASC LIMIT $1
 `
 
 func (q *Queries) GetAll5MinPercentAsc(ctx context.Context, limit int32) ([]Tblbusd5minpercent, error) {
@@ -418,6 +465,7 @@ func (q *Queries) GetAll5MinPercentAsc(ctx context.Context, limit int32) ([]Tblb
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -437,7 +485,7 @@ func (q *Queries) GetAll5MinPercentAsc(ctx context.Context, limit int32) ([]Tblb
 }
 
 const getAll5MinPercentDesc = `-- name: GetAll5MinPercentDesc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD5MinPercent ORDER BY "percent" DESC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD5MinPercent ORDER BY "percent" DESC LIMIT $1
 `
 
 func (q *Queries) GetAll5MinPercentDesc(ctx context.Context, limit int32) ([]Tblbusd5minpercent, error) {
@@ -452,6 +500,7 @@ func (q *Queries) GetAll5MinPercentDesc(ctx context.Context, limit int32) ([]Tbl
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -471,7 +520,7 @@ func (q *Queries) GetAll5MinPercentDesc(ctx context.Context, limit int32) ([]Tbl
 }
 
 const getAll60MinPercentAsc = `-- name: GetAll60MinPercentAsc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD60MinPercent ORDER BY "percent" ASC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD60MinPercent ORDER BY "percent" ASC LIMIT $1
 `
 
 func (q *Queries) GetAll60MinPercentAsc(ctx context.Context, limit int32) ([]Tblbusd60minpercent, error) {
@@ -486,6 +535,7 @@ func (q *Queries) GetAll60MinPercentAsc(ctx context.Context, limit int32) ([]Tbl
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -505,7 +555,7 @@ func (q *Queries) GetAll60MinPercentAsc(ctx context.Context, limit int32) ([]Tbl
 }
 
 const getAll60MinPercentDesc = `-- name: GetAll60MinPercentDesc :many
-SELECT id, time, symbol, price, prevprice, percent FROM tblBUSD60MinPercent ORDER BY "percent" DESC LIMIT $1
+SELECT id, time, prevtime, symbol, price, prevprice, percent FROM tblBUSD60MinPercent ORDER BY "percent" DESC LIMIT $1
 `
 
 func (q *Queries) GetAll60MinPercentDesc(ctx context.Context, limit int32) ([]Tblbusd60minpercent, error) {
@@ -520,6 +570,7 @@ func (q *Queries) GetAll60MinPercentDesc(ctx context.Context, limit int32) ([]Tb
 		if err := rows.Scan(
 			&i.ID,
 			&i.Time,
+			&i.Prevtime,
 			&i.Symbol,
 			&i.Price,
 			&i.Prevprice,
@@ -550,10 +601,11 @@ func (q *Queries) GetLastestBUSDPrice(ctx context.Context) (sql.NullString, erro
 }
 
 const insert10MinBUSDPercent = `-- name: Insert10MinBUSDPercent :exec
-INSERT INTO tblBUSD10MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+INSERT INTO tblBUSD10MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5)
 `
 
 type Insert10MinBUSDPercentParams struct {
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -562,6 +614,7 @@ type Insert10MinBUSDPercentParams struct {
 
 func (q *Queries) Insert10MinBUSDPercent(ctx context.Context, arg Insert10MinBUSDPercentParams) error {
 	_, err := q.db.ExecContext(ctx, insert10MinBUSDPercent,
+		arg.Prevtime,
 		arg.Symbol,
 		arg.Price,
 		arg.Prevprice,
@@ -571,10 +624,11 @@ func (q *Queries) Insert10MinBUSDPercent(ctx context.Context, arg Insert10MinBUS
 }
 
 const insert15MinBUSDPercent = `-- name: Insert15MinBUSDPercent :exec
-INSERT INTO tblBUSD15MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+INSERT INTO tblBUSD15MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5)
 `
 
 type Insert15MinBUSDPercentParams struct {
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -583,6 +637,7 @@ type Insert15MinBUSDPercentParams struct {
 
 func (q *Queries) Insert15MinBUSDPercent(ctx context.Context, arg Insert15MinBUSDPercentParams) error {
 	_, err := q.db.ExecContext(ctx, insert15MinBUSDPercent,
+		arg.Prevtime,
 		arg.Symbol,
 		arg.Price,
 		arg.Prevprice,
@@ -592,10 +647,11 @@ func (q *Queries) Insert15MinBUSDPercent(ctx context.Context, arg Insert15MinBUS
 }
 
 const insert1MinBUSDPercent = `-- name: Insert1MinBUSDPercent :exec
-INSERT INTO tblBUSD1MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+INSERT INTO tblBUSD1MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5)
 `
 
 type Insert1MinBUSDPercentParams struct {
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -604,6 +660,7 @@ type Insert1MinBUSDPercentParams struct {
 
 func (q *Queries) Insert1MinBUSDPercent(ctx context.Context, arg Insert1MinBUSDPercentParams) error {
 	_, err := q.db.ExecContext(ctx, insert1MinBUSDPercent,
+		arg.Prevtime,
 		arg.Symbol,
 		arg.Price,
 		arg.Prevprice,
@@ -613,10 +670,11 @@ func (q *Queries) Insert1MinBUSDPercent(ctx context.Context, arg Insert1MinBUSDP
 }
 
 const insert30MinBUSDPercent = `-- name: Insert30MinBUSDPercent :exec
-INSERT INTO tblBUSD30MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+INSERT INTO tblBUSD30MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5)
 `
 
 type Insert30MinBUSDPercentParams struct {
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -625,6 +683,7 @@ type Insert30MinBUSDPercentParams struct {
 
 func (q *Queries) Insert30MinBUSDPercent(ctx context.Context, arg Insert30MinBUSDPercentParams) error {
 	_, err := q.db.ExecContext(ctx, insert30MinBUSDPercent,
+		arg.Prevtime,
 		arg.Symbol,
 		arg.Price,
 		arg.Prevprice,
@@ -634,10 +693,11 @@ func (q *Queries) Insert30MinBUSDPercent(ctx context.Context, arg Insert30MinBUS
 }
 
 const insert5MinBUSDPercent = `-- name: Insert5MinBUSDPercent :exec
-INSERT INTO tblBUSD5MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+INSERT INTO tblBUSD5MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5)
 `
 
 type Insert5MinBUSDPercentParams struct {
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -646,6 +706,7 @@ type Insert5MinBUSDPercentParams struct {
 
 func (q *Queries) Insert5MinBUSDPercent(ctx context.Context, arg Insert5MinBUSDPercentParams) error {
 	_, err := q.db.ExecContext(ctx, insert5MinBUSDPercent,
+		arg.Prevtime,
 		arg.Symbol,
 		arg.Price,
 		arg.Prevprice,
@@ -655,10 +716,11 @@ func (q *Queries) Insert5MinBUSDPercent(ctx context.Context, arg Insert5MinBUSDP
 }
 
 const insert60MinBUSDPercent = `-- name: Insert60MinBUSDPercent :exec
-INSERT INTO tblBUSD60MinPercent ("symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4)
+INSERT INTO tblBUSD60MinPercent ("prevtime", "symbol", "price", "prevprice", "percent") VALUES ($1, $2, $3, $4, $5)
 `
 
 type Insert60MinBUSDPercentParams struct {
+	Prevtime  sql.NullTime
 	Symbol    sql.NullString
 	Price     sql.NullFloat64
 	Prevprice sql.NullFloat64
@@ -667,6 +729,7 @@ type Insert60MinBUSDPercentParams struct {
 
 func (q *Queries) Insert60MinBUSDPercent(ctx context.Context, arg Insert60MinBUSDPercentParams) error {
 	_, err := q.db.ExecContext(ctx, insert60MinBUSDPercent,
+		arg.Prevtime,
 		arg.Symbol,
 		arg.Price,
 		arg.Prevprice,

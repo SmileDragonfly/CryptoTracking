@@ -7,6 +7,7 @@ CREATE TABLE tblBUSDPrice (
 CREATE TABLE tblBUSD1MinPercent (
 	id SERIAL PRIMARY KEY,
 	time timestamp DEFAULT current_timestamp,
+    prevTime timestamp,
 	symbol text,
 	price	real,
 	prevPrice real,
@@ -16,6 +17,7 @@ CREATE TABLE tblBUSD1MinPercent (
 CREATE TABLE tblBUSD5MinPercent (
 	id SERIAL PRIMARY KEY,
 	time timestamp DEFAULT current_timestamp,
+    prevTime timestamp,
 	symbol text,
 	price	real,
 	prevPrice real,
@@ -25,6 +27,7 @@ CREATE TABLE tblBUSD5MinPercent (
 CREATE TABLE tblBUSD10MinPercent (
 	id SERIAL PRIMARY KEY,
 	time timestamp DEFAULT current_timestamp,
+    prevTime timestamp,
 	symbol text,
 	price	real,
 	prevPrice real,
@@ -34,6 +37,7 @@ CREATE TABLE tblBUSD10MinPercent (
 CREATE TABLE tblBUSD15MinPercent (
 	id SERIAL PRIMARY KEY,
 	time timestamp DEFAULT current_timestamp,
+    prevTime timestamp,
 	symbol text,
 	price	real,
 	prevPrice real,
@@ -43,6 +47,7 @@ CREATE TABLE tblBUSD15MinPercent (
 CREATE TABLE tblBUSD30MinPercent (
 	id SERIAL PRIMARY KEY,
 	time timestamp DEFAULT current_timestamp,
+    prevTime timestamp,
 	symbol text,
 	price	real,
 	prevPrice real,
@@ -52,6 +57,7 @@ CREATE TABLE tblBUSD30MinPercent (
 CREATE TABLE tblBUSD60MinPercent (
 	id SERIAL PRIMARY KEY,
 	time timestamp DEFAULT current_timestamp,
+    prevTime timestamp,
 	symbol text,
 	price	real,
 	prevPrice real,

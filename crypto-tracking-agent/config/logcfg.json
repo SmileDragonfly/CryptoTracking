@@ -1,6 +1,6 @@
 {
   "Type": "zap",
-  "FileName": "./logs/crypto-tracking-api.log",
+  "FileName": "./logs/crypto-tracking-agent.log",
   "MaxSize":   1,
   "MaxBackups": 3,
   "MaxAge": 28,
