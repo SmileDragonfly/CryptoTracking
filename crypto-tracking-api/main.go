@@ -27,9 +27,10 @@ func main() {
 	}
 	logger.Logger.Info("Start logger succesfully")
 	// Load config
-	err = loadConfig(".")
+	err = loadConfig("./config/")
 	if err != nil {
 		logger.Logger.Error(err.Error())
+		panic(err)
 	}
 	GStrConn = fmt.Sprintf("port=%d host=%s user=%s password=%s dbname=%s sslmode=disable",
 		GConfig.HostPort, GConfig.HostName, GConfig.UserName, GConfig.Password, GConfig.DBName)
