@@ -1,25 +1,35 @@
 package main
 
 import (
+	"cryptoapi/logger"
+	"encoding/json"
 	"fmt"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	log "github.com/jeanphorn/log4go"
+	"os"
 )
 
 // run will be called by Start() so business logic goes here
 func main() {
-	// Init log file
-	// load config file, it's optional
-	// or log.LoadConfiguration("./example.json", "json")
-	// config file could be json or xml
-	log.LoadConfiguration("./log4go.json")
-	log.Info("----------Start crypto-tracking-agent----------")
-	defer log.Close()
-	// Load config
-	err := loadConfig(".")
+	// Parse log config
+	byteCfg, err := os.ReadFile("./config/logcfg.json")
 	if err != nil {
-		log.Error(err.Error())
+		panic(err)
+	}
+	var logCfg logger.LoggerConfig
+	err = json.Unmarshal(byteCfg, &logCfg)
+	if err != nil {
+		panic(err)
+	}
+	err = logger.NewLogger(logCfg)
+	if err != nil {
+		panic(err)
+	}
+	logger.Logger.Info("Start logger succesfully")
+	// Load config
+	err = loadConfig(".")
+	if err != nil {
+		logger.Logger.Error(err.Error())
 	}
 	GStrConn = fmt.Sprintf("port=%d host=%s user=%s password=%s dbname=%s sslmode=disable",
 		GConfig.HostPort, GConfig.HostName, GConfig.UserName, GConfig.Password, GConfig.DBName)

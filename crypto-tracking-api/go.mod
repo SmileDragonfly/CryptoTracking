@@ -3,12 +3,13 @@ module cryptoapi
 go 1.19
 
 require (
-	CryptoTrackingSql v0.0.0-00010101000000-000000000000
+	cryptosql v0.0.0-00010101000000-000000000000
 	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-gonic/gin v1.9.0
-	github.com/jeanphorn/log4go v0.0.0-20190526082429-7dbb8deb9468
 	github.com/lib/pq v1.10.7
+	github.com/natefinch/lumberjack v2.0.0+incompatible
 	github.com/spf13/viper v1.15.0
+	go.uber.org/zap v1.21.0
 )
 
 require (
@@ -35,9 +36,10 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
-	github.com/toolkits/file v0.0.0-20160325033739-a5b3c5147e07 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.9 // indirect
+	go.uber.org/atomic v1.9.0 // indirect
+	go.uber.org/multierr v1.8.0 // indirect
 	golang.org/x/arch v0.0.0-20210923205945-b76863e36670 // indirect
 	golang.org/x/crypto v0.5.0 // indirect
 	golang.org/x/net v0.7.0 // indirect
@@ -45,7 +47,8 @@ require (
 	golang.org/x/text v0.7.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
+	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace CryptoTrackingSql => ./../crypto-sql/
+replace cryptosql => ./../crypto-sql/

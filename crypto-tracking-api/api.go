@@ -1,10 +1,10 @@
 package main
 
 import (
-	"CryptoTrackingSql/sqlc"
+	"cryptoapi/logger"
+	"cryptosql/sqlc"
 	"database/sql"
 	"github.com/gin-gonic/gin"
-	log "github.com/jeanphorn/log4go"
 	_ "github.com/lib/pq"
 	"net/http"
 	"time"
@@ -26,7 +26,7 @@ func get1MinUp(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -35,7 +35,7 @@ func get1MinUp(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll1MinPercentDesc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -50,7 +50,7 @@ func get1MinUp(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -63,7 +63,7 @@ func get5MinUp(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -72,7 +72,7 @@ func get5MinUp(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll5MinPercentDesc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -87,7 +87,7 @@ func get5MinUp(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -100,7 +100,7 @@ func get10MinUp(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -109,7 +109,7 @@ func get10MinUp(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll10MinPercentDesc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -124,7 +124,7 @@ func get10MinUp(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -137,7 +137,7 @@ func get15MinUp(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -146,7 +146,7 @@ func get15MinUp(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll15MinPercentDesc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -161,7 +161,7 @@ func get15MinUp(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -174,7 +174,7 @@ func get30MinUp(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -183,7 +183,7 @@ func get30MinUp(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll30MinPercentDesc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -198,7 +198,7 @@ func get30MinUp(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -211,7 +211,7 @@ func get60MinUp(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -220,7 +220,7 @@ func get60MinUp(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll60MinPercentDesc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -235,7 +235,7 @@ func get60MinUp(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -248,7 +248,7 @@ func get1MinDown(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -257,7 +257,7 @@ func get1MinDown(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll1MinPercentAsc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -272,7 +272,7 @@ func get1MinDown(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -285,7 +285,7 @@ func get5MinDown(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -294,7 +294,7 @@ func get5MinDown(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll5MinPercentAsc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -309,7 +309,7 @@ func get5MinDown(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -322,7 +322,7 @@ func get10MinDown(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -331,7 +331,7 @@ func get10MinDown(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll10MinPercentAsc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -346,7 +346,7 @@ func get10MinDown(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -359,7 +359,7 @@ func get15MinDown(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -368,7 +368,7 @@ func get15MinDown(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll15MinPercentAsc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -383,7 +383,7 @@ func get15MinDown(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -396,7 +396,7 @@ func get30MinDown(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -405,7 +405,7 @@ func get30MinDown(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll30MinPercentAsc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -420,7 +420,7 @@ func get30MinDown(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
@@ -433,7 +433,7 @@ func get60MinDown(c *gin.Context) {
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		conn.Close()
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
 		return
@@ -442,7 +442,7 @@ func get60MinDown(c *gin.Context) {
 	query := sqlc.New(conn)
 	dataDB, err := query.GetAll60MinPercentAsc(c, 10)
 	if err != nil {
-		log.Error(err.Error())
+		logger.Logger.Error(err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
 	} else {
 		var dataRet []BUSDPercent
@@ -457,7 +457,7 @@ func get60MinDown(c *gin.Context) {
 			dataRet = append(dataRet, it)
 		}
 		if err != nil {
-			log.Error(err.Error())
+			logger.Logger.Error(err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
 		} else {
 			c.JSON(http.StatusOK, dataRet)
