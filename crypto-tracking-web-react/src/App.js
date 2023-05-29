@@ -1,38 +1,45 @@
 import logo from './logo.svg';
 import './App.css';
-import ReactTable from './ReactTable'
+import UpTables from './components/UpTables'
+import DownTables from "./components/DownTables";
+import {useState} from "react";
 
 function App() {
-    let url = "https://5c05-14-177-7-113.ngrok-free.app"
+    let endPoint = "https://f666-118-70-124-128.ngrok-free.app"
+    // let url = "http://localhost:8888"
+    // create a state variable to store the name of the component to display
+    const [component, setComponent] = useState("Up");
+    // create a handler function to update the state variable
+    const handleClick = (name) => {
+        setComponent(name);
+    };
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {/*<a*/}
-        {/*  className="App-link"*/}
-        {/*  href="https://reactjs.org"*/}
-        {/*  target="_blank"*/}
-        {/*  rel="noopener noreferrer"*/}
-        {/*>*/}
-        {/*  Learn React*/}
-        {/*</a>*/}
-          <div class="btn-group">
-              <button>All</button>
-              <button>1m-5m-10m</button>
-              <button>15m-30m-60m</button>
-          </div>
-      </header>
-        <div className="grid-container">
-            <ReactTable endPoint={url+'/1minup'} caption={'1 Min Up'}/>
-            <ReactTable endPoint={url+'/5minup'} caption={'5 Min Up'}/>
-            <ReactTable endPoint={url+'/10minup'} caption={'10 Min Up'}/>
-            <ReactTable endPoint={url+'/15minup'} caption={'15 Min Up'}/>
-            <ReactTable endPoint={url+'/30minup'} caption={'30 Min Up'}/>
-            <ReactTable endPoint={url+'/60minup'} caption={'60 Min Up'}/>
+        <div class="btn-group">
+          <button onClick={() => handleClick("Up")}>Up</button>
+          <button onClick={() => handleClick("Down")}>Down</button>
+          <button onClick={() => handleClick("History")}>History</button>
         </div>
-        <footer> Contact me</footer>
+        <p>Current: {component}</p>
+      </header>
+        <DisplayComponent name={component} endpoint={endPoint}/>
     </div>
   );
+}
+
+// create a functional component that takes the name of the component as a prop
+function DisplayComponent({ name, endpoint }) {
+// create an object that maps the name to the component
+    const components = {
+        Up: <UpTables endPoint={endpoint}/>,
+        Down: <DownTables endPoint={endpoint}/>,
+        History: <UpTables endPoint={endpoint}/>,
+    };
+
+// return the component that matches the name or null if none
+    return components[name] || null;
 }
 
 export default App;

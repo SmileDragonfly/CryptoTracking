@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 
+
 function ReactTable({endPoint, caption}){// Define state variables for JSON data and loading status
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(0);
