@@ -1,8 +1,8 @@
 package main
 
 import (
-	"CryptoTrackingSql/sqlc"
 	"context"
+	"cryptosql/sqlc"
 	"database/sql"
 	"fmt"
 	"log"
@@ -21,7 +21,7 @@ func TestCalculatePercent(t *testing.T) {
 	query := sqlc.New(conn)
 	strPrice, err := query.GetLastestBUSDPrice(context.Background())
 	strPrice1MinAgo, err := query.Get60MinAgoBUSDPrice(context.Background())
-	percent, err := CalculatePercent(strPrice.String, strPrice1MinAgo.String)
+	percent, err := CalculatePercent(strPrice.String, strPrice1MinAgo.Price.String)
 	if err != nil {
 		t.Error(err.Error())
 	}

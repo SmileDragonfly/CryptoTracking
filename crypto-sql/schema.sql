@@ -63,3 +63,9 @@ CREATE TABLE tblBUSD60MinPercent (
 	prevPrice real,
 	percent real
 );
+
+CREATE TABLE tblBUSDTopCoinHistory (
+    id SERIAL PRIMARY KEY,
+    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    topCoin text
+);

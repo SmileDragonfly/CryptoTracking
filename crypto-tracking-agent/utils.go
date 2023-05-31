@@ -14,6 +14,11 @@ type TPricePercent struct {
 	Percent   float64 `json:"percent"`
 }
 
+type TTopCoin struct {
+	Symbol  string  `json:"Symbol"`
+	Percent float64 `json:"Percent"`
+}
+
 func getCurrentFuncname() string {
 	pc, _, _, _ := runtime.Caller(1)
 	return fmt.Sprintf("%s", runtime.FuncForPC(pc).Name())

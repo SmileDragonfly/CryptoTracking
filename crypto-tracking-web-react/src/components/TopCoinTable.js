@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 
 
-function ReactTable({endPoint, caption}){// Define state variables for JSON data and loading status
+function TopCoinTable({endPoint, caption}){// Define state variables for JSON data and loading status
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(0);
+    let url = endPoint + '/topcoin'
 
 // Use useEffect hook to call fetchData when component mounts
     useEffect( () => {
@@ -28,13 +29,13 @@ function ReactTable({endPoint, caption}){// Define state variables for JSON data
                 }
                 setTimeout(()=>{fetchData(endPoint)}, 5000)
             }
-            fetchData(endPoint);
+            fetchData(url);
         }
-    , [endPoint]);
+    , [url]);
 
 // Return JSX elements for rendering the table
     return (
-        <div>
+        <div className={TopCoinTable}>
             {loading === 0 ? (
 // Show a loading message while data is being fetched
                 <p>Loading...</p>
@@ -45,23 +46,17 @@ function ReactTable({endPoint, caption}){// Define state variables for JSON data
                     <thead>
                     <tr>
                         <th>Time</th>
-                        <th>PrevTime</th>
-                        <th>Symbol</th>
-                        <th>Price</th>
-                        <th>PrevPrice</th>
-                        <th>Percent</th>
                     </tr>
                     </thead>
                     <tbody>
                     {data.map((item) => (
 // Render each item as a table row with table cells
-                        <tr key={item.ID}>
+                        <tr>
                             <td><Moment format={"HH:mm:ss"}>{item.Time}</Moment></td>
-                            <td><Moment format={"HH:mm:ss"}>{item.PrevTime}</Moment></td>
-                            <td>{item.Symbol.replace("BUSD", "")}</td>
-                            <td>{item.Price.toFixed(5)}</td>
-                            <td>{item.PrevPrice.toFixed(5)}</td>
-                            <td>{item.Percent.toFixed(5)}</td>
+                            {item.TopCoin.map((it) => (
+                                <td>{it.Symbol.replace("BUSD", "")}</td>
+                            ))
+                            }
                         </tr>
                     ))}
                     </tbody>
@@ -71,4 +66,4 @@ function ReactTable({endPoint, caption}){// Define state variables for JSON data
     );
 }
 
-export default ReactTable;
+export default TopCoinTable;

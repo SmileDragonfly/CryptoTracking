@@ -64,6 +64,15 @@ func (q *Queries) Delete60MinBUSDPercent(ctx context.Context) error {
 	return err
 }
 
+const deleteTopCoinHistory = `-- name: DeleteTopCoinHistory :exec
+DELETE FROM tblBUSDTopCoinHistory WHERE "time" < (NOW() - INTERVAL '1 days')
+`
+
+func (q *Queries) DeleteTopCoinHistory(ctx context.Context) error {
+	_, err := q.db.ExecContext(ctx, deleteTopCoinHistory)
+	return err
+}
+
 const deleteWasteBUSDPrice = `-- name: DeleteWasteBUSDPrice :exec
 DELETE FROM tblBUSDPrice WHERE "time" < (NOW() - INTERVAL '7200 seconds')
 `
@@ -590,14 +599,46 @@ func (q *Queries) GetAll60MinPercentDesc(ctx context.Context, limit int32) ([]Tb
 }
 
 const getLastestBUSDPrice = `-- name: GetLastestBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice ORDER BY "time" DESC LIMIT 1
+SELECT "time", "price" FROM tblBUSDPrice ORDER BY "time" DESC LIMIT 1
 `
 
-func (q *Queries) GetLastestBUSDPrice(ctx context.Context) (sql.NullString, error) {
+type GetLastestBUSDPriceRow struct {
+	Time  sql.NullTime
+	Price sql.NullString
+}
+
+func (q *Queries) GetLastestBUSDPrice(ctx context.Context) (GetLastestBUSDPriceRow, error) {
 	row := q.db.QueryRowContext(ctx, getLastestBUSDPrice)
-	var price sql.NullString
-	err := row.Scan(&price)
-	return price, err
+	var i GetLastestBUSDPriceRow
+	err := row.Scan(&i.Time, &i.Price)
+	return i, err
+}
+
+const getTopCoinHistory = `-- name: GetTopCoinHistory :many
+SELECT id, time, topcoin FROM tblBUSDTopCoinHistory ORDER BY "time" DESC LIMIT $1
+`
+
+func (q *Queries) GetTopCoinHistory(ctx context.Context, limit int32) ([]Tblbusdtopcoinhistory, error) {
+	rows, err := q.db.QueryContext(ctx, getTopCoinHistory, limit)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Tblbusdtopcoinhistory
+	for rows.Next() {
+		var i Tblbusdtopcoinhistory
+		if err := rows.Scan(&i.ID, &i.Time, &i.Topcoin); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
 }
 
 const insert10MinBUSDPercent = `-- name: Insert10MinBUSDPercent :exec
@@ -744,5 +785,14 @@ INSERT INTO tblBUSDPrice ("price") VALUES ($1)
 
 func (q *Queries) InsertBUSDPrice(ctx context.Context, price sql.NullString) error {
 	_, err := q.db.ExecContext(ctx, insertBUSDPrice, price)
+	return err
+}
+
+const insertTopCoinHistory = `-- name: InsertTopCoinHistory :exec
+INSERT INTO tblBUSDTopCoinHistory (topCoin) VALUES ($1)
+`
+
+func (q *Queries) InsertTopCoinHistory(ctx context.Context, topcoin sql.NullString) error {
+	_, err := q.db.ExecContext(ctx, insertTopCoinHistory, topcoin)
 	return err
 }

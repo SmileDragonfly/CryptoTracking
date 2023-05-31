@@ -4,6 +4,7 @@ import (
 	"cryptoapi/logger"
 	"cryptosql/sqlc"
 	"database/sql"
+	"encoding/json"
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
 	"net/http"
@@ -18,6 +19,16 @@ type BUSDPercent struct {
 	Price     float64
 	PrevPrice float64
 	Percent   float64
+}
+
+type TTopCoin struct {
+	Symbol  string  `json:"Symbol"`
+	Percent float64 `json:"Percent"`
+}
+
+type TTopCoinRet struct {
+	Time    time.Time
+	TopCoin []TTopCoin
 }
 
 func get1MinUp(c *gin.Context) {
@@ -51,12 +62,7 @@ func get1MinUp(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -89,12 +95,7 @@ func get5MinUp(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -127,12 +128,7 @@ func get10MinUp(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -165,12 +161,7 @@ func get15MinUp(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -203,12 +194,7 @@ func get30MinUp(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -241,12 +227,7 @@ func get60MinUp(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -279,12 +260,7 @@ func get1MinDown(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -317,12 +293,7 @@ func get5MinDown(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -355,12 +326,7 @@ func get10MinDown(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -393,12 +359,7 @@ func get15MinDown(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -431,12 +392,7 @@ func get30MinDown(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
-		}
+		c.JSON(http.StatusOK, dataRet)
 	}
 }
 
@@ -469,11 +425,38 @@ func get60MinDown(c *gin.Context) {
 			it.Percent = v.Percent.Float64
 			dataRet = append(dataRet, it)
 		}
-		if err != nil {
-			logger.Logger.Error(err.Error())
-			c.JSON(http.StatusInternalServerError, gin.H{"Error": "Marshal data to json failed"})
-		} else {
-			c.JSON(http.StatusOK, dataRet)
+		c.JSON(http.StatusOK, dataRet)
+	}
+}
+
+func topCoin(c *gin.Context) {
+	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
+	if err != nil {
+		logger.Logger.Error(err.Error())
+		conn.Close()
+		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Cannot connect to database"})
+		return
+	}
+	defer conn.Close()
+	query := sqlc.New(conn)
+	dataDB, err := query.GetTopCoinHistory(c, int32(GConfig.NumberOfTopCoinRecord))
+	if err != nil {
+		logger.Logger.Error(err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"Error": "Get data from db failed"})
+	} else {
+		topCoinRet := []TTopCoinRet{}
+		for _, v := range dataDB {
+			it := TTopCoinRet{}
+			it.Time = v.Time.Time
+			itTopCoin := []TTopCoin{}
+			err := json.Unmarshal([]byte(v.Topcoin.String), &itTopCoin)
+			if err != nil {
+				logger.Logger.Error("Unmarshal topcoin data failed:", err)
+				continue
+			}
+			it.TopCoin = itTopCoin
+			topCoinRet = append(topCoinRet, it)
 		}
+		c.JSON(http.StatusOK, topCoinRet)
 	}
 }

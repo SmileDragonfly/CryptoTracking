@@ -1,7 +1,7 @@
 -- name: InsertBUSDPrice :exec
 INSERT INTO tblBUSDPrice ("price") VALUES ($1);
 -- name: GetLastestBUSDPrice :one
-SELECT "price" FROM tblBUSDPrice ORDER BY "time" DESC LIMIT 1;
+SELECT "time", "price" FROM tblBUSDPrice ORDER BY "time" DESC LIMIT 1;
 -- name: Get1MinAgoBUSDPrice :one
 SELECT "time", "price" FROM tblBUSDPrice WHERE "time" > (NOW() - INTERVAL '61 seconds') ORDER BY "time" ASC LIMIT 1;
 -- name: Get5MinAgoBUSDPrice :one
@@ -69,3 +69,10 @@ SELECT * FROM tblBUSD60MinPercent ORDER BY "percent" ASC LIMIT $1;
 
 -- name: DeleteWasteBUSDPrice :exec
 DELETE FROM tblBUSDPrice WHERE "time" < (NOW() - INTERVAL '7200 seconds');
+
+-- name: InsertTopCoinHistory :exec
+INSERT INTO tblBUSDTopCoinHistory (topCoin) VALUES ($1);
+-- name: GetTopCoinHistory :many
+SELECT * FROM tblBUSDTopCoinHistory ORDER BY "time" DESC LIMIT $1;
+-- name: DeleteTopCoinHistory :exec
+DELETE FROM tblBUSDTopCoinHistory WHERE "time" < (NOW() - INTERVAL '1 days');

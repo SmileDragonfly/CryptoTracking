@@ -9,6 +9,7 @@ import (
 	"fmt"
 	_ "github.com/lib/pq"
 	"os"
+	"sort"
 	"time"
 )
 
@@ -68,12 +69,14 @@ func main() {
 					query := sqlc.New(conn)
 					query = query.WithTx(tx)
 					// 2.Get price 1,5,10,15,30,60 min ago
+					strPriceLastest, err := query.GetLastestBUSDPrice(context.Background())
 					strPrice1MinAgo, err := query.Get1MinAgoBUSDPrice(context.Background())
 					strPrice5MinAgo, err := query.Get5MinAgoBUSDPrice(context.Background())
 					strPrice10MinAgo, err := query.Get10MinAgoBUSDPrice(context.Background())
 					strPrice15MinAgo, err := query.Get15MinAgoBUSDPrice(context.Background())
 					strPrice30MinAgo, err := query.Get30MinAgoBUSDPrice(context.Background())
 					strPrice60MinAgo, err := query.Get60MinAgoBUSDPrice(context.Background())
+					chanPercentLastest := make(chan []TPricePercent)
 					chanPercent1Min := make(chan []TPricePercent)
 					chanPercent5Min := make(chan []TPricePercent)
 					chanPercent10Min := make(chan []TPricePercent)
@@ -81,12 +84,14 @@ func main() {
 					chanPercent30Min := make(chan []TPricePercent)
 					chanPercent60Min := make(chan []TPricePercent)
 					logger.Logger.Info("Begin calculate percent")
+					go CalculatePercentRountine(strPrice, strPriceLastest.Price.String, chanPercentLastest)
 					go CalculatePercentRountine(strPrice, strPrice1MinAgo.Price.String, chanPercent1Min)
 					go CalculatePercentRountine(strPrice, strPrice5MinAgo.Price.String, chanPercent5Min)
 					go CalculatePercentRountine(strPrice, strPrice10MinAgo.Price.String, chanPercent10Min)
 					go CalculatePercentRountine(strPrice, strPrice15MinAgo.Price.String, chanPercent15Min)
 					go CalculatePercentRountine(strPrice, strPrice30MinAgo.Price.String, chanPercent30Min)
 					go CalculatePercentRountine(strPrice, strPrice60MinAgo.Price.String, chanPercent60Min)
+					arrPercentLastest := <-chanPercentLastest
 					arrPercent1Min := <-chanPercent1Min
 					arrPercent5Min := <-chanPercent5Min
 					arrPercent10Min := <-chanPercent10Min
@@ -172,6 +177,33 @@ func main() {
 									sql.NullFloat64{v.Percent, true}})
 						}
 					}
+					if arrPercentLastest == nil {
+						logger.Logger.Warning("CalculatePercent Lastest NUll Data")
+					} else {
+						sort.Slice(arrPercentLastest, func(i, j int) bool {
+							return arrPercentLastest[i].Percent > arrPercentLastest[j].Percent
+						})
+						arrPercentLastest = arrPercentLastest[:GConfig.NumberOfTopcoint]
+						arrTopCoin := []TTopCoin{}
+						for _, v := range arrPercentLastest {
+							it := TTopCoin{}
+							it.Symbol = v.Symbol
+							it.Percent = v.Percent
+							arrTopCoin = append(arrTopCoin, it)
+						}
+						// Convert to json
+						strTopCoin, err := json.Marshal(&arrTopCoin)
+						if err != nil {
+							logger.Logger.Error("Convert arrTopCoin to string failed:", err)
+						}
+						err = query.InsertTopCoinHistory(context.Background(), sql.NullString{
+							String: string(strTopCoin),
+							Valid:  true,
+						})
+						if err != nil {
+							logger.Logger.Error("Insert to TopCoinHistory failed:", err)
+						}
+					}
 					// Insert to DB
 					err = query.InsertBUSDPrice(context.Background(), sql.NullString{strPrice, true})
 					if err != nil {
@@ -179,6 +211,11 @@ func main() {
 					}
 					// Delete waste data
 					err = query.DeleteWasteBUSDPrice(context.Background())
+					if err != nil {
+						logger.Logger.Error(err.Error())
+					}
+					// Delete waste data
+					err = query.DeleteTopCoinHistory(context.Background())
 					if err != nil {
 						logger.Logger.Error(err.Error())
 					}

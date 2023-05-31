@@ -3,9 +3,10 @@ import './App.css';
 import UpTables from './components/UpTables'
 import DownTables from "./components/DownTables";
 import {useState} from "react";
+import TopCoinTable from "./components/TopCoinTable";
 
 function App() {
-    let endPoint = "https://f666-118-70-124-128.ngrok-free.app"
+    let endPoint = "https://aef4-118-70-124-128.ngrok-free.app"
     // let url = "http://localhost:8888"
     // create a state variable to store the name of the component to display
     const [component, setComponent] = useState("Up");
@@ -20,7 +21,7 @@ function App() {
         <div class="btn-group">
           <button onClick={() => handleClick("Up")}>Up</button>
           <button onClick={() => handleClick("Down")}>Down</button>
-          <button onClick={() => handleClick("History")}>History</button>
+          <button onClick={() => handleClick("TopCoin")}>TopCoin</button>
         </div>
         <p>Current: {component}</p>
       </header>
@@ -35,7 +36,7 @@ function DisplayComponent({ name, endpoint }) {
     const components = {
         Up: <UpTables endPoint={endpoint}/>,
         Down: <DownTables endPoint={endpoint}/>,
-        History: <UpTables endPoint={endpoint}/>,
+        TopCoin: <TopCoinTable endPoint={endpoint}/>,
     };
 
 // return the component that matches the name or null if none

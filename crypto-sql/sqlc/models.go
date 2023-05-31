@@ -73,3 +73,9 @@ type Tblbusdprice struct {
 	Time  sql.NullTime
 	Price sql.NullString
 }
+
+type Tblbusdtopcoinhistory struct {
+	ID      int32
+	Time    sql.NullTime
+	Topcoin sql.NullString
+}
