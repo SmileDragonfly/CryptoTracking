@@ -1,0 +1,11 @@
+syntax="proto3";
+import "google/protobuf/empty.proto";
+option go_package="grpc.telesvc";
+// Send message
+message SendMessageRequest {
+  int64 ChatID=1;
+  string Text=2;
+}
+service TelegramService {
+  rpc SendMessage(SendMessageRequest) returns (google.protobuf.Empty);
+}

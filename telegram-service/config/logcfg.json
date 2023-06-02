@@ -1,0 +1,8 @@
+{
+  "Type": "zap",
+  "FileName": "./logs/telesvc.log",
+  "MaxSize":   1,
+  "MaxBackups": 3,
+  "MaxAge": 28,
+  "Level": 0
+}
