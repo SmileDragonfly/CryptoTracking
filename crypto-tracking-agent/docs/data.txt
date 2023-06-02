@@ -1,0 +1,4 @@
+- tblTopCoinHistory:
++ Calculate every 5 seconds
++ Save top 10 highest percent to topCoin field
+[{"Symbol":"abcd", "Percent": 1.2121}, {"Symbol":"xyzt", "Percent": 5.1234}]

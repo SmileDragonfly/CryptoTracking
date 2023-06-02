@@ -69,3 +69,9 @@ CREATE TABLE tblBUSDTopCoinHistory (
     time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     topCoin text
 );
+
+CREATE TABLE tblTopCoinCounter (
+    id SERIAL PRIMARY KEY,
+    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    topCoinCounter text
+)
