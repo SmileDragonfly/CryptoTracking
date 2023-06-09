@@ -37,7 +37,7 @@ func main() {
 	defer ticker.Stop()
 	done := make(chan bool)
 	go func() {
-		var arrTopCoin3min [][]TopCoin1Min
+		var arrTopCoin3Min [][]TopCoin1Min
 		for {
 			// A select blocks until one of its cases can run, then it executes that case.
 			// It chooses one at random if multiple are ready
@@ -69,13 +69,14 @@ func main() {
 						}
 					}
 					if len(arrTopCoin1Min) > 0 {
-						arrTopCoin3min = append(arrTopCoin3min, arrTopCoin1Min)
-						strUpCoin3Min, _ := json.Marshal(&arrTopCoin3min)
-						logger.Instance.Info(string(strUpCoin3Min))
-						if len(arrTopCoin1Min) == 3 {
+						arrTopCoin3Min = append(arrTopCoin3Min, arrTopCoin1Min)
+						byteTopCoin3Min, _ := json.MarshalIndent(&arrTopCoin3Min, "", "  ")
+						logger.Instance.Info("Data len: ", len(arrTopCoin1Min))
+						logger.Instance.Info("Data: ", string(byteTopCoin3Min))
+						if len(arrTopCoin3Min) == 3 {
 							// Append 3 min to a slice
 							var arrTopCoinAll []TopCoin1Min
-							for _, v := range arrTopCoin3min {
+							for _, v := range arrTopCoin3Min {
 								arrTopCoinAll = append(arrTopCoinAll, v...)
 							}
 							// Find if appear 3 times (3 minutes in a rows)
@@ -93,11 +94,13 @@ func main() {
 									SendTeleMessage(config.TelegramUserId, string(byteSend))
 								}
 							}
+							logger.Instance.Info("3 mins have no top coin, delete buffer")
 							// Delete slice
-							arrTopCoin3min = nil
+							arrTopCoin3Min = nil
 						}
 					} else {
-						arrTopCoin3min = nil
+						logger.Instance.Info("1 min have no top coin, delete buffer")
+						arrTopCoin3Min = nil
 					}
 
 				}()

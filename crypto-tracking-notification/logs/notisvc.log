@@ -429,3 +429,72 @@
 2023-06-08 18:20:55	[INFO]	[Start scan DB to send notification]
 2023-06-08 18:20:55	[INFO]	[Request send message: {"chat_id":1930587972,"text":"[{\"Symbol\":\"AKROBUSD\",\"Percent\":0.006237054}]"}]
 2023-06-08 18:20:56	[INFO]	[Send message successfully]
+2023-06-09 15:42:14	[INFO]	[==================================================]
+2023-06-09 15:42:14	[INFO]	[Start logger succesfully]
+2023-06-09 15:43:14	[INFO]	[Start scan DB to send notification]
+2023-06-09 15:43:14	[INFO]	[[[{"Symbol":"XNOBUSD","Percent":0.007225513}]]]
+2023-06-09 15:44:14	[INFO]	[Start scan DB to send notification]
+2023-06-09 15:44:14	[INFO]	[[[{"Symbol":"XNOBUSD","Percent":0.007225513}],[{"Symbol":"OGBUSD","Percent":0.01050661},{"Symbol":"SANTOSBUSD","Percent":0.0060103456},{"Symbol":"TORNBUSD","Percent":0.0055249226}]]]
+2023-06-09 15:44:14	[INFO]	[3 mins have no top coin, delete buffer]
+2023-06-09 15:45:14	[INFO]	[Start scan DB to send notification]
+2023-06-09 15:45:14	[INFO]	[[[{"Symbol":"QUICKBUSD","Percent":0.008213505},{"Symbol":"WAVESBUSD","Percent":0.0057070027},{"Symbol":"SCRTBUSD","Percent":0.005540177},{"Symbol":"OGBUSD","Percent":0.0053842934}]]]
+2023-06-09 15:46:14	[INFO]	[Start scan DB to send notification]
+2023-06-09 15:46:14	[INFO]	[[[{"Symbol":"QUICKBUSD","Percent":0.008213505},{"Symbol":"WAVESBUSD","Percent":0.0057070027},{"Symbol":"SCRTBUSD","Percent":0.005540177},{"Symbol":"OGBUSD","Percent":0.0053842934}],[{"Symbol":"AGLDBUSD","Percent":0.008163221},{"Symbol":"ASRBUSD","Percent":0.0072874036}]]]
+2023-06-09 15:47:14	[INFO]	[Start scan DB to send notification]
+2023-06-09 15:47:14	[INFO]	[[[{"Symbol":"QUICKBUSD","Percent":0.008213505},{"Symbol":"WAVESBUSD","Percent":0.0057070027},{"Symbol":"SCRTBUSD","Percent":0.005540177},{"Symbol":"OGBUSD","Percent":0.0053842934}],[{"Symbol":"AGLDBUSD","Percent":0.008163221},{"Symbol":"ASRBUSD","Percent":0.0072874036}],[{"Symbol":"FTTBUSD","Percent":0.007428669},{"Symbol":"EPXBUSD","Percent":0.006855174},{"Symbol":"ACABUSD","Percent":0.005208324}]]]
+2023-06-09 15:47:14	[INFO]	[3 mins have no top coin, delete buffer]
+2023-06-09 15:49:38	[INFO]	[==================================================]
+2023-06-09 15:49:38	[INFO]	[Start logger succesfully]
+2023-06-09 15:50:38	[INFO]	[Start scan DB to send notification]
+2023-06-09 15:50:38	[INFO]	[Data len:  1 [
+    [
+        {
+            "Symbol": "TFUELBUSD",
+            "Percent": 0.0052770358
+        }
+    ]
+]]
+2023-06-09 15:51:38	[INFO]	[Start scan DB to send notification]
+2023-06-09 15:51:38	[INFO]	[1 min have no top coin, delete buffer]
+2023-06-09 15:52:38	[INFO]	[Start scan DB to send notification]
+2023-06-09 15:52:38	[INFO]	[Data len:  1 [
+    [
+        {
+            "Symbol": "FTTBUSD",
+            "Percent": 0.008482623
+        }
+    ]
+]]
+2023-06-09 15:53:38	[INFO]	[Start scan DB to send notification]
+2023-06-09 15:53:38	[INFO]	[Data len:  5 [
+    [
+        {
+            "Symbol": "FTTBUSD",
+            "Percent": 0.008482623
+        }
+    ],
+    [
+        {
+            "Symbol": "QUICKBUSD",
+            "Percent": 0.0101833
+        },
+        {
+            "Symbol": "GTCBUSD",
+            "Percent": 0.009856557
+        },
+        {
+            "Symbol": "CVPBUSD",
+            "Percent": 0.006902533
+        },
+        {
+            "Symbol": "MOBBUSD",
+            "Percent": 0.006768203
+        },
+        {
+            "Symbol": "AERGOBUSD",
+            "Percent": 0.0067437803
+        }
+    ]
+]]
+2023-06-09 15:56:03	[INFO]	[==================================================]
+2023-06-09 15:56:03	[INFO]	[Start logger succesfully]
