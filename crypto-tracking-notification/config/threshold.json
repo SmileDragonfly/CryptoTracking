@@ -1,0 +1,14 @@
+{
+  "OneMinUp": 0.005,
+  "FiveMinUp": 0.01,
+  "TenMinUp": 0.015,
+  "FifteenMinUp": 0.03,
+  "ThirtyMinUp": 0.04,
+  "SixtyMinUp": 0.05,
+  "OneMinDown": -0.005,
+  "FiveMinDown": -0.01,
+  "TenMinDown": -0.015,
+  "FifteenMinDown": -0.03,
+  "ThirtyMinDown": -0.04,
+  "SixtyMinDown": -0.05
+}
