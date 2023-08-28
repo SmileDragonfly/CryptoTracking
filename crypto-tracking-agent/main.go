@@ -8,36 +8,29 @@ import (
 	"encoding/json"
 	"fmt"
 	_ "github.com/lib/pq"
-	"os"
 	"sort"
 	"time"
 )
 
 // run will be called by Start() so business logic goes here
 func main() {
-	// Parse log config
-	byteCfg, err := os.ReadFile("./config/logcfg.json")
+	err := logger.NewLogger("./config/logcfg.json")
 	if err != nil {
 		panic(err)
 	}
-	var logCfg logger.LoggerConfig
-	err = json.Unmarshal(byteCfg, &logCfg)
-	if err != nil {
-		panic(err)
-	}
-	err = logger.NewLogger(logCfg)
-	if err != nil {
-		panic(err)
-	}
-	logger.Logger.Info("Start logger succesfully")
+	logger.Info("Start logger succesfully")
 	// Begin main program
 	err = loadConfig("./config/")
 	if err != nil {
-		logger.Logger.Error(err)
+		logger.Error(err)
 		panic(err)
 	}
 	GStrConn = fmt.Sprintf("port=%d host=%s user=%s password=%s dbname=%s sslmode=disable",
 		GConfig.HostPort, GConfig.HostName, GConfig.UserName, GConfig.Password, GConfig.DBName)
+	// 1.Open DB
+	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
+	defer conn.Close()
+	queries := sqlc.New(conn)
 	// Setup a ticker
 	var api BinanceAPI
 	ticker := time.NewTicker(time.Duration(GConfig.TickerGetPrice) * time.Second)
@@ -50,32 +43,29 @@ func main() {
 			case <-ticker.C:
 				strPrice, err := api.getAllPrice("BUSD$")
 				if err != nil {
-					logger.Logger.Error(err.Error())
+					logger.Error(err.Error())
 				} else {
 					// Calculate percent
-					// 1.Open DB
-					conn, err := sql.Open(GConfig.DBDriver, GStrConn)
-					if err != nil {
-						logger.Logger.Error(err.Error())
-						conn.Close()
-						continue
-					}
-					tx, err := conn.Begin()
-					if err != nil {
-						logger.Logger.Error(err.Error())
-						conn.Close()
-						continue
-					}
-					query := sqlc.New(conn)
-					query = query.WithTx(tx)
+					//if err != nil {
+					//	logger.Error(err.Error())
+					//	conn.Close()
+					//	continue
+					//}
+					//tx, err := conn.Begin()
+					//if err != nil {
+					//	logger.Error(err.Error())
+					//	conn.Close()
+					//	continue
+					//}
+					//query := queries.WithTx(tx)
 					// 2.Get price 1,5,10,15,30,60 min ago
-					strPriceLastest, err := query.GetLastestBUSDPrice(context.Background())
-					strPrice1MinAgo, err := query.Get1MinAgoBUSDPrice(context.Background())
-					strPrice5MinAgo, err := query.Get5MinAgoBUSDPrice(context.Background())
-					strPrice10MinAgo, err := query.Get10MinAgoBUSDPrice(context.Background())
-					strPrice15MinAgo, err := query.Get15MinAgoBUSDPrice(context.Background())
-					strPrice30MinAgo, err := query.Get30MinAgoBUSDPrice(context.Background())
-					strPrice60MinAgo, err := query.Get60MinAgoBUSDPrice(context.Background())
+					strPriceLastest, err := queries.GetLastestBUSDPrice(context.Background())
+					strPrice1MinAgo, err := queries.Get1MinAgoBUSDPrice(context.Background())
+					strPrice5MinAgo, err := queries.Get5MinAgoBUSDPrice(context.Background())
+					strPrice10MinAgo, err := queries.Get10MinAgoBUSDPrice(context.Background())
+					strPrice15MinAgo, err := queries.Get15MinAgoBUSDPrice(context.Background())
+					strPrice30MinAgo, err := queries.Get30MinAgoBUSDPrice(context.Background())
+					strPrice60MinAgo, err := queries.Get60MinAgoBUSDPrice(context.Background())
 					chanPercentLastest := make(chan []TPricePercent)
 					chanPercent1Min := make(chan []TPricePercent)
 					chanPercent5Min := make(chan []TPricePercent)
@@ -83,7 +73,7 @@ func main() {
 					chanPercent15Min := make(chan []TPricePercent)
 					chanPercent30Min := make(chan []TPricePercent)
 					chanPercent60Min := make(chan []TPricePercent)
-					logger.Logger.Info("Begin calculate percent")
+					logger.Info("Begin calculate percent")
 					go CalculatePercentRountine(strPrice, strPriceLastest.Price.String, chanPercentLastest)
 					go CalculatePercentRountine(strPrice, strPrice1MinAgo.Price.String, chanPercent1Min)
 					go CalculatePercentRountine(strPrice, strPrice5MinAgo.Price.String, chanPercent5Min)
@@ -98,88 +88,115 @@ func main() {
 					arrPercent15Min := <-chanPercent15Min
 					arrPercent30Min := <-chanPercent30Min
 					arrPercent60Min := <-chanPercent60Min
-					logger.Logger.Info("End calculate percent")
+					logger.Info("End calculate percent")
 					if arrPercent1Min == nil {
-						logger.Logger.Warning("CalculatePercent 1 Min NUll Data")
+						logger.Warning("CalculatePercent 1 Min NUll Data")
 					} else {
-						query.Delete1MinBUSDPercent(context.Background())
-						for _, v := range arrPercent1Min {
-							query.Insert1MinBUSDPercent(context.Background(),
-								sqlc.Insert1MinBUSDPercentParams{strPrice1MinAgo.Time,
-									sql.NullString{v.Symbol, true},
-									sql.NullFloat64{v.Price, true},
-									sql.NullFloat64{v.PrevPrice, true},
-									sql.NullFloat64{v.Percent, true}})
+						queries.Delete1MinBUSDPercent(context.Background())
+						//logger.Debugf("Insert1MinBUSDPercent begin")
+						//for _, v := range arrPercent1Min {
+						//	queries.Insert1MinBUSDPercent(context.Background(),
+						//		sqlc.Insert1MinBUSDPercentParams{strPrice1MinAgo.Time,
+						//			sql.NullString{v.Symbol, true},
+						//			sql.NullFloat64{v.Price, true},
+						//			sql.NullFloat64{v.PrevPrice, true},
+						//			sql.NullFloat64{v.Percent, true}})
+						//}
+						//logger.Debugf("Insert1MinBUSDPercent end")
+						logger.Debugf("Insert1MinBUSDPercent begin insert all")
+						rows := []sqlc.Insert1MinBUSDPercentParams{}
+						for _, it := range arrPercent1Min {
+							row := sqlc.Insert1MinBUSDPercentParams{
+								Prevtime:  strPrice1MinAgo.Time,
+								Symbol:    sql.NullString{it.Symbol, true},
+								Price:     sql.NullFloat64{it.Price, true},
+								Prevprice: sql.NullFloat64{it.PrevPrice, true},
+								Percent:   sql.NullFloat64{it.Percent, true},
+							}
+							rows = append(rows, row)
 						}
+						queries.Insert1MinBUSDPercentRows(context.Background(), rows)
+						logger.Debugf("Insert1MinBUSDPercent end insert all")
 					}
 					if arrPercent5Min == nil {
-						logger.Logger.Warning("CalculatePercent 5 Min NUll Data")
+						logger.Warning("CalculatePercent 5 Min NUll Data")
 					} else {
-						query.Delete5MinBUSDPercent(context.Background())
+						logger.Debugf("Insert5MinBUSDPercent begin")
+						queries.Delete5MinBUSDPercent(context.Background())
 						for _, v := range arrPercent5Min {
-							query.Insert5MinBUSDPercent(context.Background(),
+							queries.Insert5MinBUSDPercent(context.Background(),
 								sqlc.Insert5MinBUSDPercentParams{strPrice5MinAgo.Time,
 									sql.NullString{v.Symbol, true},
 									sql.NullFloat64{v.Price, true},
 									sql.NullFloat64{v.PrevPrice, true},
 									sql.NullFloat64{v.Percent, true}})
 						}
+						logger.Debugf("Insert30MinBUSDPercent end")
 					}
 					if arrPercent10Min == nil {
-						logger.Logger.Warning("CalculatePercent 10 Min NUll Data")
+						logger.Warning("CalculatePercent 10 Min NUll Data")
 					} else {
-						query.Delete10MinBUSDPercent(context.Background())
+						logger.Debugf("Insert10MinBUSDPercent begin")
+						queries.Delete10MinBUSDPercent(context.Background())
 						for _, v := range arrPercent10Min {
-							query.Insert10MinBUSDPercent(context.Background(),
+							queries.Insert10MinBUSDPercent(context.Background(),
 								sqlc.Insert10MinBUSDPercentParams{strPrice10MinAgo.Time,
 									sql.NullString{v.Symbol, true},
 									sql.NullFloat64{v.Price, true},
 									sql.NullFloat64{v.PrevPrice, true},
 									sql.NullFloat64{v.Percent, true}})
 						}
+						logger.Debugf("Insert30MinBUSDPercent end")
 					}
 					if arrPercent15Min == nil {
-						logger.Logger.Warning("CalculatePercent 15 Min NUll Data")
+						logger.Warning("CalculatePercent 15 Min NUll Data")
 					} else {
-						query.Delete15MinBUSDPercent(context.Background())
+						logger.Debugf("Insert15MinBUSDPercent begin")
+						queries.Delete15MinBUSDPercent(context.Background())
 						for _, v := range arrPercent15Min {
-							query.Insert15MinBUSDPercent(context.Background(),
+							queries.Insert15MinBUSDPercent(context.Background(),
 								sqlc.Insert15MinBUSDPercentParams{strPrice15MinAgo.Time,
 									sql.NullString{v.Symbol, true},
 									sql.NullFloat64{v.Price, true},
 									sql.NullFloat64{v.PrevPrice, true},
 									sql.NullFloat64{v.Percent, true}})
 						}
+						logger.Debugf("Insert30MinBUSDPercent end")
 					}
 					if arrPercent30Min == nil {
-						logger.Logger.Warning("CalculatePercent 30 Min NUll Data")
+						logger.Warning("CalculatePercent 30 Min NUll Data")
 					} else {
-						query.Delete30MinBUSDPercent(context.Background())
+						logger.Debugf("Insert30MinBUSDPercent begin")
+						queries.Delete30MinBUSDPercent(context.Background())
 						for _, v := range arrPercent30Min {
-							query.Insert30MinBUSDPercent(context.Background(),
+							queries.Insert30MinBUSDPercent(context.Background(),
 								sqlc.Insert30MinBUSDPercentParams{strPrice30MinAgo.Time,
 									sql.NullString{v.Symbol, true},
 									sql.NullFloat64{v.Price, true},
 									sql.NullFloat64{v.PrevPrice, true},
 									sql.NullFloat64{v.Percent, true}})
 						}
+						logger.Debugf("Insert30MinBUSDPercent end")
 					}
 					if arrPercent60Min == nil {
-						logger.Logger.Warning("CalculatePercent 60 Min NUll Data")
+						logger.Warning("CalculatePercent 60 Min NUll Data")
 					} else {
-						query.Delete60MinBUSDPercent(context.Background())
+						logger.Debugf("Insert60MinBUSDPercent begin")
+						queries.Delete60MinBUSDPercent(context.Background())
 						for _, v := range arrPercent60Min {
-							query.Insert60MinBUSDPercent(context.Background(),
+							queries.Insert60MinBUSDPercent(context.Background(),
 								sqlc.Insert60MinBUSDPercentParams{strPrice60MinAgo.Time,
 									sql.NullString{v.Symbol, true},
 									sql.NullFloat64{v.Price, true},
 									sql.NullFloat64{v.PrevPrice, true},
 									sql.NullFloat64{v.Percent, true}})
 						}
+						logger.Debugf("Insert60MinBUSDPercent end")
 					}
 					if arrPercentLastest == nil {
-						logger.Logger.Warning("CalculatePercent Lastest NUll Data")
+						logger.Warning("CalculatePercent Lastest NUll Data")
 					} else {
+						logger.Debugf("InsertTopCoinHistory begin")
 						sort.Slice(arrPercentLastest, func(i, j int) bool {
 							return arrPercentLastest[i].Percent > arrPercentLastest[j].Percent
 						})
@@ -194,33 +211,34 @@ func main() {
 						// Convert to json
 						strTopCoin, err := json.Marshal(&arrTopCoin)
 						if err != nil {
-							logger.Logger.Error("Convert arrTopCoin to string failed:", err)
+							logger.Error("Convert arrTopCoin to string failed:", err)
 						}
-						err = query.InsertTopCoinHistory(context.Background(), sql.NullString{
+						err = queries.InsertTopCoinHistory(context.Background(), sql.NullString{
 							String: string(strTopCoin),
 							Valid:  true,
 						})
 						if err != nil {
-							logger.Logger.Error("Insert to TopCoinHistory failed:", err)
+							logger.Error("Insert to TopCoinHistory failed:", err)
 						}
+						logger.Debugf("InsertTopCoinHistory end")
 					}
 					// Insert to DB
-					err = query.InsertBUSDPrice(context.Background(), sql.NullString{strPrice, true})
+					logger.Debugf("InsertBUSDPrice")
+					err = queries.InsertBUSDPrice(context.Background(), sql.NullString{strPrice, true})
 					if err != nil {
-						logger.Logger.Error(err.Error())
+						logger.Error(err.Error())
 					}
 					// Delete waste data
-					err = query.DeleteWasteBUSDPrice(context.Background())
+					err = queries.DeleteWasteBUSDPrice(context.Background())
 					if err != nil {
-						logger.Logger.Error(err.Error())
+						logger.Error(err.Error())
 					}
 					// Delete waste data
-					err = query.DeleteTopCoinHistory(context.Background())
+					err = queries.DeleteTopCoinHistory(context.Background())
 					if err != nil {
-						logger.Logger.Error(err.Error())
+						logger.Error(err.Error())
 					}
-					tx.Commit()
-					conn.Close()
+					//tx.Commit()
 				}
 			}
 		}

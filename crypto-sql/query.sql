@@ -76,3 +76,4 @@ INSERT INTO tblBUSDTopCoinHistory (topCoin) VALUES ($1);
 SELECT * FROM tblBUSDTopCoinHistory ORDER BY "time" DESC LIMIT $1;
 -- name: DeleteTopCoinHistory :exec
 DELETE FROM tblBUSDTopCoinHistory WHERE "time" < (NOW() - INTERVAL '1 days');
+

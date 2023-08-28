@@ -653,7 +653,7 @@ type Insert10MinBUSDPercentParams struct {
 	Percent   sql.NullFloat64
 }
 
-func (q *Queries) Insert10MinBUSDPercent(ctx context.Context, arg Insert10MinBUSDPercentParams) error {
+	func (q *Queries) Insert10MinBUSDPercent(ctx context.Context, arg Insert10MinBUSDPercentParams) error {
 	_, err := q.db.ExecContext(ctx, insert10MinBUSDPercent,
 		arg.Prevtime,
 		arg.Symbol,

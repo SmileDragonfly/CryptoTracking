@@ -18,13 +18,13 @@ func (b BinanceAPI) getAllPrice(symReg string) (string, error) {
 	link := "https://api.binance.com/api/v3/ticker/price"
 	resp, err := http.Get(link)
 	if err != nil {
-		logger.Logger.Error(err.Error())
+		logger.Error(err.Error())
 		return "", err
 	}
 	defer resp.Body.Close()
 	respBody, err := io.ReadAll(resp.Body)
 	if err != nil {
-		logger.Logger.Error(err.Error())
+		logger.Error(err.Error())
 		return "", err
 	}
 	//respStr := string(respBody)
@@ -32,7 +32,7 @@ func (b BinanceAPI) getAllPrice(symReg string) (string, error) {
 	var arrJson []TTickerPrice
 	err = json.Unmarshal(respBody, &arrJson)
 	if err != nil {
-		logger.Logger.Error(err.Error())
+		logger.Error(err.Error())
 		return "", err
 	}
 	// Get all symbol match with symReg
@@ -47,7 +47,7 @@ func (b BinanceAPI) getAllPrice(symReg string) (string, error) {
 	var byteRet []byte
 	byteRet, err = json.Marshal(arrRet)
 	if err != nil {
-		logger.Logger.Error(err.Error())
+		logger.Error(err.Error())
 		return "", err
 	}
 	return string(byteRet), err

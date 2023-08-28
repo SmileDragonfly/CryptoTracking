@@ -14,5 +14,7 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-# crypto-tracking-agent log file
+# crypto-tracking-agent log fileS
 crypto-tracking-agent/CryptoTrackingAgent.log
+*.log
+telegram-service/logs/telesvc.log

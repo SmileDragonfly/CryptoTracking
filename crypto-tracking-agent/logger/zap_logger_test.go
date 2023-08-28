@@ -47,7 +47,7 @@ func TestZapLogger_Debug(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			z := ZapLogger{tt.fields.logger.logger}
+			z := ZapLogger{tt.fields.logger.}
 			z.Debug(tt.args.a...)
 		})
 	}
@@ -93,7 +93,7 @@ func TestZapLogger_Error(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			z := ZapLogger{tt.fields.logger.logger}
+			z := ZapLogger{tt.fields.logger.}
 			z.Error(tt.args.a...)
 		})
 	}

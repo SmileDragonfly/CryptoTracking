@@ -70,9 +70,10 @@ func main() {
 					}
 					if len(arrTopCoin1Min) > 0 {
 						arrTopCoin3Min = append(arrTopCoin3Min, arrTopCoin1Min)
-						byteTopCoin3Min, _ := json.MarshalIndent(&arrTopCoin3Min, "", "  ")
-						logger.Instance.Info("Data len: ", len(arrTopCoin1Min))
-						logger.Instance.Info("Data: ", string(byteTopCoin3Min))
+						//byteTopCoin3Min, _ := json.MarshalIndent(&arrTopCoin3Min, "", "  ")
+						byteTopCoin3Min, _ := json.Marshal(&arrTopCoin3Min)
+						logger.Instance.Info("Data len: ", len(arrTopCoin3Min))
+						logger.Instance.Info(string(byteTopCoin3Min))
 						if len(arrTopCoin3Min) == 3 {
 							// Append 3 min to a slice
 							var arrTopCoinAll []TopCoin1Min
@@ -94,9 +95,9 @@ func main() {
 									SendTeleMessage(config.TelegramUserId, string(byteSend))
 								}
 							}
-							logger.Instance.Info("3 mins have no top coin, delete buffer")
-							// Delete slice
-							arrTopCoin3Min = nil
+							logger.Instance.Info("3 mins have no top coin, delete first item")
+							// Delete first item in slice
+							arrTopCoin3Min = append(arrTopCoin3Min[:0], arrTopCoin3Min[1:]...)
 						}
 					} else {
 						logger.Instance.Info("1 min have no top coin, delete buffer")
