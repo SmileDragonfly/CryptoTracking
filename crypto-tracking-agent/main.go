@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"cryptoagent/logger"
-	"cryptosql/sqlc"
 	"database/sql"
 	"encoding/json"
 	"fmt"
