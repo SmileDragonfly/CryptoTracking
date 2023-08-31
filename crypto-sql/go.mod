@@ -1,5 +1,3 @@
-module cryptosql
+module github.com/SmileDragonfly/CryptoTracking/tree/main/crypto-sql
 
 go 1.19
-
-require github.com/lib/pq v1.10.9
