@@ -1,8 +1,8 @@
 package main
 
 import (
+	grpc_telesvc "github.com/SmileDragonfly/go-lib/crypto-grpc/telegram-service"
 	"google.golang.org/grpc"
-	grpc_telesvc "grpcsvc/telegram-service"
 	"net"
 	"telesvc/logger"
 )

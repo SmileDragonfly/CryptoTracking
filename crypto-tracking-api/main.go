@@ -2,34 +2,22 @@ package main
 
 import (
 	"cryptoapi/logger"
-	"encoding/json"
 	"fmt"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"os"
 )
 
 // run will be called by Start() so business logic goes here
 func main() {
-	// Parse log config
-	byteCfg, err := os.ReadFile("./config/logcfg.json")
+	err := logger.NewLogger("./config/logcfg.json")
 	if err != nil {
 		panic(err)
 	}
-	var logCfg logger.LoggerConfig
-	err = json.Unmarshal(byteCfg, &logCfg)
-	if err != nil {
-		panic(err)
-	}
-	err = logger.NewLogger(logCfg)
-	if err != nil {
-		panic(err)
-	}
-	logger.Logger.Info("Start logger succesfully")
+	logger.Info("Start logger succesfully")
 	// Load config
 	err = loadConfig("./config/")
 	if err != nil {
-		logger.Logger.Error(err.Error())
+		logger.Error(err.Error())
 		panic(err)
 	}
 	GStrConn = fmt.Sprintf("port=%d host=%s user=%s password=%s dbname=%s sslmode=disable",

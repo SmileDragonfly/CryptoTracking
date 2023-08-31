@@ -1,15 +1,23 @@
 package logger
 
-import "errors"
+import (
+	"encoding/json"
+	"errors"
+	"os"
+)
 
 type ILogger interface {
 	Debug(a ...any)
 	Info(a ...any)
 	Warning(a ...any)
 	Error(a ...any)
+	Debugf(template string, a ...any)
+	Infof(template string, a ...any)
+	Warningf(template string, a ...any)
+	Errorf(template string, a ...any)
 }
 
-var Logger ILogger
+var instance ILogger
 
 type LoggerConfig struct {
 	Type       string
@@ -24,16 +32,54 @@ const (
 	ZAP_LOGGER string = "zap"
 )
 
-func NewLogger(config LoggerConfig) error {
-	switch config.Type {
+func NewLogger(sPath string) error {
+	// Init logger
+	byteCfg, err := os.ReadFile(sPath)
+	if err != nil {
+		panic(err)
+	}
+	var logCfg LoggerConfig
+	err = json.Unmarshal(byteCfg, &logCfg)
+	if err != nil {
+		panic(err)
+	}
+	switch logCfg.Type {
 	case ZAP_LOGGER:
-		logger, err := NewZapLogger(config)
+		logger, err := NewZapLogger(logCfg)
 		if err != nil {
 			return err
 		}
-		Logger = logger
-		return nil
+		instance = logger
+		break
 	default:
 		return errors.New("Invalid logger type")
 	}
+	instance.Info("==================================================")
+	instance.Info("Start logger succesfully")
+	return nil
+}
+
+func Debug(a ...any) {
+	instance.Debug(a...)
+}
+func Info(a ...any) {
+	instance.Info(a...)
+}
+func Warning(a ...any) {
+	instance.Warning(a...)
+}
+func Error(a ...any) {
+	instance.Error(a...)
+}
+func Debugf(template string, a ...any) {
+	instance.Debugf(template, a...)
+}
+func Infof(template string, a ...any) {
+	instance.Infof(template, a...)
+}
+func Warningf(template string, a ...any) {
+	instance.Warningf(template, a...)
+}
+func Errorf(template string, a ...any) {
+	instance.Errorf(template, a...)
 }

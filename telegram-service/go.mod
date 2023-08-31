@@ -2,14 +2,12 @@ module telesvc
 
 go 1.19
 
-replace grpcsvc => ../grpc
-
 require (
+	github.com/SmileDragonfly/go-lib v1.0.1
 	github.com/golang/protobuf v1.5.3
 	github.com/natefinch/lumberjack v2.0.0+incompatible
 	go.uber.org/zap v1.24.0
 	google.golang.org/grpc v1.55.0
-	grpcsvc v0.0.0-00010101000000-000000000000
 )
 
 require (

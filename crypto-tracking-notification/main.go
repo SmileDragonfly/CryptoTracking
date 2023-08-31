@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"context"
 	"cryptonoti/logger"
-	"cryptosql/sqlc"
 	"database/sql"
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/SmileDragonfly/go-lib/crypto-sql/sqlc"
 	_ "github.com/lib/pq"
 	"net/http"
 	"time"
@@ -23,13 +23,13 @@ func main() {
 	// Load config
 	_, err = LoadConfig("./config")
 	if err != nil {
-		logger.Instance.Info("Load config error:", err)
+		logger.Info("Load config error:", err)
 		panic(err)
 	}
 	// Load threshold
 	_, err = LoadThreshold("./config/threshold.json")
 	if err != nil {
-		logger.Instance.Info("Load threshold error:", err)
+		logger.Info("Load threshold error:", err)
 		panic(err)
 	}
 	// Create ticker to check DB interval
@@ -46,17 +46,17 @@ func main() {
 				return
 			case <-ticker.C:
 				func() {
-					logger.Instance.Info("Start scan DB to send notification")
+					logger.Info("Start scan DB to send notification")
 					db, err := sql.Open(config.DBDriver, config.GetConnectionString())
 					if err != nil {
-						logger.Instance.Error("Open DB connection failed:", err)
+						logger.Error("Open DB connection failed:", err)
 						return
 					}
 					defer db.Close()
 					query := sqlc.New(db)
 					upCoin1Min, err := query.GetAll1MinPercentDesc(context.Background(), 5)
 					if err != nil {
-						logger.Instance.Error("Get up coin 1 min failed:", err)
+						logger.Error("Get up coin 1 min failed:", err)
 						return
 					}
 					var arrTopCoin1Min []TopCoin1Min
@@ -72,8 +72,8 @@ func main() {
 						arrTopCoin3Min = append(arrTopCoin3Min, arrTopCoin1Min)
 						//byteTopCoin3Min, _ := json.MarshalIndent(&arrTopCoin3Min, "", "  ")
 						byteTopCoin3Min, _ := json.Marshal(&arrTopCoin3Min)
-						logger.Instance.Info("Data len: ", len(arrTopCoin3Min))
-						logger.Instance.Info(string(byteTopCoin3Min))
+						logger.Info("Data len: ", len(arrTopCoin3Min))
+						logger.Info(string(byteTopCoin3Min))
 						if len(arrTopCoin3Min) == 3 {
 							// Append 3 min to a slice
 							var arrTopCoinAll []TopCoin1Min
@@ -95,12 +95,12 @@ func main() {
 									SendTeleMessage(config.TelegramUserId, string(byteSend))
 								}
 							}
-							logger.Instance.Info("3 mins have no top coin, delete first item")
+							logger.Info("3 mins have no top coin, delete first item")
 							// Delete first item in slice
 							arrTopCoin3Min = append(arrTopCoin3Min[:0], arrTopCoin3Min[1:]...)
 						}
 					} else {
-						logger.Instance.Info("1 min have no top coin, delete buffer")
+						logger.Info("1 min have no top coin, delete buffer")
 						arrTopCoin3Min = nil
 					}
 
@@ -129,7 +129,7 @@ func SendTeleMessage(chatId int64, text string) error {
 	if err != nil {
 		return err
 	}
-	logger.Instance.Info("Request send message:", string(reqByte))
+	logger.Info("Request send message:", string(reqByte))
 	resp, err := http.Post(link, "application/json", bytes.NewBuffer(reqByte))
 	if err != nil {
 		return err
@@ -137,9 +137,9 @@ func SendTeleMessage(chatId int64, text string) error {
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
 		strErr := fmt.Sprintf("Send failed. Status: %q", resp.StatusCode)
-		logger.Instance.Error(strErr)
+		logger.Error(strErr)
 		return errors.New(strErr)
 	}
-	logger.Instance.Info("Send message successfully")
+	logger.Info("Send message successfully")
 	return nil
 }

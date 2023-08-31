@@ -17,7 +17,7 @@ type ILogger interface {
 	Errorf(template string, a ...any)
 }
 
-var Instance ILogger
+var instance ILogger
 
 type LoggerConfig struct {
 	Type       string
@@ -49,12 +49,37 @@ func NewLogger(sPath string) error {
 		if err != nil {
 			return err
 		}
-		Instance = logger
+		instance = logger
 		break
 	default:
 		return errors.New("Invalid logger type")
 	}
-	Instance.Info("==================================================")
-	Instance.Info("Start logger succesfully")
+	instance.Info("==================================================")
+	instance.Info("Start logger succesfully")
 	return nil
+}
+
+func Debug(a ...any) {
+	instance.Debug(a...)
+}
+func Info(a ...any) {
+	instance.Info(a...)
+}
+func Warning(a ...any) {
+	instance.Warning(a...)
+}
+func Error(a ...any) {
+	instance.Error(a...)
+}
+func Debugf(template string, a ...any) {
+	instance.Debugf(template, a...)
+}
+func Infof(template string, a ...any) {
+	instance.Infof(template, a...)
+}
+func Warningf(template string, a ...any) {
+	instance.Warningf(template, a...)
+}
+func Errorf(template string, a ...any) {
+	instance.Errorf(template, a...)
 }
