@@ -6,6 +6,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"github.com/SmileDragonfly/go-lib/crypto-sql/sqlc"
 	_ "github.com/lib/pq"
 	"sort"
 	"time"
