@@ -33,4 +33,21 @@ kubectl apply -f db-service.yaml
 kubectl get all
 minikube dashboard
 kubectl exec -it pod/postgresdb-7b475497d6-gw2w6 -- psql -h localhost -U postgres --password -p 5432 ewallet
+*Explain:
+kubectl exec: This is the Kubernetes command for executing a command in a running container within a pod.
+-it: These flags are used together to indicate that you want an interactive terminal session (-i for interactive and -t for terminal).
+pod/postgresdb-7b475497d6-gw2w6: This is the name of the pod where you want to execute the command.
+--: This separator is used to separate the kubectl options from the command to be executed inside the container.
+psql -h localhost -U postgres --password -p 5432 ewallet: This is the psql command and its arguments. Let's break it down further:
+psql: This is the PostgreSQL command-line utility.
+-h localhost: This specifies that you want to connect to the PostgreSQL database running on localhost within the pod.
+-U postgres: This specifies the username (postgres) to connect to the database.
+--password: This flag tells psql to prompt for the password interactively.
+-p 5432: This specifies the port number (5432) to connect to the PostgreSQL server.
+ewallet: This is the name of the PostgreSQL database to connect to.
 
+6.8. Connect to postgresql database in minikube clust from host machine
+https://stackoverflow.com/questions/60710171/minikube-ip-is-not-reachable
+*Step:
+- Check minikube service list:  minikube service list
+- Start tunnel to service:  minikube service postgresdb
