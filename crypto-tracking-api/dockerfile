@@ -1,0 +1,17 @@
+# Use an official Go runtime as the base image
+FROM golang:1.19.4
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the contents of the crypto-agent directory into the container at /app/crypto-agent
+COPY . .
+
+# Build the Go application
+RUN go build -o cryptoapi .
+
+# Expose port 8888
+EXPOSE 8888
+
+# Set the command to run the application
+CMD ["./cryptoapi"]

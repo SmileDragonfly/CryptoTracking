@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	grpc_telesvc "github.com/SmileDragonfly/go-lib/crypto-grpc/telegram-service"
 	"github.com/golang/protobuf/ptypes/empty"
-	grpc_telesvc "grpcsvc/telegram-service"
 	"net/http"
 	"telesvc/logger"
 )

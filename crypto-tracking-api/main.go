@@ -42,5 +42,5 @@ func main() {
 	router.GET("/30mindown", get30MinDown)
 	router.GET("/60mindown", get60MinDown)
 	router.GET("/topcoin", topCoin)
-	router.Run("localhost:8888")
+	router.Run(":8888")
 }

@@ -1,0 +1,5 @@
+#Docker
+docker build -t smiledragonfile/<name> .
+docker run --name <container_name> <image_name> -p <host_port>:<container_port>
+#Kubernetes
+minikube start

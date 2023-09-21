@@ -6,7 +6,7 @@ import {useState} from "react";
 import TopCoinTable from "./components/TopCoinTable";
 
 function App() {
-    let endPoint = "https://aef4-118-70-124-128.ngrok-free.app"
+    let endPoint = "https://cryptoapi-357cs5nffa-as.a.run.app"
     // let url = "http://localhost:8888"
     // create a state variable to store the name of the component to display
     const [component, setComponent] = useState("Up");

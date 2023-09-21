@@ -1,0 +1,850 @@
+* 
+* ==> Audit <==
+* |-----------|-------|----------|---------------------------|---------|---------------------|---------------------|
+|  Command  | Args  | Profile  |           User            | Version |     Start Time      |      End Time       |
+|-----------|-------|----------|---------------------------|---------|---------------------|---------------------|
+| start     |       | minikube | DESKTOP-B3TCKVO\DATDT-LAP | v1.31.2 | 15 Sep 23 10:56 +07 | 15 Sep 23 11:01 +07 |
+| dashboard |       | minikube | DESKTOP-B3TCKVO\DATDT-LAP | v1.31.2 | 15 Sep 23 12:25 +07 |                     |
+| addons    | list  | minikube | DESKTOP-B3TCKVO\DATDT-LAP | v1.31.2 | 15 Sep 23 12:29 +07 | 15 Sep 23 12:29 +07 |
+| stop      |       | minikube | DESKTOP-B3TCKVO\DATDT-LAP | v1.31.2 | 15 Sep 23 14:18 +07 | 15 Sep 23 14:18 +07 |
+| stop      |       | minikube | DESKTOP-B3TCKVO\DATDT-LAP | v1.31.2 | 15 Sep 23 14:22 +07 | 15 Sep 23 14:22 +07 |
+| delete    | --all | minikube | DESKTOP-B3TCKVO\DATDT-LAP | v1.31.2 | 15 Sep 23 14:23 +07 | 15 Sep 23 14:23 +07 |
+| dashboard |       | minikube | DESKTOP-B3TCKVO\DATDT-LAP | v1.31.2 | 15 Sep 23 14:24 +07 |                     |
+| start     |       | minikube | DESKTOP-B3TCKVO\DATDT-LAP | v1.31.2 | 17 Sep 23 18:31 +07 |                     |
+|-----------|-------|----------|---------------------------|---------|---------------------|---------------------|
+
+* 
+* ==> Last Start <==
+* Log file created at: 2023/09/17 18:31:24
+Running on machine: DESKTOP-B3TCKVO
+Binary: Built with gc go1.20.7 for windows/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0917 18:31:24.197105   15484 out.go:296] Setting OutFile to fd 92 ...
+I0917 18:31:24.197635   15484 out.go:343] TERM=,COLORTERM=, which probably does not support color
+I0917 18:31:24.197635   15484 out.go:309] Setting ErrFile to fd 96...
+I0917 18:31:24.197635   15484 out.go:343] TERM=,COLORTERM=, which probably does not support color
+I0917 18:31:24.220493   15484 out.go:303] Setting JSON to false
+I0917 18:31:24.225289   15484 start.go:128] hostinfo: {"hostname":"DESKTOP-B3TCKVO","uptime":255731,"bootTime":1694694552,"procs":353,"os":"windows","platform":"Microsoft Windows 10 Home Single Language","platformFamily":"Standalone Workstation","platformVersion":"10.0.19045.3448 Build 19045.3448","kernelVersion":"10.0.19045.3448 Build 19045.3448","kernelArch":"x86_64","virtualizationSystem":"","virtualizationRole":"","hostId":"e61f5e7e-95ce-4402-bbdf-885e9a9aced9"}
+W0917 18:31:24.225289   15484 start.go:136] gopshost.Virtualization returned error: not implemented yet
+I0917 18:31:24.226376   15484 out.go:177] * minikube v1.31.2 on Microsoft Windows 10 Home Single Language 10.0.19045.3448 Build 19045.3448
+I0917 18:31:24.227453   15484 notify.go:220] Checking for updates...
+I0917 18:31:24.227998   15484 driver.go:373] Setting default libvirt URI to qemu:///system
+I0917 18:31:24.227998   15484 global.go:111] Querying for installed drivers using PATH=C:\Program Files\Go\bin;C:\Users\DATDT-LAP\go\bin;C:\Program Files\AdoptOpenJDK\jre-11.0.11.9-hotspot\bin;C:\Program Files\Python311\Scripts\;C:\Program Files\Python311\;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files\Git LFS;D:\MicrotecVN\Documents\FIM\Protobuf\protoc-3.5.1-win32\bin;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\Go\bin;C:\Program Files (x86)\Windows Kits\10\Debuggers\x64;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\Qt\Tools\OpenSSL\Win_x86\bin;C:\Qt\6.4.2\msvc2019_64\bin;C:\Qt\Tools\mingw1120_64\bin;D:\Program Files\Nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\CMake\bin;D:\Program Files\protoc-22.3-win64\bin;C:\Program Files\PuTTY\;D:\Program Files (x86)\ngrok;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Docker\Docker\resources\bin;D:\Setup\Kubernetes;D:\Program Files\Minikube;C:\Users\DATDT-LAP\AppData\Local\Microsoft\WindowsApps;C:\Users\DATDT-LAP\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\GoLand 2022.2.5\bin;;C:\Users\DATDT-LAP\go\bin;C:\Program Files\JetBrains\PyCharm 2022.3\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.2\bin;;C:\Users\DATDT-LAP\.dotnet\tools;C:\Users\DATDT-LAP\AppData\Roaming\npm
+I0917 18:31:24.283008   15484 global.go:122] virtualbox default: true priority: 6, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:unable to find VBoxManage in $PATH Reason: Fix:Install VirtualBox Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/virtualbox/ Version:}
+I0917 18:31:24.311931   15484 global.go:122] vmware default: false priority: 5, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "vmrun": executable file not found in %!P(MISSING)ATH%!R(MISSING)eason: Fix:Install vmrun Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/vmware/ Version:}
+I0917 18:31:24.687702   15484 docker.go:121] docker version: linux-24.0.5:Docker Desktop 4.22.1 (118664)
+I0917 18:31:24.711204   15484 cli_runner.go:164] Run: docker system info --format "{{json .}}"
+I0917 18:31:25.477707   15484 info.go:266] docker info: {ID:b54e6e0b-142a-402c-8a08-84e75aee81be Containers:0 ContainersRunning:0 ContainersPaused:0 ContainersStopped:0 Images:0 Driver:vfs DriverStatus:[] SystemStatus:<nil> Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:<nil> Log:[awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:true KernelMemoryTCP:true CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6Tables:true Debug:false NFd:53 OomKillDisable:true NGoroutines:84 SystemTime:2023-09-17 11:26:29.171034718 +0000 UTC LoggingDriver:json-file CgroupDriver:cgroupfs NEventsListener:21 KernelVersion:5.15.90.1-microsoft-standard-WSL2 OperatingSystem:Docker Desktop OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:{AllowNondistributableArtifactsCIDRs:[] AllowNondistributableArtifactsHostnames:[] InsecureRegistryCIDRs:[127.0.0.0/8] IndexConfigs:{DockerIo:{Name:docker.io Mirrors:[] Secure:true Official:true}} Mirrors:[]} NCPU:8 MemTotal:12427657216 GenericResources:<nil> DockerRootDir:D:\Program Files\DockerData HTTPProxy:http.docker.internal:3128 HTTPSProxy:http.docker.internal:3128 NoProxy:hubproxy.docker.internal Name:docker-desktop Labels:[] ExperimentalBuild:false ServerVersion:24.0.5 ClusterStore: ClusterAdvertise: Runtimes:{Runc:{Path:runc}} DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:3dce8eb055cbb6872793272b4f20ed16117344f8 Expected:3dce8eb055cbb6872793272b4f20ed16117344f8} RuncCommit:{ID:v1.1.7-0-g860f061 Expected:v1.1.7-0-g860f061} InitCommit:{ID:de40ad0 Expected:de40ad0} SecurityOptions:[name=seccomp,profile=unconfined] ProductLicense: Warnings:[WARNING: No blkio throttle.read_bps_device support WARNING: No blkio throttle.write_bps_device support WARNING: No blkio throttle.read_iops_device support WARNING: No blkio throttle.write_iops_device support WARNING: daemon is not using the default seccomp profile] ServerErrors:[] ClientInfo:{Debug:false Plugins:[map[Name:buildx Path:C:\Program Files\Docker\cli-plugins\docker-buildx.exe SchemaVersion:0.1.0 ShortDescription:Docker Buildx Vendor:Docker Inc. Version:v0.11.2-desktop.1] map[Name:compose Path:C:\Program Files\Docker\cli-plugins\docker-compose.exe SchemaVersion:0.1.0 ShortDescription:Docker Compose Vendor:Docker Inc. Version:v2.20.2-desktop.1] map[Name:dev Path:C:\Program Files\Docker\cli-plugins\docker-dev.exe SchemaVersion:0.1.0 ShortDescription:Docker Dev Environments Vendor:Docker Inc. Version:v0.1.0] map[Name:extension Path:C:\Program Files\Docker\cli-plugins\docker-extension.exe SchemaVersion:0.1.0 ShortDescription:Manages Docker extensions Vendor:Docker Inc. Version:v0.2.20] map[Name:init Path:C:\Program Files\Docker\cli-plugins\docker-init.exe SchemaVersion:0.1.0 ShortDescription:Creates Docker-related starter files for your project Vendor:Docker Inc. Version:v0.1.0-beta.6] map[Name:sbom Path:C:\Program Files\Docker\cli-plugins\docker-sbom.exe SchemaVersion:0.1.0 ShortDescription:View the packaged-based Software Bill Of Materials (SBOM) for an image URL:https://github.com/docker/sbom-cli-plugin Vendor:Anchore Inc. Version:0.6.0] map[Name:scan Path:C:\Program Files\Docker\cli-plugins\docker-scan.exe SchemaVersion:0.1.0 ShortDescription:Docker Scan Vendor:Docker Inc. Version:v0.26.0] map[Name:scout Path:C:\Program Files\Docker\cli-plugins\docker-scout.exe SchemaVersion:0.1.0 ShortDescription:Command line tool for Docker Scout Vendor:Docker Inc. Version:0.20.0]] Warnings:<nil>}}
+I0917 18:31:25.478219   15484 global.go:122] docker default: true priority: 9, state: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0917 18:31:26.944414   15484 global.go:122] hyperv default: true priority: 8, state: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0917 18:31:26.970576   15484 global.go:122] podman default: true priority: 3, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "podman": executable file not found in %!P(MISSING)ATH%!R(MISSING)eason: Fix:Install Podman Doc:https://minikube.sigs.k8s.io/docs/drivers/podman/ Version:}
+I0917 18:31:26.997711   15484 global.go:122] qemu2 default: true priority: 3, state: {Installed:false Healthy:false Running:false NeedsImprovement:false Error:exec: "qemu-system-x86_64": executable file not found in %!P(MISSING)ATH%!R(MISSING)eason: Fix:Install qemu-system Doc:https://minikube.sigs.k8s.io/docs/reference/drivers/qemu/ Version:}
+I0917 18:31:26.997711   15484 global.go:122] ssh default: false priority: 4, state: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0917 18:31:26.997711   15484 driver.go:308] not recommending "ssh" due to default: false
+I0917 18:31:26.997711   15484 driver.go:343] Picked: docker
+I0917 18:31:26.997711   15484 driver.go:344] Alternatives: [hyperv ssh]
+I0917 18:31:26.997711   15484 driver.go:345] Rejects: [virtualbox vmware podman qemu2]
+I0917 18:31:26.998263   15484 out.go:177] * Automatically selected the docker driver. Other choices: hyperv, ssh
+I0917 18:31:26.999364   15484 start.go:298] selected driver: docker
+I0917 18:31:26.999364   15484 start.go:902] validating driver "docker" against <nil>
+I0917 18:31:26.999364   15484 start.go:913] status for docker: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0917 18:31:27.040894   15484 cli_runner.go:164] Run: docker system info --format "{{json .}}"
+I0917 18:31:27.314022   15484 info.go:266] docker info: {ID:b54e6e0b-142a-402c-8a08-84e75aee81be Containers:0 ContainersRunning:0 ContainersPaused:0 ContainersStopped:0 Images:0 Driver:vfs DriverStatus:[] SystemStatus:<nil> Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:<nil> Log:[awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:true KernelMemoryTCP:true CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6Tables:true Debug:false NFd:53 OomKillDisable:true NGoroutines:84 SystemTime:2023-09-17 11:26:29.171034718 +0000 UTC LoggingDriver:json-file CgroupDriver:cgroupfs NEventsListener:21 KernelVersion:5.15.90.1-microsoft-standard-WSL2 OperatingSystem:Docker Desktop OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:{AllowNondistributableArtifactsCIDRs:[] AllowNondistributableArtifactsHostnames:[] InsecureRegistryCIDRs:[127.0.0.0/8] IndexConfigs:{DockerIo:{Name:docker.io Mirrors:[] Secure:true Official:true}} Mirrors:[]} NCPU:8 MemTotal:12427657216 GenericResources:<nil> DockerRootDir:D:\Program Files\DockerData HTTPProxy:http.docker.internal:3128 HTTPSProxy:http.docker.internal:3128 NoProxy:hubproxy.docker.internal Name:docker-desktop Labels:[] ExperimentalBuild:false ServerVersion:24.0.5 ClusterStore: ClusterAdvertise: Runtimes:{Runc:{Path:runc}} DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:3dce8eb055cbb6872793272b4f20ed16117344f8 Expected:3dce8eb055cbb6872793272b4f20ed16117344f8} RuncCommit:{ID:v1.1.7-0-g860f061 Expected:v1.1.7-0-g860f061} InitCommit:{ID:de40ad0 Expected:de40ad0} SecurityOptions:[name=seccomp,profile=unconfined] ProductLicense: Warnings:[WARNING: No blkio throttle.read_bps_device support WARNING: No blkio throttle.write_bps_device support WARNING: No blkio throttle.read_iops_device support WARNING: No blkio throttle.write_iops_device support WARNING: daemon is not using the default seccomp profile] ServerErrors:[] ClientInfo:{Debug:false Plugins:[map[Name:buildx Path:C:\Program Files\Docker\cli-plugins\docker-buildx.exe SchemaVersion:0.1.0 ShortDescription:Docker Buildx Vendor:Docker Inc. Version:v0.11.2-desktop.1] map[Name:compose Path:C:\Program Files\Docker\cli-plugins\docker-compose.exe SchemaVersion:0.1.0 ShortDescription:Docker Compose Vendor:Docker Inc. Version:v2.20.2-desktop.1] map[Name:dev Path:C:\Program Files\Docker\cli-plugins\docker-dev.exe SchemaVersion:0.1.0 ShortDescription:Docker Dev Environments Vendor:Docker Inc. Version:v0.1.0] map[Name:extension Path:C:\Program Files\Docker\cli-plugins\docker-extension.exe SchemaVersion:0.1.0 ShortDescription:Manages Docker extensions Vendor:Docker Inc. Version:v0.2.20] map[Name:init Path:C:\Program Files\Docker\cli-plugins\docker-init.exe SchemaVersion:0.1.0 ShortDescription:Creates Docker-related starter files for your project Vendor:Docker Inc. Version:v0.1.0-beta.6] map[Name:sbom Path:C:\Program Files\Docker\cli-plugins\docker-sbom.exe SchemaVersion:0.1.0 ShortDescription:View the packaged-based Software Bill Of Materials (SBOM) for an image URL:https://github.com/docker/sbom-cli-plugin Vendor:Anchore Inc. Version:0.6.0] map[Name:scan Path:C:\Program Files\Docker\cli-plugins\docker-scan.exe SchemaVersion:0.1.0 ShortDescription:Docker Scan Vendor:Docker Inc. Version:v0.26.0] map[Name:scout Path:C:\Program Files\Docker\cli-plugins\docker-scout.exe SchemaVersion:0.1.0 ShortDescription:Command line tool for Docker Scout Vendor:Docker Inc. Version:0.20.0]] Warnings:<nil>}}
+W0917 18:31:27.314022   15484 out.go:239] ! docker is currently using the vfs storage driver, setting preload=false
+I0917 18:31:27.314585   15484 start_flags.go:305] no existing cluster config was found, will generate one from the flags 
+I0917 18:31:27.346436   15484 start_flags.go:382] Using suggested 6000MB memory alloc based on sys=24351MB, container=11851MB
+I0917 18:31:27.346976   15484 start_flags.go:901] Wait components to verify : map[apiserver:true system_pods:true]
+I0917 18:31:27.347502   15484 out.go:177] * Using Docker Desktop driver with root privileges
+I0917 18:31:27.348020   15484 cni.go:84] Creating CNI manager for ""
+I0917 18:31:27.348020   15484 cni.go:158] "docker" driver + "docker" container runtime found on kubernetes v1.24+, recommending bridge
+I0917 18:31:27.348020   15484 start_flags.go:314] Found "bridge CNI" CNI - setting NetworkPlugin=cni
+I0917 18:31:27.348020   15484 start_flags.go:319] config:
+{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 Memory:6000 CPUs:2 DiskSize:20000 VMDriver: Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:0 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.27.4 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:C:\Users\DATDT-LAP:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0}
+I0917 18:31:27.348561   15484 out.go:177] * Starting control plane node minikube in cluster minikube
+I0917 18:31:27.349089   15484 cache.go:122] Beginning downloading kic base image for docker with docker
+I0917 18:31:27.349634   15484 out.go:177] * Pulling base image ...
+I0917 18:31:27.350690   15484 preload.go:132] Checking if preload exists for k8s version v1.27.4 and runtime docker
+I0917 18:31:27.350690   15484 image.go:79] Checking for gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 in local docker daemon
+I0917 18:31:27.350690   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\gcr.io\k8s-minikube\storage-provisioner:v5 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\gcr.io\k8s-minikube\storage-provisioner_v5
+I0917 18:31:27.350690   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-scheduler:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-scheduler_v1.27.4
+I0917 18:31:27.350690   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-proxy:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-proxy_v1.27.4
+I0917 18:31:27.350690   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\pause:3.9 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\pause_3.9
+I0917 18:31:27.350690   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\etcd:3.5.7-0 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\etcd_3.5.7-0
+I0917 18:31:27.351197   15484 profile.go:148] Saving config to C:\Users\DATDT-LAP\.minikube\profiles\minikube\config.json ...
+I0917 18:31:27.351197   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-apiserver:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-apiserver_v1.27.4
+I0917 18:31:27.351197   15484 lock.go:35] WriteFile acquiring C:\Users\DATDT-LAP\.minikube\profiles\minikube\config.json: {Name:mkd83f9697fd2738d2e5defe28e4a9a9db3c4c15 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0917 18:31:27.354799   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-controller-manager:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-controller-manager_v1.27.4
+I0917 18:31:27.361213   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\coredns\coredns:v1.10.1 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\coredns\coredns_v1.10.1
+I0917 18:31:27.574694   15484 cache.go:150] Downloading gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 to local cache
+I0917 18:31:27.574694   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\kic\amd64\kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631.tar -> C:\Users\DATDT-LAP\.minikube\cache\kic\amd64\kicbase_v0.0.40@sha256_8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631.tar
+I0917 18:31:27.577116   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\kic\amd64\kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631.tar -> C:\Users\DATDT-LAP\.minikube\cache\kic\amd64\kicbase_v0.0.40@sha256_8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631.tar
+I0917 18:31:27.577116   15484 image.go:63] Checking for gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 in local cache directory
+I0917 18:31:27.577623   15484 image.go:66] Found gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 in local cache directory, skipping pull
+I0917 18:31:27.577659   15484 image.go:105] gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 exists in cache, skipping pull
+I0917 18:31:27.577659   15484 cache.go:153] successfully saved gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 as a tarball
+I0917 18:31:27.577659   15484 cache.go:163] Loading gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 from local cache
+I0917 18:31:27.577659   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\kic\amd64\kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631.tar -> C:\Users\DATDT-LAP\.minikube\cache\kic\amd64\kicbase_v0.0.40@sha256_8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631.tar
+I0917 18:31:27.604487   15484 cache.go:107] acquiring lock: {Name:mkfe247f78081120e85c18c80406ec02c22f9893 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:31:27.604487   15484 cache.go:107] acquiring lock: {Name:mk4990fe03cb6ff7613cd7e0a17e6e4e6f6916be Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:31:27.604487   15484 cache.go:107] acquiring lock: {Name:mk678409884c19f07bc0532f8dee53df0339d56c Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:31:27.604487   15484 cache.go:107] acquiring lock: {Name:mk2c76372cb9fd6782ad25e6a2fe42791a1c011d Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:31:27.605017   15484 cache.go:107] acquiring lock: {Name:mk23db690081792ad100479e88b4d2f1f1c5eeb1 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:31:27.605017   15484 cache.go:107] acquiring lock: {Name:mkcf004c3809f0a40a6de0198761452552764007 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:31:27.605017   15484 cache.go:107] acquiring lock: {Name:mka7e0c3f6f9479d3d5f5a5c8ac5276843642157 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:31:27.605530   15484 cache.go:107] acquiring lock: {Name:mk36928001a41378c0cca1a0f2eb16519c6b088b Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:31:27.613134   15484 image.go:134] retrieving image: registry.k8s.io/kube-apiserver:v1.27.4
+I0917 18:31:27.614793   15484 image.go:134] retrieving image: gcr.io/k8s-minikube/storage-provisioner:v5
+I0917 18:31:27.617531   15484 image.go:134] retrieving image: registry.k8s.io/kube-scheduler:v1.27.4
+I0917 18:31:27.617531   15484 image.go:134] retrieving image: registry.k8s.io/coredns/coredns:v1.10.1
+I0917 18:31:27.617531   15484 image.go:134] retrieving image: registry.k8s.io/kube-controller-manager:v1.27.4
+I0917 18:31:27.617531   15484 image.go:134] retrieving image: registry.k8s.io/kube-proxy:v1.27.4
+I0917 18:31:27.617531   15484 image.go:134] retrieving image: registry.k8s.io/pause:3.9
+I0917 18:31:27.618124   15484 image.go:134] retrieving image: registry.k8s.io/etcd:3.5.7-0
+I0917 18:31:27.621918   15484 image.go:177] daemon lookup for registry.k8s.io/kube-apiserver:v1.27.4: Error response from daemon: No such image: registry.k8s.io/kube-apiserver:v1.27.4
+I0917 18:31:27.623072   15484 image.go:177] daemon lookup for gcr.io/k8s-minikube/storage-provisioner:v5: Error response from daemon: No such image: gcr.io/k8s-minikube/storage-provisioner:v5
+I0917 18:31:27.626617   15484 image.go:177] daemon lookup for registry.k8s.io/etcd:3.5.7-0: Error response from daemon: No such image: registry.k8s.io/etcd:3.5.7-0
+I0917 18:31:27.626664   15484 image.go:177] daemon lookup for registry.k8s.io/kube-scheduler:v1.27.4: Error response from daemon: No such image: registry.k8s.io/kube-scheduler:v1.27.4
+I0917 18:31:27.645268   15484 image.go:177] daemon lookup for registry.k8s.io/pause:3.9: Error response from daemon: No such image: registry.k8s.io/pause:3.9
+I0917 18:31:27.646310   15484 image.go:177] daemon lookup for registry.k8s.io/coredns/coredns:v1.10.1: Error response from daemon: No such image: registry.k8s.io/coredns/coredns:v1.10.1
+I0917 18:31:27.651211   15484 image.go:177] daemon lookup for registry.k8s.io/kube-proxy:v1.27.4: Error response from daemon: No such image: registry.k8s.io/kube-proxy:v1.27.4
+I0917 18:31:27.670412   15484 image.go:177] daemon lookup for registry.k8s.io/kube-controller-manager:v1.27.4: Error response from daemon: No such image: registry.k8s.io/kube-controller-manager:v1.27.4
+I0917 18:31:29.061764   15484 cache.go:162] opening:  \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-apiserver_v1.27.4
+I0917 18:31:29.084630   15484 cache.go:162] opening:  \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\etcd_3.5.7-0
+I0917 18:31:29.184659   15484 cache.go:162] opening:  \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-scheduler_v1.27.4
+I0917 18:31:29.185695   15484 cache.go:162] opening:  \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\pause_3.9
+I0917 18:31:29.328876   15484 cache.go:162] opening:  \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\coredns\coredns_v1.10.1
+I0917 18:31:29.677227   15484 cache.go:162] opening:  \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-proxy_v1.27.4
+I0917 18:31:29.730675   15484 cache.go:157] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\pause_3.9 exists
+I0917 18:31:29.731206   15484 cache.go:96] cache image "registry.k8s.io/pause:3.9" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\pause_3.9" took 2.3805167s
+I0917 18:31:29.731206   15484 cache.go:80] save to tar file registry.k8s.io/pause:3.9 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\pause_3.9 succeeded
+I0917 18:31:29.971463   15484 cache.go:162] opening:  \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-controller-manager_v1.27.4
+I0917 18:31:30.469467   15484 cache.go:162] opening:  \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\gcr.io\k8s-minikube\storage-provisioner_v5
+I0917 18:31:48.079937   15484 cache.go:165] successfully loaded and using gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 from cached tarball
+I0917 18:31:48.079937   15484 cache.go:195] Successfully downloaded all kic artifacts
+I0917 18:31:48.079937   15484 start.go:365] acquiring machines lock for minikube: {Name:mk035ffb2532b2c04fb18af093ba741b8020d77a Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:31:48.080470   15484 start.go:369] acquired machines lock for "minikube" in 533.4µs
+I0917 18:31:48.080470   15484 start.go:93] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 Memory:6000 CPUs:2 DiskSize:20000 VMDriver: Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:0 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.27.4 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.27.4 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:C:\Users\DATDT-LAP:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0} &{Name: IP: Port:8443 KubernetesVersion:v1.27.4 ContainerRuntime:docker ControlPlane:true Worker:true}
+I0917 18:31:48.080470   15484 start.go:125] createHost starting for "" (driver="docker")
+I0917 18:31:48.081000   15484 out.go:204] * Creating docker container (CPUs=2, Memory=6000MB) ...
+I0917 18:31:48.082132   15484 start.go:159] libmachine.API.Create for "minikube" (driver="docker")
+I0917 18:31:48.082132   15484 client.go:168] LocalClient.Create starting
+I0917 18:31:48.082676   15484 main.go:141] libmachine: Reading certificate data from C:\Users\DATDT-LAP\.minikube\certs\ca.pem
+I0917 18:31:48.089518   15484 main.go:141] libmachine: Decoding PEM data...
+I0917 18:31:48.089518   15484 main.go:141] libmachine: Parsing certificate...
+I0917 18:31:48.090048   15484 main.go:141] libmachine: Reading certificate data from C:\Users\DATDT-LAP\.minikube\certs\cert.pem
+I0917 18:31:48.096505   15484 main.go:141] libmachine: Decoding PEM data...
+I0917 18:31:48.096505   15484 main.go:141] libmachine: Parsing certificate...
+I0917 18:31:48.121823   15484 cli_runner.go:164] Run: docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+W0917 18:31:48.262235   15484 cli_runner.go:211] docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}" returned with exit code 1
+I0917 18:31:48.284498   15484 network_create.go:281] running [docker network inspect minikube] to gather additional debugging logs...
+I0917 18:31:48.284498   15484 cli_runner.go:164] Run: docker network inspect minikube
+W0917 18:31:48.439237   15484 cli_runner.go:211] docker network inspect minikube returned with exit code 1
+I0917 18:31:48.439237   15484 network_create.go:284] error running [docker network inspect minikube]: docker network inspect minikube: exit status 1
+stdout:
+[]
+
+stderr:
+Error response from daemon: network minikube not found
+I0917 18:31:48.439237   15484 network_create.go:286] output of [docker network inspect minikube]: -- stdout --
+[]
+
+-- /stdout --
+** stderr ** 
+Error response from daemon: network minikube not found
+
+** /stderr **
+I0917 18:31:48.465768   15484 cli_runner.go:164] Run: docker network inspect bridge --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+I0917 18:31:48.760642   15484 network.go:209] using free private subnet 192.168.49.0/24: &{IP:192.168.49.0 Netmask:255.255.255.0 Prefix:24 CIDR:192.168.49.0/24 Gateway:192.168.49.1 ClientMin:192.168.49.2 ClientMax:192.168.49.254 Broadcast:192.168.49.255 IsPrivate:true Interface:{IfaceName: IfaceIPv4: IfaceMTU:0 IfaceMAC:} reservation:0xc001504bd0}
+I0917 18:31:48.760642   15484 network_create.go:123] attempt to create docker network minikube 192.168.49.0/24 with gateway 192.168.49.1 and MTU of 1500 ...
+I0917 18:31:48.789789   15484 cli_runner.go:164] Run: docker network create --driver=bridge --subnet=192.168.49.0/24 --gateway=192.168.49.1 -o --ip-masq -o --icc -o com.docker.network.driver.mtu=1500 --label=created_by.minikube.sigs.k8s.io=true --label=name.minikube.sigs.k8s.io=minikube minikube
+I0917 18:31:48.977085   15484 network_create.go:107] docker network minikube 192.168.49.0/24 created
+I0917 18:31:48.977085   15484 kic.go:117] calculated static IP "192.168.49.2" for the "minikube" container
+I0917 18:31:49.030175   15484 cli_runner.go:164] Run: docker ps -a --format {{.Names}}
+I0917 18:31:49.210273   15484 cli_runner.go:164] Run: docker volume create minikube --label name.minikube.sigs.k8s.io=minikube --label created_by.minikube.sigs.k8s.io=true
+I0917 18:31:49.343616   15484 oci.go:103] Successfully created a docker volume minikube
+I0917 18:31:49.373888   15484 cli_runner.go:164] Run: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib
+I0917 18:31:49.976001   15484 cache.go:157] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\gcr.io\k8s-minikube\storage-provisioner_v5 exists
+I0917 18:31:49.976001   15484 cache.go:96] cache image "gcr.io/k8s-minikube/storage-provisioner:v5" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\gcr.io\\k8s-minikube\\storage-provisioner_v5" took 22.6253109s
+I0917 18:31:49.976001   15484 cache.go:80] save to tar file gcr.io/k8s-minikube/storage-provisioner:v5 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\gcr.io\k8s-minikube\storage-provisioner_v5 succeeded
+W0917 18:31:52.525259   15484 cli_runner.go:211] docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib returned with exit code 127
+I0917 18:31:52.525259   15484 cli_runner.go:217] Completed: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib: (3.1513715s)
+I0917 18:31:52.525958   15484 client.go:171] LocalClient.Create took 4.4431271s
+I0917 18:31:54.046358   15484 cache.go:157] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\coredns\coredns_v1.10.1 exists
+I0917 18:31:54.046358   15484 cache.go:96] cache image "registry.k8s.io/coredns/coredns:v1.10.1" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\coredns\\coredns_v1.10.1" took 26.6851449s
+I0917 18:31:54.046358   15484 cache.go:80] save to tar file registry.k8s.io/coredns/coredns:v1.10.1 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\coredns\coredns_v1.10.1 succeeded
+I0917 18:31:54.344782   15484 cache.go:157] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-proxy_v1.27.4 exists
+I0917 18:31:54.344782   15484 cache.go:96] cache image "registry.k8s.io/kube-proxy:v1.27.4" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\kube-proxy_v1.27.4" took 26.9940919s
+I0917 18:31:54.344782   15484 cache.go:80] save to tar file registry.k8s.io/kube-proxy:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-proxy_v1.27.4 succeeded
+I0917 18:31:54.572495   15484 ssh_runner.go:195] Run: sh -c "df -h /var | awk 'NR==2{print $5}'"
+I0917 18:31:54.601549   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:31:54.771319   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:31:54.771319   15484 retry.go:31] will retry after 127.967929ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:31:54.945568   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:31:55.117750   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:31:55.117750   15484 retry.go:31] will retry after 261.422608ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:31:55.419350   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:31:55.569098   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:31:55.569098   15484 retry.go:31] will retry after 636.323542ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:31:56.244812   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:31:56.413521   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+W0917 18:31:56.413660   15484 start.go:275] error running df -h /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+
+W0917 18:31:56.413660   15484 start.go:242] error getting percentage of /var that is free: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:31:56.455601   15484 ssh_runner.go:195] Run: sh -c "df -BG /var | awk 'NR==2{print $4}'"
+I0917 18:31:56.493647   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:31:56.660495   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:31:56.660495   15484 retry.go:31] will retry after 150.125767ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:31:56.855156   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:31:57.040653   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:31:57.040653   15484 retry.go:31] will retry after 532.172481ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:31:57.619843   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:31:57.813443   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:31:57.813443   15484 retry.go:31] will retry after 417.861206ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:31:58.345396   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+I0917 18:31:58.390239   15484 cache.go:157] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-controller-manager_v1.27.4 exists
+I0917 18:31:58.390239   15484 cache.go:96] cache image "registry.k8s.io/kube-controller-manager:v1.27.4" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\kube-controller-manager_v1.27.4" took 31.0354395s
+I0917 18:31:58.390239   15484 cache.go:80] save to tar file registry.k8s.io/kube-controller-manager:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-controller-manager_v1.27.4 succeeded
+W0917 18:31:58.565911   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+W0917 18:31:58.565911   15484 start.go:290] error running df -BG /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+
+W0917 18:31:58.565911   15484 start.go:247] error getting GiB of /var that is available: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:31:58.565911   15484 start.go:128] duration metric: createHost completed in 10.4854405s
+I0917 18:31:58.565911   15484 start.go:83] releasing machines lock for "minikube", held for 10.4854405s
+W0917 18:31:58.565911   15484 start.go:672] error starting host: creating host: create: creating: setting up container node: preparing volume for minikube container: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib: exit status 127
+stdout:
+
+stderr:
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: invalid rootfs: stat /var/run/desktop-containerd/daemon/io.containerd.runtime.v2.task/moby/5e2bbe4de10521b83ec4f269fc0976c8f9f7473c34625e9f1b40a8eaf306d65c/D:\Program Files\DockerData/vfs/dir/5426e999681f6732e175ab197b39c70d4f3daa9242ac56b19a592b4819ce3795: no such file or directory: unknown.
+I0917 18:31:58.653785   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:31:58.853405   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:31:58.853405   15484 delete.go:82] Unable to get host status for minikube, assuming it has already been deleted: state: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+W0917 18:31:58.853405   15484 out.go:239] ! StartHost failed, but will try again: creating host: create: creating: setting up container node: preparing volume for minikube container: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib: exit status 127
+stdout:
+
+stderr:
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: invalid rootfs: stat /var/run/desktop-containerd/daemon/io.containerd.runtime.v2.task/moby/5e2bbe4de10521b83ec4f269fc0976c8f9f7473c34625e9f1b40a8eaf306d65c/D:\Program Files\DockerData/vfs/dir/5426e999681f6732e175ab197b39c70d4f3daa9242ac56b19a592b4819ce3795: no such file or directory: unknown.
+
+I0917 18:31:58.855698   15484 start.go:687] Will try again in 5 seconds ...
+I0917 18:32:03.856050   15484 start.go:365] acquiring machines lock for minikube: {Name:mk035ffb2532b2c04fb18af093ba741b8020d77a Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:32:03.856612   15484 start.go:369] acquired machines lock for "minikube" in 562.3µs
+I0917 18:32:03.856612   15484 start.go:96] Skipping create...Using existing machine configuration
+I0917 18:32:03.856612   15484 fix.go:54] fixHost starting: 
+I0917 18:32:03.942285   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:04.108126   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:04.108346   15484 fix.go:102] recreateIfNeeded on minikube: state= err=unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:04.108384   15484 fix.go:107] machineExists: false. err=machine does not exist
+I0917 18:32:04.110708   15484 out.go:177] * docker "minikube" container is missing, will recreate.
+I0917 18:32:04.112678   15484 delete.go:124] DEMOLISHING minikube ...
+I0917 18:32:04.147628   15484 cache.go:157] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-scheduler_v1.27.4 exists
+I0917 18:32:04.147628   15484 cache.go:96] cache image "registry.k8s.io/kube-scheduler:v1.27.4" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\kube-scheduler_v1.27.4" took 36.7969385s
+I0917 18:32:04.147628   15484 cache.go:80] save to tar file registry.k8s.io/kube-scheduler:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-scheduler_v1.27.4 succeeded
+I0917 18:32:04.198974   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:04.334139   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+W0917 18:32:04.334139   15484 stop.go:75] unable to get state: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:04.334257   15484 delete.go:128] stophost failed (probably ok): ssh power off: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:04.385519   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:04.519825   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:04.519825   15484 delete.go:82] Unable to get host status for minikube, assuming it has already been deleted: state: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:04.548499   15484 cli_runner.go:164] Run: docker container inspect -f {{.Id}} minikube
+W0917 18:32:04.674330   15484 cli_runner.go:211] docker container inspect -f {{.Id}} minikube returned with exit code 1
+I0917 18:32:04.674360   15484 kic.go:367] could not find the container minikube to remove it. will try anyways
+I0917 18:32:04.696978   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:04.808603   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+W0917 18:32:04.809039   15484 oci.go:84] error getting container status, will try to delete anyways: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:04.831528   15484 cli_runner.go:164] Run: docker exec --privileged -t minikube /bin/bash -c "sudo init 0"
+W0917 18:32:04.946615   15484 cli_runner.go:211] docker exec --privileged -t minikube /bin/bash -c "sudo init 0" returned with exit code 1
+I0917 18:32:04.946615   15484 oci.go:647] error shutdown minikube: docker exec --privileged -t minikube /bin/bash -c "sudo init 0": exit status 1
+stdout:
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:05.540626   15484 cache.go:157] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-apiserver_v1.27.4 exists
+I0917 18:32:05.540626   15484 cache.go:96] cache image "registry.k8s.io/kube-apiserver:v1.27.4" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\kube-apiserver_v1.27.4" took 38.1894295s
+I0917 18:32:05.540626   15484 cache.go:80] save to tar file registry.k8s.io/kube-apiserver:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-apiserver_v1.27.4 succeeded
+I0917 18:32:05.978288   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:06.105489   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:06.105489   15484 oci.go:659] temporary error verifying shutdown: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:06.105489   15484 oci.go:661] temporary error: container minikube status is  but expect it to be exited
+I0917 18:32:06.105489   15484 retry.go:31] will retry after 585.742431ms: couldn't verify container is exited. %!v(MISSING): unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:06.712837   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:06.827191   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:06.827191   15484 oci.go:659] temporary error verifying shutdown: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:06.827191   15484 oci.go:661] temporary error: container minikube status is  but expect it to be exited
+I0917 18:32:06.827283   15484 retry.go:31] will retry after 1.099975159s: couldn't verify container is exited. %!v(MISSING): unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:07.956123   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:08.103770   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:08.103770   15484 oci.go:659] temporary error verifying shutdown: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:08.103770   15484 oci.go:661] temporary error: container minikube status is  but expect it to be exited
+I0917 18:32:08.103770   15484 retry.go:31] will retry after 1.474630518s: couldn't verify container is exited. %!v(MISSING): unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:09.608016   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:09.737921   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:09.737921   15484 oci.go:659] temporary error verifying shutdown: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:09.737921   15484 oci.go:661] temporary error: container minikube status is  but expect it to be exited
+I0917 18:32:09.737921   15484 retry.go:31] will retry after 2.125055385s: couldn't verify container is exited. %!v(MISSING): unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:11.916534   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:12.035633   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:12.035633   15484 oci.go:659] temporary error verifying shutdown: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:12.035633   15484 oci.go:661] temporary error: container minikube status is  but expect it to be exited
+I0917 18:32:12.035633   15484 retry.go:31] will retry after 3.746315779s: couldn't verify container is exited. %!v(MISSING): unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:14.596488   15484 cache.go:157] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\etcd_3.5.7-0 exists
+I0917 18:32:14.596488   15484 cache.go:96] cache image "registry.k8s.io/etcd:3.5.7-0" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\etcd_3.5.7-0" took 47.2457986s
+I0917 18:32:14.596488   15484 cache.go:80] save to tar file registry.k8s.io/etcd:3.5.7-0 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\etcd_3.5.7-0 succeeded
+I0917 18:32:14.597015   15484 cache.go:87] Successfully saved all images to host disk.
+I0917 18:32:15.845203   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:15.964642   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:15.964642   15484 oci.go:659] temporary error verifying shutdown: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:15.964642   15484 oci.go:661] temporary error: container minikube status is  but expect it to be exited
+I0917 18:32:15.964642   15484 retry.go:31] will retry after 4.256684509s: couldn't verify container is exited. %!v(MISSING): unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:20.277896   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:20.396988   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:20.396988   15484 oci.go:659] temporary error verifying shutdown: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:20.396988   15484 oci.go:661] temporary error: container minikube status is  but expect it to be exited
+I0917 18:32:20.396988   15484 retry.go:31] will retry after 3.210609983s: couldn't verify container is exited. %!v(MISSING): unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:23.633187   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:23.748453   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:23.748453   15484 oci.go:659] temporary error verifying shutdown: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:23.748453   15484 oci.go:661] temporary error: container minikube status is  but expect it to be exited
+I0917 18:32:23.748453   15484 oci.go:88] couldn't shut down minikube (might be okay): verify shutdown: couldn't verify container is exited. %!v(MISSING): unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+ 
+I0917 18:32:23.771782   15484 cli_runner.go:164] Run: docker rm -f -v minikube
+I0917 18:32:23.942521   15484 cli_runner.go:164] Run: docker container inspect -f {{.Id}} minikube
+W0917 18:32:24.071787   15484 cli_runner.go:211] docker container inspect -f {{.Id}} minikube returned with exit code 1
+I0917 18:32:24.092083   15484 cli_runner.go:164] Run: docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+I0917 18:32:24.230845   15484 cli_runner.go:164] Run: docker network rm minikube
+I0917 18:32:24.491283   15484 fix.go:114] Sleeping 1 second for extra luck!
+I0917 18:32:25.504101   15484 start.go:125] createHost starting for "" (driver="docker")
+I0917 18:32:25.505997   15484 out.go:204] * Creating docker container (CPUs=2, Memory=6000MB) ...
+I0917 18:32:25.507561   15484 start.go:159] libmachine.API.Create for "minikube" (driver="docker")
+I0917 18:32:25.507561   15484 client.go:168] LocalClient.Create starting
+I0917 18:32:25.508133   15484 main.go:141] libmachine: Reading certificate data from C:\Users\DATDT-LAP\.minikube\certs\ca.pem
+I0917 18:32:25.508765   15484 main.go:141] libmachine: Decoding PEM data...
+I0917 18:32:25.508765   15484 main.go:141] libmachine: Parsing certificate...
+I0917 18:32:25.509193   15484 main.go:141] libmachine: Reading certificate data from C:\Users\DATDT-LAP\.minikube\certs\cert.pem
+I0917 18:32:25.509465   15484 main.go:141] libmachine: Decoding PEM data...
+I0917 18:32:25.509465   15484 main.go:141] libmachine: Parsing certificate...
+I0917 18:32:25.545559   15484 cli_runner.go:164] Run: docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+W0917 18:32:25.658058   15484 cli_runner.go:211] docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}" returned with exit code 1
+I0917 18:32:25.679715   15484 network_create.go:281] running [docker network inspect minikube] to gather additional debugging logs...
+I0917 18:32:25.679715   15484 cli_runner.go:164] Run: docker network inspect minikube
+W0917 18:32:25.796402   15484 cli_runner.go:211] docker network inspect minikube returned with exit code 1
+I0917 18:32:25.796413   15484 network_create.go:284] error running [docker network inspect minikube]: docker network inspect minikube: exit status 1
+stdout:
+[]
+
+stderr:
+Error response from daemon: network minikube not found
+I0917 18:32:25.796413   15484 network_create.go:286] output of [docker network inspect minikube]: -- stdout --
+[]
+
+-- /stdout --
+** stderr ** 
+Error response from daemon: network minikube not found
+
+** /stderr **
+I0917 18:32:25.818756   15484 cli_runner.go:164] Run: docker network inspect bridge --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+I0917 18:32:26.040565   15484 network.go:212] skipping subnet 192.168.49.0/24 that is reserved: &{IP:192.168.49.0 Netmask:255.255.255.0 Prefix:24 CIDR:192.168.49.0/24 Gateway:192.168.49.1 ClientMin:192.168.49.2 ClientMax:192.168.49.254 Broadcast:192.168.49.255 IsPrivate:true Interface:{IfaceName: IfaceIPv4: IfaceMTU:0 IfaceMAC:} reservation:<nil>}
+I0917 18:32:26.138612   15484 network.go:209] using free private subnet 192.168.58.0/24: &{IP:192.168.58.0 Netmask:255.255.255.0 Prefix:24 CIDR:192.168.58.0/24 Gateway:192.168.58.1 ClientMin:192.168.58.2 ClientMax:192.168.58.254 Broadcast:192.168.58.255 IsPrivate:true Interface:{IfaceName: IfaceIPv4: IfaceMTU:0 IfaceMAC:} reservation:0xc001466bd0}
+I0917 18:32:26.138612   15484 network_create.go:123] attempt to create docker network minikube 192.168.58.0/24 with gateway 192.168.58.1 and MTU of 1500 ...
+I0917 18:32:26.158500   15484 cli_runner.go:164] Run: docker network create --driver=bridge --subnet=192.168.58.0/24 --gateway=192.168.58.1 -o --ip-masq -o --icc -o com.docker.network.driver.mtu=1500 --label=created_by.minikube.sigs.k8s.io=true --label=name.minikube.sigs.k8s.io=minikube minikube
+I0917 18:32:26.317757   15484 network_create.go:107] docker network minikube 192.168.58.0/24 created
+I0917 18:32:26.317757   15484 kic.go:117] calculated static IP "192.168.58.2" for the "minikube" container
+I0917 18:32:26.358526   15484 cli_runner.go:164] Run: docker ps -a --format {{.Names}}
+I0917 18:32:26.492877   15484 cli_runner.go:164] Run: docker volume create minikube --label name.minikube.sigs.k8s.io=minikube --label created_by.minikube.sigs.k8s.io=true
+I0917 18:32:26.641433   15484 oci.go:103] Successfully created a docker volume minikube
+I0917 18:32:26.673385   15484 cli_runner.go:164] Run: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib
+W0917 18:32:28.754007   15484 cli_runner.go:211] docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib returned with exit code 127
+I0917 18:32:28.754007   15484 cli_runner.go:217] Completed: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib: (2.0806217s)
+I0917 18:32:28.754007   15484 client.go:171] LocalClient.Create took 3.2464454s
+I0917 18:32:30.802958   15484 ssh_runner.go:195] Run: sh -c "df -h /var | awk 'NR==2{print $5}'"
+I0917 18:32:30.831255   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:30.948558   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:30.948558   15484 retry.go:31] will retry after 240.952456ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:31.227721   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:31.351185   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:31.351185   15484 retry.go:31] will retry after 254.980669ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:31.648812   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:31.774095   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:31.774095   15484 retry.go:31] will retry after 603.252548ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:32.420096   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:32.543370   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+W0917 18:32:32.543386   15484 start.go:275] error running df -h /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+
+W0917 18:32:32.543386   15484 start.go:242] error getting percentage of /var that is free: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:32.582294   15484 ssh_runner.go:195] Run: sh -c "df -BG /var | awk 'NR==2{print $4}'"
+I0917 18:32:32.612548   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:32.727590   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:32.727771   15484 retry.go:31] will retry after 299.812753ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:33.068821   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:33.196282   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:33.196282   15484 retry.go:31] will retry after 190.602208ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:33.431203   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:33.552388   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:33.552388   15484 retry.go:31] will retry after 691.267917ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:34.274786   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:34.400139   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+W0917 18:32:34.400139   15484 start.go:290] error running df -BG /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+
+W0917 18:32:34.400139   15484 start.go:247] error getting GiB of /var that is available: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:34.400139   15484 start.go:128] duration metric: createHost completed in 8.8960378s
+I0917 18:32:34.436874   15484 ssh_runner.go:195] Run: sh -c "df -h /var | awk 'NR==2{print $5}'"
+I0917 18:32:34.466573   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:34.600411   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:34.600411   15484 retry.go:31] will retry after 357.069663ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:34.991599   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:35.116137   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:35.116137   15484 retry.go:31] will retry after 560.173082ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:35.703924   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:35.814938   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+W0917 18:32:35.814985   15484 start.go:275] error running df -h /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+
+W0917 18:32:35.814985   15484 start.go:242] error getting percentage of /var that is free: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:35.850005   15484 ssh_runner.go:195] Run: sh -c "df -BG /var | awk 'NR==2{print $4}'"
+I0917 18:32:35.882604   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:36.013451   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:36.013451   15484 retry.go:31] will retry after 312.709124ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:36.369963   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:36.493191   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:36.493191   15484 retry.go:31] will retry after 188.469025ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:36.720764   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:36.834217   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+I0917 18:32:36.834217   15484 retry.go:31] will retry after 303.01748ms: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:37.181676   15484 cli_runner.go:164] Run: docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube
+W0917 18:32:37.320048   15484 cli_runner.go:211] docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube returned with exit code 1
+W0917 18:32:37.320119   15484 start.go:290] error running df -BG /var: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+
+W0917 18:32:37.320119   15484 start.go:247] error getting GiB of /var that is available: NewSession: new client: new client: Error creating new ssh host from driver: Error getting ssh port for driver: get ssh host-port: get port 22 for "minikube": docker container inspect -f "'{{(index (index .NetworkSettings.Ports "22/tcp") 0).HostPort}}'" minikube: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:37.320119   15484 fix.go:56] fixHost completed within 33.4635068s
+I0917 18:32:37.320119   15484 start.go:83] releasing machines lock for "minikube", held for 33.4635068s
+W0917 18:32:37.320119   15484 out.go:239] * Failed to start docker container. Running "minikube delete" may fix it: recreate: creating host: create: creating: setting up container node: preparing volume for minikube container: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib: exit status 127
+stdout:
+
+stderr:
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: invalid rootfs: stat /var/run/desktop-containerd/daemon/io.containerd.runtime.v2.task/moby/4f38e36a857d9197b678cb3352a6e0ce18416f2a4000ae0f020a89230d313593/D:\Program Files\DockerData/vfs/dir/019724c3def1e6f834a3f4922e7e9012c4717a0def25975ad69b25068be132d0: no such file or directory: unknown.
+
+W0917 18:32:37.321177   15484 out.go:239] ! Startup with docker driver failed, trying with alternate driver hyperv: Failed to start host: recreate: creating host: create: creating: setting up container node: preparing volume for minikube container: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib: exit status 127
+stdout:
+
+stderr:
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: invalid rootfs: stat /var/run/desktop-containerd/daemon/io.containerd.runtime.v2.task/moby/4f38e36a857d9197b678cb3352a6e0ce18416f2a4000ae0f020a89230d313593/D:\Program Files\DockerData/vfs/dir/019724c3def1e6f834a3f4922e7e9012c4717a0def25975ad69b25068be132d0: no such file or directory: unknown.
+
+I0917 18:32:37.322222   15484 config.go:182] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.27.4
+I0917 18:32:37.322222   15484 delete.go:329] Deleting minikube
+I0917 18:32:37.322222   15484 delete.go:334] minikube configuration: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 Memory:6000 CPUs:2 DiskSize:20000 VMDriver: Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:0 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.27.4 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.27.4 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:C:\Users\DATDT-LAP:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0}
+I0917 18:32:37.322747   15484 out.go:177] * Deleting "minikube" in docker ...
+I0917 18:32:37.353751   15484 delete.go:48] deleting possible leftovers for minikube (driver=docker) ...
+I0917 18:32:37.385672   15484 cli_runner.go:164] Run: docker ps -a --filter label=name.minikube.sigs.k8s.io=minikube --format {{.Names}}
+I0917 18:32:37.505358   15484 volumes.go:79] trying to delete all docker volumes with label name.minikube.sigs.k8s.io=minikube
+I0917 18:32:37.531927   15484 cli_runner.go:164] Run: docker volume ls --filter label=name.minikube.sigs.k8s.io=minikube --format {{.Name}}
+I0917 18:32:37.688400   15484 cli_runner.go:164] Run: docker volume rm --force minikube
+I0917 18:32:37.843967   15484 cli_runner.go:164] Run: docker network ls --filter=label=name.minikube.sigs.k8s.io=minikube --format {{.Name}}
+I0917 18:32:37.991880   15484 cli_runner.go:164] Run: docker network inspect minikube --format "{"Name": "{{.Name}}","Driver": "{{.Driver}}","Subnet": "{{range .IPAM.Config}}{{.Subnet}}{{end}}","Gateway": "{{range .IPAM.Config}}{{.Gateway}}{{end}}","MTU": {{if (index .Options "com.docker.network.driver.mtu")}}{{(index .Options "com.docker.network.driver.mtu")}}{{else}}0{{end}}, "ContainerIPs": [{{range $k,$v := .Containers }}"{{$v.IPv4Address}}",{{end}}]}"
+I0917 18:32:38.146796   15484 cli_runner.go:164] Run: docker network rm minikube
+I0917 18:32:38.444322   15484 volumes.go:101] trying to prune all docker volumes with label name.minikube.sigs.k8s.io=minikube
+I0917 18:32:38.475671   15484 cli_runner.go:164] Run: docker volume prune -f --filter label=name.minikube.sigs.k8s.io=minikube
+I0917 18:32:38.599199   15484 config.go:182] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.27.4
+I0917 18:32:38.599726   15484 config.go:182] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.27.4
+I0917 18:32:38.648550   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:32:38.766410   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:32:38.766410   15484 delete.go:82] Unable to get host status for minikube, assuming it has already been deleted: state: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:32:38.767494   15484 out.go:177] * Removing C:\Users\DATDT-LAP\.minikube\machines\minikube ...
+W0917 18:32:38.769665   15484 out.go:239] ! Failed to delete cluster minikube, proceeding with retry anyway.
+I0917 18:32:38.770196   15484 start.go:298] selected driver: hyperv
+I0917 18:32:38.770196   15484 start.go:902] validating driver "hyperv" against <nil>
+I0917 18:32:38.770196   15484 start.go:913] status for hyperv: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0917 18:32:38.770196   15484 start_flags.go:305] no existing cluster config was found, will generate one from the flags 
+I0917 18:32:38.770196   15484 start_flags.go:382] Using suggested 6000MB memory alloc based on sys=24351MB, container=0MB
+I0917 18:32:38.771298   15484 start_flags.go:901] Wait components to verify : map[apiserver:true system_pods:true]
+I0917 18:32:38.771298   15484 cni.go:84] Creating CNI manager for ""
+I0917 18:32:38.771298   15484 cni.go:158] "hyperv" driver + "docker" container runtime found on kubernetes v1.24+, recommending bridge
+I0917 18:32:38.771298   15484 start_flags.go:314] Found "bridge CNI" CNI - setting NetworkPlugin=cni
+I0917 18:32:38.771298   15484 start_flags.go:319] config:
+{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 Memory:6000 CPUs:2 DiskSize:20000 VMDriver: Driver:hyperv HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:0 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.27.4 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:C:\Users\DATDT-LAP:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0}
+I0917 18:32:38.771700   15484 iso.go:125] acquiring lock: {Name:mk7e0977e0fd1ba6de45cec4f28adb75c4ac04e6 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+W0917 18:32:38.772225   15484 register.go:133] "Deleting" was not found within the registered steps for "Initial Minikube Setup": [Initial Minikube Setup Selecting Driver Downloading Artifacts Starting Node Updating Driver Pulling Base Image Running on Localhost Local OS Release Creating Container Creating VM Running Remotely Preparing Kubernetes Generating certificates Booting control plane Configuring RBAC rules Configuring CNI Configuring Localhost Environment Verifying Kubernetes Enabling Addons Done]
+I0917 18:32:38.772762   15484 out.go:177] * Downloading VM boot image ...
+I0917 18:32:38.773291   15484 download.go:107] Downloading: https://storage.googleapis.com/minikube-builds/iso/16971/minikube-v1.31.0-amd64.iso?checksum=file:https://storage.googleapis.com/minikube-builds/iso/16971/minikube-v1.31.0-amd64.iso.sha256 -> C:\Users\DATDT-LAP\.minikube\cache\iso\amd64\minikube-v1.31.0-amd64.iso
+E0917 18:32:39.374461   15484 iso.go:90] Unable to download https://storage.googleapis.com/minikube-builds/iso/16971/minikube-v1.31.0-amd64.iso: getter: &{Ctx:context.Background Src:https://storage.googleapis.com/minikube-builds/iso/16971/minikube-v1.31.0-amd64.iso?checksum=file:https://storage.googleapis.com/minikube-builds/iso/16971/minikube-v1.31.0-amd64.iso.sha256 Dst:C:\Users\DATDT-LAP\.minikube\cache\iso\amd64\minikube-v1.31.0-amd64.iso.download Pwd: Mode:2 Umask:---------- Detectors:[0x49cf5e8 0x49cf5e8 0x49cf5e8 0x49cf5e8 0x49cf5e8 0x49cf5e8 0x49cf5e8] Decompressors:map[bz2:0xc0003cff78 gz:0xc0003cffd0 tar:0xc0003cff80 tar.bz2:0xc0003cff90 tar.gz:0xc0003cffa0 tar.xz:0xc0003cffb0 tar.zst:0xc0003cffc0 tbz2:0xc0003cff90 tgz:0xc0003cffa0 txz:0xc0003cffb0 tzst:0xc0003cffc0 xz:0xc0003cffd8 zip:0xc0003cffe0 zst:0xc0003cfff0] Getters:map[file:0xc000c56300 http:0xc0007a6140 https:0xc0007a6190] Dir:false ProgressListener:0x4963370 Insecure:false DisableSymlinks:false Options:[0x1ce1520]}: invalid checksum: Error downloading checksum file: bad response code: 404
+I0917 18:32:39.375841   15484 iso.go:125] acquiring lock: {Name:mk7e0977e0fd1ba6de45cec4f28adb75c4ac04e6 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+W0917 18:32:39.375841   15484 register.go:133] "Deleting" was not found within the registered steps for "Initial Minikube Setup": [Initial Minikube Setup Selecting Driver Downloading Artifacts Starting Node Updating Driver Pulling Base Image Running on Localhost Local OS Release Creating Container Creating VM Running Remotely Preparing Kubernetes Generating certificates Booting control plane Configuring RBAC rules Configuring CNI Configuring Localhost Environment Verifying Kubernetes Enabling Addons Done]
+I0917 18:32:39.376937   15484 out.go:177] * Downloading VM boot image ...
+I0917 18:32:39.378312   15484 download.go:107] Downloading: https://github.com/kubernetes/minikube/releases/download/v1.31.0/minikube-v1.31.0-amd64.iso?checksum=file:https://github.com/kubernetes/minikube/releases/download/v1.31.0/minikube-v1.31.0-amd64.iso.sha256 -> C:\Users\DATDT-LAP\.minikube\cache\iso\amd64\minikube-v1.31.0-amd64.iso
+I0917 18:33:40.551467   15484 out.go:177] * Starting control plane node minikube in cluster minikube
+I0917 18:33:40.552464   15484 preload.go:132] Checking if preload exists for k8s version v1.27.4 and runtime docker
+I0917 18:33:40.553470   15484 profile.go:148] Saving config to C:\Users\DATDT-LAP\.minikube\profiles\minikube\config.json ...
+I0917 18:33:40.553470   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\gcr.io\k8s-minikube\storage-provisioner:v5 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\gcr.io\k8s-minikube\storage-provisioner_v5
+I0917 18:33:40.553470   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-proxy:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-proxy_v1.27.4
+I0917 18:33:40.553470   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\etcd:3.5.7-0 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\etcd_3.5.7-0
+I0917 18:33:40.553470   15484 lock.go:35] WriteFile acquiring C:\Users\DATDT-LAP\.minikube\profiles\minikube\config.json: {Name:mkd83f9697fd2738d2e5defe28e4a9a9db3c4c15 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0917 18:33:40.553470   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\pause:3.9 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\pause_3.9
+I0917 18:33:40.553470   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\coredns\coredns:v1.10.1 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\coredns\coredns_v1.10.1
+I0917 18:33:40.553470   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-controller-manager:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-controller-manager_v1.27.4
+I0917 18:33:40.553470   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-apiserver:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-apiserver_v1.27.4
+I0917 18:33:40.554533   15484 localpath.go:146] windows sanitize: C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-scheduler:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-scheduler_v1.27.4
+I0917 18:33:40.557539   15484 start.go:365] acquiring machines lock for minikube: {Name:mk3f92d63aa13f1f44f7e49e7b0e11a44c099781 Clock:{} Delay:500ms Timeout:13m0s Cancel:<nil>}
+I0917 18:33:40.557539   15484 start.go:369] acquired machines lock for "minikube" in 0s
+I0917 18:33:40.557539   15484 start.go:93] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO:https://github.com/kubernetes/minikube/releases/download/v1.31.0/minikube-v1.31.0-amd64.iso KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 Memory:6000 CPUs:2 DiskSize:20000 VMDriver: Driver:hyperv HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:0 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.27.4 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.27.4 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:C:\Users\DATDT-LAP:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0} &{Name: IP: Port:8443 KubernetesVersion:v1.27.4 ContainerRuntime:docker ControlPlane:true Worker:true}
+I0917 18:33:40.558376   15484 start.go:125] createHost starting for "" (driver="hyperv")
+I0917 18:33:40.558938   15484 out.go:204] * Creating hyperv VM (CPUs=2, Memory=6000MB, Disk=20000MB) ...
+I0917 18:33:40.559464   15484 start.go:159] libmachine.API.Create for "minikube" (driver="hyperv")
+I0917 18:33:40.559464   15484 client.go:168] LocalClient.Create starting
+I0917 18:33:40.559969   15484 main.go:141] libmachine: Reading certificate data from C:\Users\DATDT-LAP\.minikube\certs\ca.pem
+I0917 18:33:40.559986   15484 main.go:141] libmachine: Decoding PEM data...
+I0917 18:33:40.559986   15484 main.go:141] libmachine: Parsing certificate...
+I0917 18:33:40.559986   15484 main.go:141] libmachine: Reading certificate data from C:\Users\DATDT-LAP\.minikube\certs\cert.pem
+I0917 18:33:40.559986   15484 main.go:141] libmachine: Decoding PEM data...
+I0917 18:33:40.559986   15484 main.go:141] libmachine: Parsing certificate...
+I0917 18:33:40.559986   15484 main.go:141] libmachine: [executing ==>] : C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive @(Get-Module -ListAvailable hyper-v).Name | Get-Unique
+I0917 18:33:40.742455   15484 cache.go:107] acquiring lock: {Name:mk678409884c19f07bc0532f8dee53df0339d56c Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:33:40.742455   15484 cache.go:107] acquiring lock: {Name:mk23db690081792ad100479e88b4d2f1f1c5eeb1 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:33:40.742455   15484 cache.go:115] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\gcr.io\k8s-minikube\storage-provisioner_v5 exists
+I0917 18:33:40.742455   15484 cache.go:115] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\etcd_3.5.7-0 exists
+I0917 18:33:40.742455   15484 cache.go:96] cache image "gcr.io/k8s-minikube/storage-provisioner:v5" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\gcr.io\\k8s-minikube\\storage-provisioner_v5" took 188.9858ms
+I0917 18:33:40.742455   15484 cache.go:96] cache image "registry.k8s.io/etcd:3.5.7-0" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\etcd_3.5.7-0" took 188.9858ms
+I0917 18:33:40.742455   15484 cache.go:80] save to tar file gcr.io/k8s-minikube/storage-provisioner:v5 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\gcr.io\k8s-minikube\storage-provisioner_v5 succeeded
+I0917 18:33:40.742455   15484 cache.go:80] save to tar file registry.k8s.io/etcd:3.5.7-0 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\etcd_3.5.7-0 succeeded
+I0917 18:33:40.745192   15484 cache.go:107] acquiring lock: {Name:mk2c76372cb9fd6782ad25e6a2fe42791a1c011d Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:33:40.745192   15484 cache.go:115] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\coredns\coredns_v1.10.1 exists
+I0917 18:33:40.745192   15484 cache.go:96] cache image "registry.k8s.io/coredns/coredns:v1.10.1" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\coredns\\coredns_v1.10.1" took 191.7226ms
+I0917 18:33:40.745192   15484 cache.go:80] save to tar file registry.k8s.io/coredns/coredns:v1.10.1 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\coredns\coredns_v1.10.1 succeeded
+I0917 18:33:40.752568   15484 cache.go:107] acquiring lock: {Name:mk36928001a41378c0cca1a0f2eb16519c6b088b Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:33:40.752568   15484 cache.go:107] acquiring lock: {Name:mka7e0c3f6f9479d3d5f5a5c8ac5276843642157 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:33:40.752639   15484 cache.go:107] acquiring lock: {Name:mk4990fe03cb6ff7613cd7e0a17e6e4e6f6916be Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:33:40.752639   15484 cache.go:107] acquiring lock: {Name:mkcf004c3809f0a40a6de0198761452552764007 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:33:40.752639   15484 cache.go:115] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-proxy_v1.27.4 exists
+I0917 18:33:40.752639   15484 cache.go:115] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-apiserver_v1.27.4 exists
+I0917 18:33:40.752639   15484 cache.go:115] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-scheduler_v1.27.4 exists
+I0917 18:33:40.752639   15484 cache.go:115] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\pause_3.9 exists
+I0917 18:33:40.752639   15484 cache.go:96] cache image "registry.k8s.io/kube-proxy:v1.27.4" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\kube-proxy_v1.27.4" took 199.169ms
+I0917 18:33:40.752639   15484 cache.go:80] save to tar file registry.k8s.io/kube-proxy:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-proxy_v1.27.4 succeeded
+I0917 18:33:40.752639   15484 cache.go:96] cache image "registry.k8s.io/kube-apiserver:v1.27.4" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\kube-apiserver_v1.27.4" took 199.169ms
+I0917 18:33:40.752639   15484 cache.go:80] save to tar file registry.k8s.io/kube-apiserver:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-apiserver_v1.27.4 succeeded
+I0917 18:33:40.752639   15484 cache.go:96] cache image "registry.k8s.io/pause:3.9" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\pause_3.9" took 199.169ms
+I0917 18:33:40.752639   15484 cache.go:80] save to tar file registry.k8s.io/pause:3.9 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\pause_3.9 succeeded
+I0917 18:33:40.752639   15484 cache.go:96] cache image "registry.k8s.io/kube-scheduler:v1.27.4" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\kube-scheduler_v1.27.4" took 198.1053ms
+I0917 18:33:40.752639   15484 cache.go:80] save to tar file registry.k8s.io/kube-scheduler:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-scheduler_v1.27.4 succeeded
+I0917 18:33:40.767670   15484 cache.go:107] acquiring lock: {Name:mkfe247f78081120e85c18c80406ec02c22f9893 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0917 18:33:40.767670   15484 cache.go:115] \\?\Volume{f6ad49dc-3b43-4e6f-8568-8f73541b74eb}\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-controller-manager_v1.27.4 exists
+I0917 18:33:40.767670   15484 cache.go:96] cache image "registry.k8s.io/kube-controller-manager:v1.27.4" -> "C:\\Users\\DATDT-LAP\\.minikube\\cache\\images\\amd64\\registry.k8s.io\\kube-controller-manager_v1.27.4" took 214.2006ms
+I0917 18:33:40.767670   15484 cache.go:80] save to tar file registry.k8s.io/kube-controller-manager:v1.27.4 -> C:\Users\DATDT-LAP\.minikube\cache\images\amd64\registry.k8s.io\kube-controller-manager_v1.27.4 succeeded
+I0917 18:33:40.767670   15484 cache.go:87] Successfully saved all images to host disk.
+I0917 18:33:40.987301   15484 main.go:141] libmachine: [stdout =====>] : 
+I0917 18:33:40.987301   15484 main.go:141] libmachine: [stderr =====>] : 
+I0917 18:33:40.987301   15484 client.go:171] LocalClient.Create took 427.8364ms
+I0917 18:33:42.999769   15484 start.go:128] duration metric: createHost completed in 2.4413931s
+I0917 18:33:42.999769   15484 start.go:83] releasing machines lock for "minikube", held for 2.4422293s
+W0917 18:33:42.999946   15484 start.go:672] error starting host: creating host: create: precreate: Hyper-V PowerShell Module is not available
+I0917 18:33:43.035818   15484 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+W0917 18:33:43.169285   15484 cli_runner.go:211] docker container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0917 18:33:43.169285   15484 delete.go:46] couldn't inspect container "minikube" before deleting: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+Error response from daemon: No such container: minikube
+I0917 18:33:43.200864   15484 cli_runner.go:164] Run: podman container inspect minikube --format={{.State.Status}}
+I0917 18:33:43.201429   15484 delete.go:46] couldn't inspect container "minikube" before deleting: unknown state "minikube": podman container inspect minikube --format={{.State.Status}}: exec: "podman": executable file not found in %!P(MISSING)ATH%!
+(MISSING)stdout:
+
+stderr:
+W0917 18:33:43.201429   15484 start.go:677] delete host: Docker machine "minikube" does not exist. Use "docker-machine ls" to list machines. Use "docker-machine create" to add a new one.
+W0917 18:33:43.201429   15484 out.go:239] ! StartHost failed, but will try again: creating host: create: precreate: Hyper-V PowerShell Module is not available
+I0917 18:33:43.201956   15484 start.go:687] Will try again in 5 seconds ...
+I0917 18:33:48.208326   15484 start.go:365] acquiring machines lock for minikube: {Name:mk3f92d63aa13f1f44f7e49e7b0e11a44c099781 Clock:{} Delay:500ms Timeout:13m0s Cancel:<nil>}
+I0917 18:33:48.208504   15484 start.go:369] acquired machines lock for "minikube" in 0s
+I0917 18:33:48.209109   15484 start.go:93] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO:https://github.com/kubernetes/minikube/releases/download/v1.31.0/minikube-v1.31.0-amd64.iso KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 Memory:6000 CPUs:2 DiskSize:20000 VMDriver: Driver:hyperv HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:0 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.27.4 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.27.4 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:C:\Users\DATDT-LAP:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0} &{Name: IP: Port:8443 KubernetesVersion:v1.27.4 ContainerRuntime:docker ControlPlane:true Worker:true}
+I0917 18:33:48.209109   15484 start.go:125] createHost starting for "" (driver="hyperv")
+I0917 18:33:48.212174   15484 out.go:204] * Creating hyperv VM (CPUs=2, Memory=6000MB, Disk=20000MB) ...
+I0917 18:33:48.214852   15484 start.go:159] libmachine.API.Create for "minikube" (driver="hyperv")
+I0917 18:33:48.214852   15484 client.go:168] LocalClient.Create starting
+I0917 18:33:48.216092   15484 main.go:141] libmachine: Reading certificate data from C:\Users\DATDT-LAP\.minikube\certs\ca.pem
+I0917 18:33:48.216551   15484 main.go:141] libmachine: Decoding PEM data...
+I0917 18:33:48.216636   15484 main.go:141] libmachine: Parsing certificate...
+I0917 18:33:48.216636   15484 main.go:141] libmachine: Reading certificate data from C:\Users\DATDT-LAP\.minikube\certs\cert.pem
+I0917 18:33:48.217352   15484 main.go:141] libmachine: Decoding PEM data...
+I0917 18:33:48.217352   15484 main.go:141] libmachine: Parsing certificate...
+I0917 18:33:48.217352   15484 main.go:141] libmachine: [executing ==>] : C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive @(Get-Module -ListAvailable hyper-v).Name | Get-Unique
+I0917 18:33:48.513454   15484 main.go:141] libmachine: [stdout =====>] : 
+I0917 18:33:48.513482   15484 main.go:141] libmachine: [stderr =====>] : 
+I0917 18:33:48.513482   15484 client.go:171] LocalClient.Create took 298.6303ms
+I0917 18:33:50.519060   15484 start.go:128] duration metric: createHost completed in 2.3099508s
+I0917 18:33:50.519060   15484 start.go:83] releasing machines lock for "minikube", held for 2.3105563s
+W0917 18:33:50.519443   15484 out.go:239] * Failed to start hyperv VM. Running "minikube delete" may fix it: creating host: create: precreate: Hyper-V PowerShell Module is not available
+I0917 18:33:50.525324   15484 out.go:177] 
+W0917 18:33:50.527188   15484 out.go:239] X Exiting due to GUEST_PROVISION: error provisioning guest: Failed to start host: recreate: creating host: create: creating: setting up container node: preparing volume for minikube container: docker run --rm --name minikube-preload-sidecar --label created_by.minikube.sigs.k8s.io=true --label name.minikube.sigs.k8s.io=minikube --entrypoint /usr/bin/test -v minikube:/var gcr.io/k8s-minikube/kicbase:v0.0.40@sha256:8cadf23777709e43eca447c47a45f5a4635615129267ce025193040ec92a1631 -d /var/lib: exit status 127
+stdout:
+
+stderr:
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: invalid rootfs: stat /var/run/desktop-containerd/daemon/io.containerd.runtime.v2.task/moby/4f38e36a857d9197b678cb3352a6e0ce18416f2a4000ae0f020a89230d313593/D:\Program Files\DockerData/vfs/dir/019724c3def1e6f834a3f4922e7e9012c4717a0def25975ad69b25068be132d0: no such file or directory: unknown.
+
+W0917 18:33:50.528465   15484 out.go:239] * 
+W0917 18:33:50.529775   15484 out.go:239] ╭─────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                             │
+│    * If the above advice does not help, please let us know:                                 │
+│      https://github.com/kubernetes/minikube/issues/new/choose                               │
+│                                                                                             │
+│    * Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    │
+│                                                                                             │
+╰─────────────────────────────────────────────────────────────────────────────────────────────╯
+I0917 18:33:50.532050   15484 out.go:177] 
+
+* 

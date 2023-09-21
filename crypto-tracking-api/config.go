@@ -18,7 +18,7 @@ var GStrConn string
 
 func loadConfig(path string) error {
 	viper.AddConfigPath(path)
-	viper.SetConfigName("Config")
+	viper.SetConfigName("config")
 	viper.SetConfigType("env")
 
 	viper.AutomaticEnv()

@@ -1,0 +1,36 @@
+#19092023
+1. Start minikube: minikube start
+2. Check docker context if error: docker context ls (--> need to start docker?)
+3. Check docker: docker context show
+docker version
+docker --info
+docker system df (Show docker disk usage)
+4. Resolve: docker context use default (--> This will update your active context which minikube will pick up)
+minikube start
+kubectl get pods -A
+5. Install helm: Kubernetes package manager (--> Maybe don't need)
+6. Deploying PostgreSQL Using Kubernetes: https://sweetcode.io/how-to-deploy-postgresql-instance-to-kubernetes/
+6.1. Creating the Volumes (Persistent Volume)
+6.2. To allow a cluster to request access to the data storage, you need to set up a PersistentVolumeClaim (PVC) to the corresponding Persistent Volume
+(When a pod specifies this PVC in its volume mounts,
+the Kubernetes control plane will automatically bind the PVC to an available PV that matches the criteria
+(storage class, capacity, access mode, etc.) defined in the PVC and PV configurations.)
+6.3. Creating Database Secrets(Databases require access control using passwords and users)
+6.4. Creating the Deployment Resource
+6.5. Creating the Service Resource (A service exposes a deployment. It provides a stable network endpoint for accessing a cluster)
+6.6. Deploy postgresql
+-Deploy the PV:
+kubectl apply -f db-persistent-volume.yaml
+-Deploy the PVC
+kubectl apply -f db-volume-claim.yaml
+-The environment variables are needed by the cluster. Deploy them as follows:
+kubectl apply -f db-configmap.yaml
+-Next, create the deployment and add pods replicas.
+kubectl apply -f db-deployment.yaml
+-Finaly run the service to expose the cluster
+kubectl apply -f db-service.yaml
+6.7. Testing deployment
+kubectl get all
+minikube dashboard
+kubectl exec -it pod/postgresdb-7b475497d6-gw2w6 -- psql -h localhost -U postgres --password -p 5432 ewallet
+
