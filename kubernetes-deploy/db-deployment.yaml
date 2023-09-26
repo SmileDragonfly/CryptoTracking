@@ -35,6 +35,8 @@ spec:
             # The volume mounts  for the container
             - mountPath: /var/lib/postgres/data
               name: db-data
+        - name: cryptoagent
+          image: smiledragonfly/cryptoagent
       # Volumes attached to the pod
       volumes:
         - name: db-data

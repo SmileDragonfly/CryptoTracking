@@ -51,3 +51,19 @@ https://stackoverflow.com/questions/60710171/minikube-ip-is-not-reachable
 *Step:
 - Check minikube service list:  minikube service list
 - Start tunnel to service:  minikube service postgresdb
+
+#26092023
+1. Explore pods
+List Pods:              kubectl get pods
+Pod Details:            kubectl describe pod <pod_name>
+Logs:                   kubectl logs <pod_name>
+                        kubectl logs <pod_name> -c <container_name>
+Exec into a Pod:        kubectl exec -it <pod_name> -- /bin/bash
+Exec into a Container:  kubectl exec -it my-pod -c my-container -- /bin/bash
+Port Forwarding:        kubectl port-forward <pod_name> 8080:80
+Delete Pod:             kubectl delete pod <pod_name>
+View Pod YAML:          kubectl get pod <pod_name> -o yaml
+List Pods by Label:     kubectl get pods -l <label_selector>
+To list all containers running within a specific pod in Kubernetes: kubectl get pod <pod_name> -n <namespace> -o json
+2. SSH to minikube: minikube ssh
+Check OS Version: cat /etc/os-release --> Ubuntu 22.04
