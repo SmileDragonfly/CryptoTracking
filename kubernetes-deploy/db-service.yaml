@@ -11,7 +11,10 @@ spec:
   type: NodePort
   ports:
     # The port number to expose the service
-    - port: 5432
+    - name: postgres-port
+      port: 5432
+    - name: cryptoapi-port
+      port: 8888
   # Pod to route service traffic
   selector:
     app: postgresdb

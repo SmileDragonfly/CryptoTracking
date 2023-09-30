@@ -25,11 +25,32 @@ func main() {
 		logger.Error(err)
 		panic(err)
 	}
-	GStrConn = fmt.Sprintf("port=%d host=%s user=%s password=%s dbname=%s sslmode=disable",
-		GConfig.HostPort, GConfig.HostName, GConfig.UserName, GConfig.Password, GConfig.DBName)
+	GStrConn = fmt.Sprintf("port=%d host=%s user=%s password=%s sslmode=disable",
+		GConfig.HostPort, GConfig.HostName, GConfig.UserName, GConfig.Password)
 	// 1.Open DB
 	conn, err := sql.Open(GConfig.DBDriver, GStrConn)
+	if err != nil {
+		panic(err)
+	}
 	defer conn.Close()
+	// Check db is exist
+	query := "SELECT datname FROM pg_database WHERE datname='%s';"
+	query = fmt.Sprintf(query, GConfig.DBName)
+	var dbname string
+	if err := conn.QueryRow(query).Scan(&dbname); err != nil {
+		if err != sql.ErrNoRows {
+			panic(err)
+		}
+	}
+	if dbname == "" {
+		// Create database
+		query := "CREATE DATABASE %s;"
+		query = fmt.Sprintf(query, GConfig.DBName)
+		_, err := conn.Exec(query)
+		if err != nil {
+			panic(err)
+		}
+	}
 	queries := sqlc.New(conn)
 	// Setup a ticker
 	var api BinanceAPI

@@ -33,10 +33,14 @@ spec:
                 name: db-secret-credentials
           volumeMounts:
             # The volume mounts  for the container
-            - mountPath: /var/lib/postgres/data
+            - mountPath: /var/lib/postgresql/data
               name: db-data
         - name: cryptoagent
           image: smiledragonfly/cryptoagent
+        - name: cryptoapi
+          image: smiledragonfly/cryptoapi
+          ports:
+            - containerPort: 8888
       # Volumes attached to the pod
       volumes:
         - name: db-data

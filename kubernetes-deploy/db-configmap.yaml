@@ -8,7 +8,7 @@ metadata:
     app: postgresdb
 data:
   # User DB
-  POSTGRES_DB: ewallet
+  POSTGRES_DB: crypto
   # Db user
   POSTGRES_USER: postgres
   # Db password
