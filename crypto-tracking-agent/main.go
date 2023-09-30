@@ -7,6 +7,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/SmileDragonfly/go-lib/crypto-sql/sqlc"
+	"github.com/golang-migrate/migrate/v4"
+	"github.com/golang-migrate/migrate/v4/database/postgres"
+	_ "github.com/golang-migrate/migrate/v4/source/file"
 	_ "github.com/lib/pq"
 	"sort"
 	"time"
@@ -63,6 +66,18 @@ func main() {
 		if err := conn.Ping(); err != nil {
 			panic(err)
 		}
+	}
+	driver, err := postgres.WithInstance(conn, &postgres.Config{})
+	if err != nil {
+		panic(err)
+	}
+	m, err := migrate.NewWithDatabaseInstance("file://./db", "crypto", driver)
+	if err != nil {
+		panic(err)
+	}
+	err = m.Up()
+	if err != nil {
+		panic(err)
 	}
 	queries := sqlc.New(conn)
 	// Setup a ticker
