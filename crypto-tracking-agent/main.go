@@ -5,6 +5,7 @@ import (
 	"cryptoagent/logger"
 	"database/sql"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/SmileDragonfly/go-lib/crypto-sql/sqlc"
 	"github.com/golang-migrate/migrate/v4"
@@ -77,7 +78,10 @@ func main() {
 	}
 	err = m.Up()
 	if err != nil {
-		panic(err)
+		if !errors.Is(err, migrate.ErrNoChange) {
+			panic(err)
+		}
+		logger.Info("MigrateDB: No change")
 	}
 	queries := sqlc.New(conn)
 	// Setup a ticker

@@ -20,15 +20,15 @@ the Kubernetes control plane will automatically bind the PVC to an available PV 
 6.5. Creating the Service Resource (A service exposes a deployment. It provides a stable network endpoint for accessing a cluster)
 6.6. Deploy postgresql
 -Deploy the PV:
-kubectl apply -f db-persistent-volume.yaml
+kubectl apply -f ./kubernetes-deploy/db-persistent-volume.yaml
 -Deploy the PVC
-kubectl apply -f db-volume-claim.yaml
+kubectl apply -f ./kubernetes-deploy/db-volume-claim.yaml
 -The environment variables are needed by the cluster. Deploy them as follows:
-kubectl apply -f db-configmap.yaml
+kubectl apply -f ./kubernetes-deploy/db-configmap.yaml
 -Next, create the deployment and add pods replicas.
-kubectl apply -f db-deployment.yaml
+kubectl apply -f ./kubernetes-deploy/db-deployment.yaml
 -Finaly run the service to expose the cluster
-kubectl apply -f db-service.yaml
+kubectl apply -f ./kubernetes-deploy/db-service.yaml
 6.7. Testing deployment
 kubectl get all
 minikube dashboard
