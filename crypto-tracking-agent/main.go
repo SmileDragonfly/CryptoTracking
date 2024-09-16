@@ -7,10 +7,11 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	_ "github.com/lib/pq"
 	"os"
 	"sort"
 	"time"
+
+	_ "github.com/lib/pq"
 )
 
 // run will be called by Start() so business logic goes here
@@ -48,7 +49,7 @@ func main() {
 			case <-tickerDone:
 				return
 			case <-ticker.C:
-				strPrice, err := api.getAllPrice("BUSD$")
+				strPrice, err := api.getAllPrice("USDT$")
 				if err != nil {
 					logger.Logger.Error(err.Error())
 				} else {
