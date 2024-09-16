@@ -50,11 +50,42 @@ func NewLogger(sPath string) error {
 			return err
 		}
 		Instance = logger
-		break
 	default:
 		return errors.New("Invalid logger type")
 	}
 	Instance.Info("==================================================")
 	Instance.Info("Start logger succesfully")
 	return nil
+}
+
+func Debug(a ...any) {
+	Instance.Debug(a...)
+}
+
+func Info(a ...any) {
+	Instance.Info(a...)
+}
+
+func Warning(a ...any) {
+	Instance.Warning(a...)
+}
+
+func Error(a ...any) {
+	Instance.Error(a...)
+}
+
+func Debugf(template string, a ...any) {
+	Instance.Debugf(template, a...)
+}
+
+func Infof(template string, a ...any) {
+	Instance.Infof(template, a...)
+}
+
+func Warningf(template string, a ...any) {
+	Instance.Warningf(template, a...)
+}
+
+func Errorf(template string, a ...any) {
+	Instance.Errorf(template, a...)
 }

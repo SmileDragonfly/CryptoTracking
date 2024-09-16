@@ -30,11 +30,11 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	logger.Logger.Info("Start logger succesfully")
+	logger.Info("Start logger succesfully")
 	// Begin main program
 	err = loadConfig("./config/")
 	if err != nil {
-		logger.Logger.Error(err)
+		logger.Error(err)
 		panic(err)
 	}
 	GStrConn = fmt.Sprintf("port=%d host=%s user=%s password=%s dbname=%s sslmode=disable",
@@ -51,19 +51,19 @@ func main() {
 			case <-ticker.C:
 				strPrice, err := api.getAllPrice("USDT$")
 				if err != nil {
-					logger.Logger.Error(err.Error())
+					logger.Error(err.Error())
 				} else {
 					// Calculate percent
 					// 1.Open DB
 					conn, err := sql.Open(GConfig.DBDriver, GStrConn)
 					if err != nil {
-						logger.Logger.Error(err.Error())
+						logger.Error(err.Error())
 						conn.Close()
 						continue
 					}
 					tx, err := conn.Begin()
 					if err != nil {
-						logger.Logger.Error(err.Error())
+						logger.Error(err.Error())
 						conn.Close()
 						continue
 					}
@@ -84,7 +84,7 @@ func main() {
 					chanPercent15Min := make(chan []TPricePercent)
 					chanPercent30Min := make(chan []TPricePercent)
 					chanPercent60Min := make(chan []TPricePercent)
-					logger.Logger.Info("Begin calculate percent")
+					logger.Info("Begin calculate percent")
 					go CalculatePercentRountine(strPrice, strPriceLastest.Price.String, chanPercentLastest)
 					go CalculatePercentRountine(strPrice, strPrice1MinAgo.Price.String, chanPercent1Min)
 					go CalculatePercentRountine(strPrice, strPrice5MinAgo.Price.String, chanPercent5Min)
@@ -99,9 +99,9 @@ func main() {
 					arrPercent15Min := <-chanPercent15Min
 					arrPercent30Min := <-chanPercent30Min
 					arrPercent60Min := <-chanPercent60Min
-					logger.Logger.Info("End calculate percent")
+					logger.Info("End calculate percent")
 					if arrPercent1Min == nil {
-						logger.Logger.Warning("CalculatePercent 1 Min NUll Data")
+						logger.Warning("CalculatePercent 1 Min NUll Data")
 					} else {
 						query.Delete1MinBUSDPercent(context.Background())
 						for _, v := range arrPercent1Min {
@@ -114,7 +114,7 @@ func main() {
 						}
 					}
 					if arrPercent5Min == nil {
-						logger.Logger.Warning("CalculatePercent 5 Min NUll Data")
+						logger.Warning("CalculatePercent 5 Min NUll Data")
 					} else {
 						query.Delete5MinBUSDPercent(context.Background())
 						for _, v := range arrPercent5Min {
@@ -127,7 +127,7 @@ func main() {
 						}
 					}
 					if arrPercent10Min == nil {
-						logger.Logger.Warning("CalculatePercent 10 Min NUll Data")
+						logger.Warning("CalculatePercent 10 Min NUll Data")
 					} else {
 						query.Delete10MinBUSDPercent(context.Background())
 						for _, v := range arrPercent10Min {
@@ -140,7 +140,7 @@ func main() {
 						}
 					}
 					if arrPercent15Min == nil {
-						logger.Logger.Warning("CalculatePercent 15 Min NUll Data")
+						logger.Warning("CalculatePercent 15 Min NUll Data")
 					} else {
 						query.Delete15MinBUSDPercent(context.Background())
 						for _, v := range arrPercent15Min {
@@ -153,7 +153,7 @@ func main() {
 						}
 					}
 					if arrPercent30Min == nil {
-						logger.Logger.Warning("CalculatePercent 30 Min NUll Data")
+						logger.Warning("CalculatePercent 30 Min NUll Data")
 					} else {
 						query.Delete30MinBUSDPercent(context.Background())
 						for _, v := range arrPercent30Min {
@@ -166,7 +166,7 @@ func main() {
 						}
 					}
 					if arrPercent60Min == nil {
-						logger.Logger.Warning("CalculatePercent 60 Min NUll Data")
+						logger.Warning("CalculatePercent 60 Min NUll Data")
 					} else {
 						query.Delete60MinBUSDPercent(context.Background())
 						for _, v := range arrPercent60Min {
@@ -179,7 +179,7 @@ func main() {
 						}
 					}
 					if arrPercentLastest == nil {
-						logger.Logger.Warning("CalculatePercent Lastest NUll Data")
+						logger.Warning("CalculatePercent Lastest NUll Data")
 					} else {
 						sort.Slice(arrPercentLastest, func(i, j int) bool {
 							return arrPercentLastest[i].Percent > arrPercentLastest[j].Percent
@@ -195,30 +195,30 @@ func main() {
 						// Convert to json
 						strTopCoin, err := json.Marshal(&arrTopCoin)
 						if err != nil {
-							logger.Logger.Error("Convert arrTopCoin to string failed:", err)
+							logger.Error("Convert arrTopCoin to string failed:", err)
 						}
 						err = query.InsertTopCoinHistory(context.Background(), sql.NullString{
 							String: string(strTopCoin),
 							Valid:  true,
 						})
 						if err != nil {
-							logger.Logger.Error("Insert to TopCoinHistory failed:", err)
+							logger.Error("Insert to TopCoinHistory failed:", err)
 						}
 					}
 					// Insert to DB
 					err = query.InsertBUSDPrice(context.Background(), sql.NullString{strPrice, true})
 					if err != nil {
-						logger.Logger.Error(err.Error())
+						logger.Error(err.Error())
 					}
 					// Delete waste data
 					err = query.DeleteWasteBUSDPrice(context.Background())
 					if err != nil {
-						logger.Logger.Error(err.Error())
+						logger.Error(err.Error())
 					}
 					// Delete waste data
 					err = query.DeleteTopCoinHistory(context.Background())
 					if err != nil {
-						logger.Logger.Error(err.Error())
+						logger.Error(err.Error())
 					}
 					tx.Commit()
 					conn.Close()
