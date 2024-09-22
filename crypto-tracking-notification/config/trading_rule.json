@@ -1,0 +1,16 @@
+{
+    "StopLoss": {
+        "1H": 5,
+        "4H": 7,
+        "12H": 8.5,
+        "24H": 10,
+        "48H": 15,
+        "72H": 20
+    },
+    "ChangeCoin": {
+        "TopOneMinTimes": 3,
+        "TopOneMinTimes": 3,
+        "TopOneMinTimes": 3,
+        "TopOneMinTimes": 3
+    }
+}

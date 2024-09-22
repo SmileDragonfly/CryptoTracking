@@ -1,0 +1,33 @@
+@startuml
+Main -> TradingBot: Init
+activate TradingBot
+TradingBot -> TradingBot: Load rules
+activate TradingBot
+TradingBot -> TradingBot: Init timer for withdrawing (stoploss, replace coin) in minute
+TradingBot -> TradingBot: Check if stoploss reach threshold config
+alt case true
+    TradingBot -> TradingBot: Withdraw
+else case false
+    TradingBot -> TradingBot: Check if have a better coin to replace current coin
+    alt case true
+        TradingBot -> TradingBot: with draw, set isReplace = true
+    else case false
+        TradingBot -> TradingBot: skip
+    end
+end
+deactivate TradingBot
+TradingBot -> TradingBot: Init timer for buying
+activate TradingBot
+alt balance is 0
+    TradingBot -> TradingBot: skip
+else balance isnt 0
+    alt isReplace is true
+        TradingBot -> TradingBot: Check replace coin -> buy, isReplace = fasle
+    else
+        TradingBot -> TradingBot: Check best coin -> buy
+    end
+end
+deactivate TradingBot
+deactivate TradingBot
+TradingBot -> Main: return
+@enduml
